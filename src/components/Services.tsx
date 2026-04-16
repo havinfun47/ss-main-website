@@ -114,11 +114,7 @@ export default function Services() {
           })}
         </div>
 
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-6 pt-6 border-t border-border">
-          <p className="text-xs text-tertiary">
-            <span className="font-semibold uppercase tracking-wider" style={{ letterSpacing: "0.1em" }}>Not included: </span>
-            In-house video/photo production · Customer service · Shopify/website management
-          </p>
+        <div className="flex justify-end mt-6 pt-6 border-t border-border">
           <Link
             href="#contact"
             className="inline-flex items-center justify-center gap-2 bg-primary text-white rounded px-6 py-3 text-xs font-semibold shrink-0 hover:bg-primary/90 transition-opacity w-full sm:w-auto"

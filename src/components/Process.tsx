@@ -46,8 +46,8 @@ export default function Process() {
               How It Works
             </p>
             <h2 className="text-5xl md:text-6xl leading-tight tracking-tight" style={{ color: "#F1F5F9", fontWeight: 300 }}>
-              The EOS{" "}
-              <span style={{ fontWeight: 600 }}>Proven Process.</span>
+              The Scale Science{" "}
+              <span style={{ fontWeight: 600 }}>Growth System.</span>
             </h2>
           </div>
           <p className="text-sm leading-relaxed md:max-w-sm" style={{ color: "#64748B" }}>
