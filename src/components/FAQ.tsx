@@ -8,11 +8,11 @@ const faqs = [
   },
   {
     q: "What platforms do you run ads on?",
-    a: "Our core expertise is Meta — Facebook and Instagram — where we've generated millions in revenue across dozens of brands. We also coordinate with complementary channels including Google and TikTok where the data supports it.",
+    a: "Our core expertise is Meta — Facebook and Instagram. We also coordinate with complementary channels including Google and TikTok where the data supports it.",
   },
   {
     q: "What ad budget do I need to get started?",
-    a: "We typically work with brands spending at least $5K/month in ad spend. Our sweet spot is $10K–$50K/month, where our systems create the most leverage. If you're below that threshold, we'll be straightforward on the call about whether we're the right fit.",
+    a: "We typically work with brands spending at least $20K/month in ad spend. Our sweet spot is $20K–$100K/month, where our systems create the most leverage. If you're below that threshold, we'll be straightforward on the call about whether we're the right fit.",
   },
   {
     q: "How is Scale Science different from other agencies?",
