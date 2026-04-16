@@ -98,25 +98,14 @@ export default function Results() {
               style={{ backgroundColor: "#0F172A" }}
             >
               {/* Image */}
-              <div className="relative">
-                <Image
-                  src={`${BASE}${c.image}`}
-                  alt={c.title}
-                  width={0}
-                  height={0}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="w-full h-auto block"
-                />
-                {/* Case number badge */}
-                <div className="absolute top-4 left-4">
-                  <span
-                    className="text-xs font-semibold px-2.5 py-1 rounded-sm"
-                    style={{ backgroundColor: "rgba(15,23,42,0.75)", color: "#94A3B8", letterSpacing: "0.08em" }}
-                  >
-                    Case Study #{c.id}
-                  </span>
-                </div>
-              </div>
+              <Image
+                src={`${BASE}${c.image}`}
+                alt={c.title}
+                width={0}
+                height={0}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="w-full h-auto block"
+              />
 
               {/* Content */}
               <div className="flex flex-col gap-4 p-7 flex-1">
@@ -161,11 +150,11 @@ export default function Results() {
               </div>
 
               {/* CTA */}
-              <div className="px-7 py-4 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+              <div className="px-7 py-5 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
                 <Link
                   href="#contact"
-                  className="text-sm font-semibold transition-colors"
-                  style={{ color: "#2563EB" }}
+                  className="inline-flex items-center justify-center w-full px-5 py-2.5 rounded text-sm font-semibold transition-colors"
+                  style={{ backgroundColor: "#2563EB", color: "#FFFFFF" }}
                 >
                   Get results like this →
                 </Link>
