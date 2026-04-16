@@ -17,7 +17,7 @@ const cases = [
       { label: "ROAS Improvement", value: "+234%" },
       { label: "Cost Per Acquisition", value: "−71%" },
     ],
-    image: "/images/case-01.jpg",
+    image: "/images/case-01.jpeg",
   },
   {
     id: "02",
@@ -34,7 +34,7 @@ const cases = [
       { label: "Meta Revenue", value: "+1,076%" },
       { label: "ROAS Improvement", value: "+583%" },
     ],
-    image: "/images/case-02.jpg",
+    image: "/images/case-02.jpeg",
   },
   {
     id: "03",
@@ -51,7 +51,7 @@ const cases = [
       { label: "Spend Increase", value: "+433%" },
       { label: "Timeline", value: "90 Days" },
     ],
-    image: "/images/case-03.jpg",
+    image: "/images/case-03.jpeg",
   },
   {
     id: "04",
@@ -68,7 +68,7 @@ const cases = [
       { label: "Revenue", value: "$122K" },
       { label: "ROAS", value: "3.17×" },
     ],
-    image: "/images/case-04.jpg",
+    image: "/images/case-04.jpeg",
   },
 ];
 
