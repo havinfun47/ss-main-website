@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const cases = [
   {
@@ -16,6 +17,7 @@ const cases = [
       { label: "ROAS Improvement", value: "+234%" },
       { label: "Cost Per Acquisition", value: "−71%" },
     ],
+    image: "/images/case-01.jpg",
   },
   {
     id: "02",
@@ -32,6 +34,7 @@ const cases = [
       { label: "Meta Revenue", value: "+1,076%" },
       { label: "ROAS Improvement", value: "+583%" },
     ],
+    image: "/images/case-02.jpg",
   },
   {
     id: "03",
@@ -48,6 +51,7 @@ const cases = [
       { label: "Spend Increase", value: "+433%" },
       { label: "Timeline", value: "90 Days" },
     ],
+    image: "/images/case-03.jpg",
   },
   {
     id: "04",
@@ -64,6 +68,7 @@ const cases = [
       { label: "Revenue", value: "$122K" },
       { label: "ROAS", value: "3.17×" },
     ],
+    image: "/images/case-04.jpg",
   },
 ];
 
@@ -85,35 +90,50 @@ export default function Results() {
 
         <div className="grid md:grid-cols-2 gap-4">
           {cases.map((c) => (
-            <div key={c.id} className="border border-border rounded-lg overflow-hidden bg-bg flex flex-col">
-              {/* Stats bar — visual hook at the top */}
-              <div className="grid grid-cols-2 border-b border-border">
-                {c.stats.map((s, i) => (
-                  <div
-                    key={s.label}
-                    className={`px-6 py-5 ${i === 0 ? "border-r border-border" : ""}`}
-                    style={{ backgroundColor: i === 0 ? "#2563EB" : "#1D4ED8" }}
+            <div
+              key={c.id}
+              className="rounded-xl overflow-hidden flex flex-col"
+              style={{ backgroundColor: "#0F172A" }}
+            >
+              {/* Image */}
+              <div className="relative w-full aspect-[16/9] overflow-hidden">
+                <Image
+                  src={c.image}
+                  alt={c.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                {/* Case number badge */}
+                <div className="absolute top-4 left-4">
+                  <span
+                    className="text-xs font-semibold px-2.5 py-1 rounded-sm"
+                    style={{ backgroundColor: "rgba(15,23,42,0.75)", color: "#94A3B8", letterSpacing: "0.08em" }}
                   >
-                    <p className="text-3xl font-bold text-white tracking-tight leading-none">{s.value}</p>
-                    <p className="text-xs text-blue-200 mt-1.5 font-medium">{s.label}</p>
-                  </div>
-                ))}
+                    Case Study #{c.id}
+                  </span>
+                </div>
               </div>
 
-              <div className="p-7 flex flex-col gap-4 flex-1">
+              {/* Content */}
+              <div className="flex flex-col gap-4 p-7 flex-1">
                 <div>
-                  <span className="text-tertiary text-xs font-mono">Case Study #{c.id} · {c.industry}</span>
-                  <h3 className="text-lg font-semibold mt-1.5 text-primary tracking-tight leading-snug">{c.title}</h3>
+                  <h3 className="text-xl font-semibold leading-snug tracking-tight" style={{ color: "#F1F5F9" }}>
+                    {c.title}
+                  </h3>
+                  <p className="text-xs mt-1 font-medium" style={{ color: "#475569" }}>{c.industry}</p>
                 </div>
 
-                <p className="text-secondary text-sm leading-relaxed">{c.description}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "#64748B" }}>{c.description}</p>
 
                 <div>
-                  <p className="text-xs text-tertiary uppercase tracking-widest mb-2.5 font-medium" style={{ letterSpacing: "0.1em" }}>After Scale Science:</p>
+                  <p className="text-xs uppercase tracking-widest mb-2.5 font-semibold" style={{ color: "#475569", letterSpacing: "0.1em" }}>
+                    After Scale Science:
+                  </p>
                   <ul className="space-y-1.5">
                     {c.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-2 text-sm text-secondary">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0 text-accent mt-0.5">
+                      <li key={b} className="flex items-start gap-2 text-sm" style={{ color: "#94A3B8" }}>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0 mt-0.5" style={{ color: "#2563EB" }}>
                           <path d="M2 7l4 4 6-8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                         {b}
@@ -121,8 +141,29 @@ export default function Results() {
                     ))}
                   </ul>
                 </div>
+              </div>
 
-                <Link href="#contact" className="mt-auto pt-4 border-t border-border text-sm text-accent hover:text-accent/80 transition-colors font-semibold flex items-center gap-1.5">
+              {/* Stats bar */}
+              <div className="grid grid-cols-2 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+                {c.stats.map((s, i) => (
+                  <div
+                    key={s.label}
+                    className={`px-7 py-5 ${i === 0 ? "border-r" : ""}`}
+                    style={{ borderColor: "rgba(255,255,255,0.06)" }}
+                  >
+                    <p className="text-2xl font-bold tracking-tight" style={{ color: "#F1F5F9" }}>{s.value}</p>
+                    <p className="text-xs mt-1 font-medium" style={{ color: "#475569" }}>{s.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <div className="px-7 py-4 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+                <Link
+                  href="#contact"
+                  className="text-sm font-semibold transition-colors"
+                  style={{ color: "#2563EB" }}
+                >
                   Get results like this →
                 </Link>
               </div>
