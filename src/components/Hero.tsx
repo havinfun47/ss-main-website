@@ -27,10 +27,10 @@ export default function Hero() {
 
         <div className="flex flex-col sm:flex-row items-center gap-4">
           <Link
-            href="https://calendly.com/graydon-scalescientist/30min" target="_blank" rel="noopener noreferrer"
+            href="https://connect.scalescientist.com/" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-accent text-white px-7 py-3.5 rounded text-sm font-semibold hover:bg-accent/90 transition-colors"
           >
-            Claim your spot — it&apos;s free
+            Let&apos;s Chat
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>

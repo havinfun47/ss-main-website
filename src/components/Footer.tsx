@@ -72,10 +72,10 @@ export default function Footer() {
             No pitch deck. No hard sell. If we&apos;re not the right fit, we&apos;ll tell you.
           </p>
           <Link
-            href="https://calendly.com/graydon-scalescientist/30min" target="_blank" rel="noopener noreferrer"
+            href="https://connect.scalescientist.com/" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded text-sm font-semibold hover:bg-accent/90 transition-colors"
           >
-            Claim your spot — it&apos;s free
+            Let&apos;s Chat
           </Link>
         </div>
       </section>
