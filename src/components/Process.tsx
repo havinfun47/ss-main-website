@@ -93,21 +93,21 @@ export default function Process() {
           ))}
         </div>
 
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center mt-10 overflow-x-auto">
           <div
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-sm"
+            className="inline-flex items-center gap-2 px-6 py-4 rounded-sm shrink-0"
             style={{ backgroundColor: "rgba(255,255,255,0.04)" }}
           >
-            <span className="text-xs font-semibold uppercase tracking-widest mr-4" style={{ color: "#475569", letterSpacing: "0.12em" }}>
+            <span className="text-xs font-semibold uppercase tracking-widest mr-3 whitespace-nowrap" style={{ color: "#475569", letterSpacing: "0.12em" }}>
               Ongoing flywheel
             </span>
             {["Test", "Learn", "Iterate", "Scale"].map((step) => (
-              <span key={step} className="flex items-center gap-3">
-                <span className="text-sm font-medium" style={{ color: "#F1F5F9" }}>{step}</span>
+              <span key={step} className="flex items-center gap-2">
+                <span className="text-sm font-medium whitespace-nowrap" style={{ color: "#F1F5F9" }}>{step}</span>
                 <span className="text-sm" style={{ color: "#2563EB" }}>→</span>
               </span>
             ))}
-            <span className="text-sm font-semibold" style={{ color: "#2563EB" }}>Repeat</span>
+            <span className="text-sm font-semibold whitespace-nowrap" style={{ color: "#2563EB" }}>Repeat</span>
           </div>
         </div>
       </div>

@@ -11,8 +11,7 @@ export default function Hero() {
         </div>
 
         <h1 className="text-5xl md:text-7xl font-light leading-[1.06] tracking-tight text-primary">
-          We build Meta funnels that<br />
-          turn ad spend into{" "}
+          We build Meta funnels that turn ad spend into{" "}
           <span className="font-bold text-accent">predictable revenue.</span>
         </h1>
 

@@ -39,7 +39,8 @@ export default function Comparison() {
           </h2>
         </div>
 
-        <div className="border border-border rounded-lg overflow-hidden">
+        {/* Desktop table */}
+        <div className="hidden md:block border border-border rounded-lg overflow-hidden">
           <div className="grid grid-cols-3 border-b border-border">
             <div className="p-5 text-xs text-tertiary uppercase tracking-widest font-medium" />
             <div className="p-5 text-center border-l border-border">
@@ -58,17 +59,46 @@ export default function Comparison() {
               <div className="p-5">
                 <p className="text-secondary text-xs uppercase tracking-widest font-medium">{row.category}</p>
               </div>
-              <div className="p-5 border-l border-border flex items-center gap-2">
-                <svg width="14" height="14" viewBox="0 0 14 14" className="shrink-0 text-tertiary" fill="none">
+              <div className="p-5 border-l border-border flex items-start gap-2">
+                <svg width="14" height="14" viewBox="0 0 14 14" className="shrink-0 text-tertiary mt-0.5" fill="none">
                   <path d="M3 3l8 8M11 3L3 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
                 <p className="text-secondary text-sm">{row.them}</p>
               </div>
-              <div className="p-5 border-l border-border bg-bg flex items-center gap-2">
-                <svg width="14" height="14" viewBox="0 0 14 14" className="shrink-0 text-accent" fill="none">
+              <div className="p-5 border-l border-border bg-bg flex items-start gap-2">
+                <svg width="14" height="14" viewBox="0 0 14 14" className="shrink-0 text-accent mt-0.5" fill="none">
                   <path d="M2 7l4 4 6-8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 <p className="text-primary text-sm font-medium">{row.us}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile stacked cards */}
+        <div className="md:hidden space-y-3">
+          {rows.map((row) => (
+            <div key={row.category} className="border border-border rounded-lg overflow-hidden">
+              <div className="px-4 py-2.5 bg-bg border-b border-border">
+                <p className="text-xs font-semibold uppercase tracking-widest text-accent" style={{ letterSpacing: "0.12em" }}>{row.category}</p>
+              </div>
+              <div className="p-4 border-b border-border flex items-start gap-2.5">
+                <svg width="14" height="14" viewBox="0 0 14 14" className="shrink-0 text-tertiary mt-0.5" fill="none">
+                  <path d="M3 3l8 8M11 3L3 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+                <div>
+                  <p className="text-xs text-tertiary font-medium mb-0.5">Typical Agency</p>
+                  <p className="text-secondary text-sm">{row.them}</p>
+                </div>
+              </div>
+              <div className="p-4 bg-bg flex items-start gap-2.5">
+                <svg width="14" height="14" viewBox="0 0 14 14" className="shrink-0 text-accent mt-0.5" fill="none">
+                  <path d="M2 7l4 4 6-8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <div>
+                  <p className="text-xs text-accent font-semibold mb-0.5">Scale Science</p>
+                  <p className="text-primary text-sm font-medium">{row.us}</p>
+                </div>
               </div>
             </div>
           ))}

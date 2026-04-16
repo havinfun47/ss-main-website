@@ -77,7 +77,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-0.5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-0.5">
           {services.map((s) => {
             const isDark = s.variant === "dark";
             const isAccent = s.variant === "accent";
@@ -121,7 +121,7 @@ export default function Services() {
           </p>
           <Link
             href="#contact"
-            className="inline-flex items-center gap-2 bg-primary text-white rounded px-6 py-3 text-xs font-semibold shrink-0 hover:bg-primary/90 transition-opacity"
+            className="inline-flex items-center justify-center gap-2 bg-primary text-white rounded px-6 py-3 text-xs font-semibold shrink-0 hover:bg-primary/90 transition-opacity w-full sm:w-auto"
           >
             Book a free strategy call
             <span className="text-accent">→</span>

@@ -35,7 +35,7 @@ const cases = [
   },
   {
     id: "03",
-    title: "3× ad budget. Target ROAS held.",
+    title: "+433% ad budget. Target ROAS held.",
     industry: "Health & Wellness Brand",
     description:
       "Every time this brand tried to scale, ROAS collapsed. We rebuilt the funnel, re-segmented audiences, and produced fresh creative that held efficiency as we tripled their monthly ad investment in under 3 months.",
@@ -45,7 +45,7 @@ const cases = [
       "Full ramp in under 3 months",
     ],
     stats: [
-      { label: "Spend Increase", value: "+434%" },
+      { label: "Spend Increase", value: "+433%" },
       { label: "Timeline", value: "90 Days" },
     ],
   },
@@ -85,41 +85,47 @@ export default function Results() {
 
         <div className="grid md:grid-cols-2 gap-4">
           {cases.map((c) => (
-            <div key={c.id} className="border border-border rounded-lg p-8 bg-bg flex flex-col gap-5">
-              <div>
-                <span className="text-tertiary text-xs font-mono">Case Study #{c.id}</span>
-                <h3 className="text-xl font-semibold mt-1 text-primary tracking-tight">{c.title}</h3>
-                <span className="text-xs text-tertiary">{c.industry}</span>
-              </div>
-
-              <p className="text-secondary text-sm leading-relaxed">{c.description}</p>
-
-              <div>
-                <p className="text-xs text-tertiary uppercase tracking-widest mb-2.5 font-medium">After Scale Science:</p>
-                <ul className="space-y-1.5">
-                  {c.bullets.map((b) => (
-                    <li key={b} className="flex items-center gap-2 text-sm text-secondary">
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0 text-accent">
-                        <path d="M2 7l4 4 6-8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4 pt-4 border-t border-border">
-                {c.stats.map((s) => (
-                  <div key={s.label}>
-                    <p className="text-2xl font-bold text-primary tracking-tight">{s.value}</p>
-                    <p className="text-xs text-secondary mt-0.5">{s.label}</p>
+            <div key={c.id} className="border border-border rounded-lg overflow-hidden bg-bg flex flex-col">
+              {/* Stats bar — visual hook at the top */}
+              <div className="grid grid-cols-2 border-b border-border">
+                {c.stats.map((s, i) => (
+                  <div
+                    key={s.label}
+                    className={`px-6 py-5 ${i === 0 ? "border-r border-border" : ""}`}
+                    style={{ backgroundColor: i === 0 ? "#2563EB" : "#1D4ED8" }}
+                  >
+                    <p className="text-3xl font-bold text-white tracking-tight leading-none">{s.value}</p>
+                    <p className="text-xs text-blue-200 mt-1.5 font-medium">{s.label}</p>
                   </div>
                 ))}
               </div>
 
-              <Link href="#contact" className="text-sm text-accent hover:text-accent/80 transition-colors font-medium">
-                Get results like this →
-              </Link>
+              <div className="p-7 flex flex-col gap-4 flex-1">
+                <div>
+                  <span className="text-tertiary text-xs font-mono">Case Study #{c.id} · {c.industry}</span>
+                  <h3 className="text-lg font-semibold mt-1.5 text-primary tracking-tight leading-snug">{c.title}</h3>
+                </div>
+
+                <p className="text-secondary text-sm leading-relaxed">{c.description}</p>
+
+                <div>
+                  <p className="text-xs text-tertiary uppercase tracking-widest mb-2.5 font-medium" style={{ letterSpacing: "0.1em" }}>After Scale Science:</p>
+                  <ul className="space-y-1.5">
+                    {c.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-2 text-sm text-secondary">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0 text-accent mt-0.5">
+                          <path d="M2 7l4 4 6-8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <Link href="#contact" className="mt-auto pt-4 border-t border-border text-sm text-accent hover:text-accent/80 transition-colors font-semibold flex items-center gap-1.5">
+                  Get results like this →
+                </Link>
+              </div>
             </div>
           ))}
         </div>
