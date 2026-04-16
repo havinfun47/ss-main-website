@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 };
 
 const LAST_UPDATED = "April 16, 2025";
-const CONTACT_EMAIL = "graydon@scalescientist.com";
+const CONTACT_EMAIL = "support@scalescientist.com";
 
 export default function PrivacyPolicy() {
   return (

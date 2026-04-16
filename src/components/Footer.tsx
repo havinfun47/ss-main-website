@@ -111,9 +111,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto mt-8 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-tertiary">
+        <div className="max-w-7xl mx-auto mt-8 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-tertiary">
           <p>© {new Date().getFullYear()} Scale Science. All rights reserved.</p>
-          <p>Results may vary. Individual outcomes depend on brand, budget, and market conditions.</p>
+          <div className="flex items-center gap-4">
+            <p>Results may vary. Individual outcomes depend on brand, budget, and market conditions.</p>
+            <Link href="/privacy" className="hover:text-primary transition-colors shrink-0">Privacy Policy</Link>
+          </div>
         </div>
       </div>
     </footer>
