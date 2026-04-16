@@ -3,98 +3,66 @@ import Link from "next/link";
 const cases = [
   {
     id: "01",
-    title: "+$114,000 Per Month In 57 Days",
-    industry: "Outdoor Brand",
+    title: "40% less spend. 89% more revenue.",
+    industry: "Sepura Home · Home Appliances",
     description:
-      "For an outdoor brand with underperforming email marketing, we implemented lifecycle flows and value-driven campaigns, adding $114k in monthly email-attributed revenue.",
+      "Sepura Home was priced at 2× the market leader. Their previous agency was delivering a 1.03 ROAS and 97% MER. We rebuilt the entire funnel — messaging, audiences, landing pages. Turned it around in 60 days.",
     bullets: [
-      "30% increase in campaign revenue",
-      "54.30% in email attributed revenue",
-      "$137,320 increase in total revenue",
+      "ROAS: 1.03 → 3.44 in 60 days (+234%)",
+      "nCPA: $529 → $152 (−71%)",
+      "Year-end: 60% less spend, 10% more revenue",
     ],
     stats: [
-      { label: "Repeat Purchases", value: "+32%" },
-      { label: "Flow Revenue", value: "+108%" },
+      { label: "ROAS Improvement", value: "+234%" },
+      { label: "Cost Per Acquisition", value: "−71%" },
     ],
   },
   {
     id: "02",
-    title: "+$1.5 Million In 6 Months",
-    industry: "Men's Accessories",
+    title: "+1,076% Meta revenue in 90 days.",
+    industry: "myco:soul · Health & Wellness",
     description:
-      "For a men's accessories brand, we drove $1.5M in email revenue within 6 months, a 170.69% increase from the previous period.",
+      "A saturated mushroom coffee market with acquisition costs that blocked profitability. We built a four-stage funnel — educational advertorials through to strategic retargeting — unlocking explosive, sustainable scale.",
     bullets: [
-      "$800K generated in a single month during BFCM",
-      "Increased email opt-in by 182%",
-      "99.40% increase in flow revenue",
+      "Meta attributed revenue +1,076%",
+      "Cost per purchase −66%",
+      "Ad spend scaled +510%",
     ],
     stats: [
-      { label: "Email Revenue", value: "+170%" },
-      { label: "Flow Revenue", value: "+99%" },
+      { label: "Meta Revenue", value: "+1,076%" },
+      { label: "ROAS Improvement", value: "+583%" },
     ],
   },
   {
     id: "03",
-    title: "$71K+ In 2 Months",
-    industry: "Fashion Drop Brand",
+    title: "3× ad budget. Target ROAS held.",
+    industry: "Health & Wellness Brand",
     description:
-      "For a fashion drop brand, we introduced a new drop campaign strategy, resulting in $71K in email revenue in less than 2 months of working together.",
+      "Every time this brand tried to scale, ROAS collapsed. We rebuilt the funnel, re-segmented audiences, and produced fresh creative that held efficiency as we tripled their monthly ad investment in under 3 months.",
     bullets: [
-      "31.23% in email attributed revenue",
-      "All-time highs in email revenue",
-      "Increasing email revenue by $38K",
+      "Monthly spend: $10K → $36K",
+      "Target ROAS maintained throughout",
+      "Full ramp in under 3 months",
     ],
     stats: [
-      { label: "Returning Customers", value: "+45%" },
-      { label: "Campaign Revenue", value: "+115%" },
+      { label: "Spend Increase", value: "+434%" },
+      { label: "Timeline", value: "90 Days" },
     ],
   },
   {
     id: "04",
-    title: "$54K Increase In Email Revenue",
-    industry: "Gummy Brand",
+    title: "$0 → $122K revenue in 60 days.",
+    industry: "Kitchen Appliance Brand",
     description:
-      "A gummy brand came to us to optimize their flows and campaigns, increasing their email-attributed revenue from $28K to $83K.",
+      "No existing Meta presence. We built the full funnel from scratch — research, creative, audiences, landing pages — and delivered $122K in revenue at a 3.17 ROAS within the first 60 days.",
     bullets: [
-      "35.96% in email attributed revenue",
-      "More time working on their business",
-      "2x list growth rate",
+      "$0 to $122K in attributed revenue",
+      "3.17 ROAS from day one",
+      "Full funnel live in under 2 weeks",
     ],
     stats: [
-      { label: "Campaign Revenue", value: "+144%" },
-      { label: "Flow Revenue", value: "+238%" },
-    ],
-  },
-  {
-    id: "05",
-    title: "Extra +$498K In 12 Months",
-    industry: "Men's Wallets",
-    description:
-      "A men's wallet brand approached us after facing communication issues with their previous agency. We stepped in and boosted their email-attributed revenue by 41.91%.",
-    bullets: [
-      "70.75% increase in campaign revenue",
-      "41% in email attributed revenue",
-      "Savings hours of founder's time",
-    ],
-    stats: [
-      { label: "Repeat Purchases", value: "+15%" },
-      { label: "Email Revenue", value: "+41%" },
-    ],
-  },
-  {
-    id: "06",
-    title: "$39,446 Increase In Email Revenue",
-    industry: "Supplement Brand",
-    description:
-      "A supplement brand approached us due to stagnant growth. We boosted their email-attributed revenue from 29.18% to 42.07%, driving significant results.",
-    bullets: [
-      "Generating revenue on autopilot",
-      "42.07% in email attributed revenue",
-      "12 flows covering all customer journey",
-    ],
-    stats: [
-      { label: "List Growth", value: "+107%" },
-      { label: "Campaign Revenue", value: "+206%" },
+      { label: "Revenue", value: "$122K" },
+      { label: "ROAS", value: "3.17×" },
     ],
   },
 ];
@@ -103,67 +71,36 @@ export default function Results() {
   return (
     <section className="py-24 px-6 bg-bg-card" id="results">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="mb-16">
-          <p className="text-secondary text-sm uppercase tracking-widest mb-3">
-            Results
+        <div className="mb-14">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3" style={{ letterSpacing: "0.14em" }}>
+            Case Studies
           </p>
-          <h2 className="text-3xl md:text-5xl font-light leading-tight max-w-2xl mb-4">
-            Results speak for themselves.
+          <h2 className="text-4xl md:text-5xl font-light leading-tight max-w-2xl text-primary tracking-tight mb-3">
+            The results speak for themselves.
           </h2>
-          <p className="text-secondary max-w-xl leading-relaxed">
-            We&apos;ve worked across a number of industries and have achieved some
-            incredible results with some incredible people and brands.
+          <p className="text-secondary max-w-lg leading-relaxed text-sm">
+            Real brands, real numbers — across home goods, health & wellness, and more.
           </p>
         </div>
 
-        {/* Case studies grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-4">
           {cases.map((c) => (
-            <div
-              key={c.id}
-              className="border border-border rounded-xl p-8 bg-bg flex flex-col gap-6"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <span className="text-tertiary text-xs font-mono">
-                    Results #{c.id}
-                  </span>
-                  <h3 className="text-xl font-semibold mt-1 text-primary">
-                    {c.title}
-                  </h3>
-                  <span className="text-xs text-secondary">{c.industry}</span>
-                </div>
+            <div key={c.id} className="border border-border rounded-lg p-8 bg-bg flex flex-col gap-5">
+              <div>
+                <span className="text-tertiary text-xs font-mono">Case Study #{c.id}</span>
+                <h3 className="text-xl font-semibold mt-1 text-primary tracking-tight">{c.title}</h3>
+                <span className="text-xs text-tertiary">{c.industry}</span>
               </div>
 
-              <p className="text-secondary text-sm leading-relaxed">
-                {c.description}
-              </p>
+              <p className="text-secondary text-sm leading-relaxed">{c.description}</p>
 
               <div>
-                <p className="text-xs text-secondary uppercase tracking-widest mb-3">
-                  After Scale Science:
-                </p>
+                <p className="text-xs text-tertiary uppercase tracking-widest mb-2.5 font-medium">After Scale Science:</p>
                 <ul className="space-y-1.5">
                   {c.bullets.map((b) => (
-                    <li
-                      key={b}
-                      className="flex items-center gap-2 text-sm text-secondary"
-                    >
-                      <svg
-                        width="14"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        fill="none"
-                        className="shrink-0 text-primary"
-                      >
-                        <path
-                          d="M2 7l4 4 6-8"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
+                    <li key={b} className="flex items-center gap-2 text-sm text-secondary">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0 text-accent">
+                        <path d="M2 7l4 4 6-8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                       {b}
                     </li>
@@ -171,34 +108,28 @@ export default function Results() {
                 </ul>
               </div>
 
-              {/* Stats */}
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-border">
                 {c.stats.map((s) => (
                   <div key={s.label}>
-                    <p className="text-2xl font-semibold text-primary">
-                      {s.value}
-                    </p>
+                    <p className="text-2xl font-bold text-primary tracking-tight">{s.value}</p>
                     <p className="text-xs text-secondary mt-0.5">{s.label}</p>
                   </div>
                 ))}
               </div>
 
-              <Link
-                href="#contact"
-                className="text-sm text-secondary hover:text-primary transition-colors underline underline-offset-4"
-              >
-                Book A Strategy Call →
+              <Link href="#contact" className="text-sm text-accent hover:text-accent/80 transition-colors font-medium">
+                Get results like this →
               </Link>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-10">
           <Link
             href="#contact"
-            className="inline-flex items-center gap-2 bg-primary text-bg px-7 py-3.5 rounded text-sm font-semibold hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center gap-2 bg-accent text-white px-7 py-3.5 rounded text-sm font-semibold hover:bg-accent/90 transition-colors"
           >
-            Book A Strategy Call
+            Book a free strategy call
           </Link>
         </div>
       </div>

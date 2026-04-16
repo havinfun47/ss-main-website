@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const navLinks = [
-  { label: "About Us", href: "#about" },
+  { label: "About", href: "#about" },
   { label: "Results", href: "#results" },
   { label: "Services", href: "#services" },
   { label: "Process", href: "#process" },
@@ -50,30 +50,32 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer>
-      {/* CTA Banner */}
       <section
         className="py-24 px-6 text-center border-t border-border"
         id="contact"
       >
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-light leading-tight mb-6">
-            Ready to <span className="font-serif italic">guarantee</span> your
-            email revenue?
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-4" style={{ letterSpacing: "0.14em" }}>
+            Get Started
+          </p>
+          <h2 className="text-3xl md:text-5xl font-light leading-tight mb-6 text-primary tracking-tight">
+            Ready to scale{" "}
+            <span className="font-bold">profitably?</span>
           </h2>
-          <p className="text-secondary mb-10 leading-relaxed">
-            Book a free strategy call. We&apos;ll audit your email program and show
-            you exactly how much revenue you&apos;re leaving on the table.
+          <p className="text-secondary mb-10 leading-relaxed text-sm max-w-md mx-auto">
+            Book a free 30-minute strategy call. We&apos;ll audit your ad account,
+            identify where revenue is leaking, and outline exactly what our system
+            would look like for your brand.
           </p>
           <Link
             href="#contact"
-            className="inline-flex items-center gap-2 bg-primary text-bg px-8 py-4 rounded text-sm font-semibold hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded text-sm font-semibold hover:bg-accent/90 transition-colors"
           >
-            Book A Strategy Call
+            Book a free strategy call
           </Link>
         </div>
       </section>
 
-      {/* Footer nav */}
       <div className="border-t border-border px-6 py-12">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <Link
@@ -111,7 +113,7 @@ export default function Footer() {
 
         <div className="max-w-7xl mx-auto mt-8 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-tertiary">
           <p>© {new Date().getFullYear()} Scale Science. All rights reserved.</p>
-          <p>Results may vary. Individual outcomes depend on brand, list size, and market.</p>
+          <p>Results may vary. Individual outcomes depend on brand, budget, and market conditions.</p>
         </div>
       </div>
     </footer>

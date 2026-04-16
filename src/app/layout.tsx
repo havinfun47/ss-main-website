@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Hanken_Grotesk, Instrument_Serif } from "next/font/google";
+import { Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 
 const hanken = Hanken_Grotesk({
@@ -8,17 +8,32 @@ const hanken = Hanken_Grotesk({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const instrument = Instrument_Serif({
-  subsets: ["latin"],
-  variable: "--font-instrument",
-  weight: ["400"],
-  style: ["normal", "italic"],
-});
-
 export const metadata: Metadata = {
-  title: "Scale Science — Top eCommerce Growth Agency",
+  metadataBase: new URL("https://havinfun47.github.io"),
+  title: "Scale Science — Meta Funnels for eCom Brands",
   description:
-    "We contractually guarantee $50k–$500k per month in email revenue within 60 days.",
+    "Boutique growth partner for 6-7 figure eCommerce brands. Senior Meta strategists, data-backed creative, and landing pages engineered to convert.",
+  openGraph: {
+    title: "Scale Science — Meta Funnels for eCom Brands",
+    description:
+      "Boutique growth partner for 6-7 figure eCommerce brands. Senior Meta strategists, data-backed creative, and landing pages engineered to convert.",
+    images: [
+      {
+        url: "/ss-main-website/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Scale Science",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Scale Science — Meta Funnels for eCom Brands",
+    description:
+      "Boutique growth partner for 6-7 figure eCommerce brands. Senior Meta strategists, data-backed creative, and landing pages engineered to convert.",
+    images: ["/ss-main-website/images/og-image.png"],
+  },
 };
 
 export default function RootLayout({
@@ -28,9 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${hanken.variable} ${instrument.variable} font-sans antialiased bg-bg text-primary`}
-      >
+      <body className={`${hanken.variable} font-sans antialiased bg-bg text-primary`}>
         {children}
       </body>
     </html>

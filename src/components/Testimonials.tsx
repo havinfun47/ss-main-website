@@ -1,37 +1,37 @@
 const testimonials = [
   {
     quote:
-      "The emails look great and are extremely on brand. We've seen a noticeable improvement in open rates and revenue since working with them.",
+      "The creative is outstanding and completely on brand. We've seen a noticeable improvement in conversion rates and revenue since working with Scale Science.",
     name: "Andy Theng",
     title: "Co-Founder at Wick of Hope",
   },
   {
     quote:
-      "We go to them for everything eCommerce and digital marketing related. They're proactive, creative, and truly understand our customers.",
+      "We go to them for everything eCommerce and growth-related. They're proactive, data-driven, and they genuinely understand our customers better than most agencies we've worked with.",
     name: "Mike Trupiano",
     title: "CEO & Founder at The Feel Bar",
   },
   {
     quote:
-      "Working with Scale Science transformed our email program completely. The results have been outstanding and communication is always top-notch.",
+      "Working with Scale Science transformed our paid acquisition completely. The results have been outstanding and the communication is always proactive.",
     name: "Anthony Campos",
     title: "CEO & Founder at Mattress On Demand",
   },
   {
     quote:
-      "They brought a level of expertise we hadn't seen from previous agencies. Our LTV and repeat purchase rate are the highest they've ever been.",
+      "They brought a level of strategic rigor we hadn't seen from any previous agency. Our ROAS and customer acquisition costs are the best they've ever been.",
     name: "Ralph Crescenzo",
     title: "Director of eCommerce & Digital Operations",
   },
   {
     quote:
-      "Within 60 days we were seeing email revenue numbers we thought were impossible for our brand size. Incredible team.",
+      "Within 60 days we were seeing revenue numbers we thought were impossible for our brand size. The funnel they built just works.",
     name: "Chris R.",
     title: "Founder at StickerFab",
   },
   {
     quote:
-      "Absolutely recommend Scale Science to any brand serious about growing through email. They deliver what they promise.",
+      "Would absolutely recommend Scale Science to any brand serious about scaling profitably. They do what they say they'll do — which is rarer than it should be.",
     name: "Jacki Alcorn",
     title: "Owner at Primitive Star Quilt",
   },
@@ -41,28 +41,25 @@ export default function Testimonials() {
   return (
     <section className="py-24 px-6 bg-bg-card" id="testimonials">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="mb-16 text-center">
           <p className="text-secondary text-sm uppercase tracking-widest mb-3">
-            Our Clients
+            Client Stories
           </p>
           <h2 className="text-3xl md:text-5xl font-light leading-tight mb-4">
-            Hear it directly from our clients.
+            Don&apos;t take our word for it.
           </h2>
           <p className="text-secondary max-w-xl mx-auto">
-            Our testimonials reflect the satisfaction our clients have in our
-            services.
+            Founders and operators who&apos;ve been through bad agencies before
+            — and know the difference.
           </p>
         </div>
 
-        {/* Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((t) => (
             <div
               key={t.name}
               className="border border-border rounded-xl p-6 bg-bg flex flex-col gap-4"
             >
-              {/* Stars */}
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
                   <svg

@@ -1,69 +1,42 @@
 const problems = [
   {
     number: "01",
-    title: "Increasing Ad Cost",
-    body: "It's tempting to rely on paid ads to keep customers flowing in. It feels like a sure bet—spend money, get traffic. But as competition heats up, the costs skyrocket. You keep paying more without seeing proportionate returns.",
+    title: "Your ROAS is quietly eroding",
+    body: "CPMs rise. Creative fatigue sets in every few weeks. You keep spending more each month but returns don't follow. Cost per acquisition climbs and profitability drifts further out of reach.",
   },
   {
     number: "02",
-    title: "Low Conversion",
-    body: "It's easy to get traffic, but turning visitors into buyers is another story. Many brands accept low conversion rates, thinking they&apos;ll eventually improve.",
+    title: "Your agency handed you off to a junior",
+    body: "The pitch was senior. The execution isn't. Generic creative, vague monthly reports, and 'the algorithm changed' when results slip. You're paying for accountability you're not getting.",
   },
   {
     number: "03",
-    title: "Low LTV",
-    body: "Many brands are fixated on acquiring new customers, thinking volume equals success. But if those customers don&apos;t stick around or spend more over time, you won't grow.",
+    title: "Your landing pages are leaking revenue",
+    body: "Traffic lands on pages that weren't designed to convert. Every ad dollar is either amplified or wasted by where it takes people. Most brands have no idea how much is being left on the table.",
   },
 ];
 
 export default function PainPoints() {
   return (
-    <section className="py-24 px-6" id="about">
+    <section className="py-24 px-6 bg-bg" id="about">
       <div className="max-w-7xl mx-auto">
-        {/* Section header */}
-        <div className="mb-16">
-          <p className="text-secondary text-sm uppercase tracking-widest mb-3">
-            What we&apos;ll build for you
+        <div className="mb-12">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3" style={{ letterSpacing: "0.14em" }}>
+            Sound familiar?
           </p>
-          <h2 className="text-3xl md:text-5xl font-light leading-tight max-w-2xl">
-            Snapshot of the backend eCommerce funnel we&apos;re building for you.
+          <h2 className="text-4xl md:text-5xl font-light leading-tight max-w-2xl text-primary tracking-tight">
+            Three problems holding most eCom brands back.
           </h2>
         </div>
 
-        {/* Funnel visual */}
-        <div className="grid grid-cols-3 gap-px bg-border mb-24 rounded-xl overflow-hidden">
-          {["List Growth", "Conversion", "Retention"].map((step, i) => (
-            <div key={step} className="bg-bg-card p-8 text-center">
-              <div className="w-10 h-10 rounded-full border border-border-subtle flex items-center justify-center text-secondary text-sm mx-auto mb-4">
-                {i + 1}
-              </div>
-              <p className="font-medium text-primary">{step}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Problems */}
-        <div className="mb-8">
-          <p className="text-secondary text-sm uppercase tracking-widest mb-3">
-            Are you struggling with
-          </p>
-          <h2 className="text-3xl md:text-5xl font-light leading-tight mb-12 max-w-xl">
-            Many eCommerce brands struggle with these issues.
-          </h2>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-4">
           {problems.map((p) => (
             <div
               key={p.number}
-              className="border border-border rounded-xl p-8 bg-bg-card"
+              className="border border-border rounded-lg p-8 bg-bg-card"
             >
-              <span className="text-tertiary text-xs font-mono mb-4 block">
-                {p.number}
-              </span>
-              <h3 className="text-xl font-medium mb-4 text-primary">
-                {p.title}
-              </h3>
+              <span className="text-tertiary text-xs font-mono mb-5 block">{p.number}</span>
+              <h3 className="text-base font-semibold mb-3 text-primary leading-snug">{p.title}</h3>
               <p className="text-secondary leading-relaxed text-sm">{p.body}</p>
             </div>
           ))}

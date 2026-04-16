@@ -1,4 +1,6 @@
 const brands = [
+  "Sepura Home",
+  "myco:soul",
   "Wick of Hope",
   "The Feel Bar",
   "Mattress On Demand",
@@ -7,17 +9,15 @@ const brands = [
   "Blue Scorpion",
   "Scattered Kind",
   "Mr. Derk",
-  "7-Figure Brand",
-  "Supplement Co.",
 ];
 
 export default function LogoMarquee() {
   const doubled = [...brands, ...brands];
 
   return (
-    <section className="py-12 border-y border-border overflow-hidden">
-      <p className="text-center text-secondary text-xs uppercase tracking-widest mb-8">
-        Trusted By Top eCommerce Brands
+    <section className="py-10 border-y border-border overflow-hidden bg-bg-card">
+      <p className="text-center text-tertiary text-xs uppercase tracking-widest mb-6 font-medium">
+        Trusted by 6-7 figure eCom brands
       </p>
       <div className="relative">
         <div className="flex gap-12 animate-marquee whitespace-nowrap marquee-track">

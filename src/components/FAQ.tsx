@@ -3,28 +3,28 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "What results can I expect in the first 60 days?",
-    a: "We contractually guarantee $50k–$500k per month in email revenue within 60 days. During onboarding, we audit your current setup, implement high-converting flows, and launch optimized campaigns targeting your existing subscriber base.",
+    q: "What results can I realistically expect?",
+    a: "Results vary by brand, budget, and starting point — but our case studies give you a realistic picture. New brands can expect a profitable funnel live within 2 weeks. Established brands typically see meaningful ROAS improvement and CPA reduction within the first 30 days. We're designed to produce results in 60 days or less.",
   },
   {
-    q: "What platforms do you work with?",
-    a: "We specialize in Klaviyo, the industry-leading email marketing platform for eCommerce. We can also work with other platforms depending on your existing setup.",
+    q: "What platforms do you run ads on?",
+    a: "Our core expertise is Meta — Facebook and Instagram — where we've generated millions in revenue across dozens of brands. We also coordinate with complementary channels including Google and TikTok where the data supports it.",
   },
   {
-    q: "Do I need a large email list to get started?",
-    a: "No. List growth is our first step—we turn your existing traffic into subscribers with high-converting opt-in forms. Even a small list can generate significant revenue when managed correctly.",
+    q: "What ad budget do I need to get started?",
+    a: "We typically work with brands spending at least $5K/month in ad spend. Our sweet spot is $10K–$50K/month, where our systems create the most leverage. If you're below that threshold, we'll be straightforward on the call about whether we're the right fit.",
   },
   {
     q: "How is Scale Science different from other agencies?",
-    a: "We're founded by former eCommerce merchants who scaled to $500K/month themselves. We don't outsource, we communicate proactively, and we back our work with a contractual revenue guarantee.",
+    a: "We don't use juniors. We don't outsource. We're a boutique shop which means your account gets real senior attention — not a rotating cast of account managers. We communicate proactively, we build custom landing pages as standard, and we own our results.",
   },
   {
     q: "What types of brands do you work with?",
-    a: "We work with 7-8 figure eCommerce brands across a wide range of verticals including fashion, accessories, supplements, home goods, and more.",
+    a: "We work with 6-7 figure eCommerce brands across high-consideration categories: home goods, health & wellness, kitchen, outdoor, supplements, and more. We're selective — we only take on brands we're genuinely confident we can scale.",
   },
   {
     q: "How does the strategy call work?",
-    a: "Book a free 30-minute strategy call. We'll audit your current email program, identify gaps and opportunities, and outline exactly what we'd build for your brand.",
+    a: "Book a free 30-minute call. We'll review your current ad setup, identify the top opportunities you're missing, and outline exactly what our system would look like for your brand. No pitch decks, no hard sell — just a real conversation about your growth.",
   },
 ];
 
@@ -32,14 +32,14 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="py-24 px-6" id="faqs">
+    <section className="py-24 px-6 bg-bg" id="faqs">
       <div className="max-w-3xl mx-auto">
         <div className="mb-16 text-center">
-          <p className="text-secondary text-sm uppercase tracking-widest mb-3">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3" style={{ letterSpacing: "0.14em" }}>
             FAQs
           </p>
-          <h2 className="text-3xl md:text-4xl font-light leading-tight">
-            Common questions answered.
+          <h2 className="text-3xl md:text-4xl font-light leading-tight text-primary tracking-tight">
+            Common questions, straight answers.
           </h2>
         </div>
 

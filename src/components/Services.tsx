@@ -1,58 +1,131 @@
+import Link from "next/link";
+
 const services = [
   {
-    title: "Email Strategy",
-    description:
-      "Craft a unique strategy that deeply aligns with your brand's distinct goals. Using data, we ensure your campaigns achieve maximum impact.",
-    icon: "✦",
+    number: "01",
+    title: "Creative Strategy",
+    items: [
+      "Customer research (pains, motivations, language)",
+      "Competitor + content research",
+      "Customer avatars + angle map",
+      "Monthly content + testing plan",
+    ],
+    variant: "dark",
   },
   {
-    title: "Optimization",
-    description:
-      "First impressions matter. Through rigorous A/B tests, analytics, and industry insights, we fine-tune emails for top-tier engagement and conversion rates.",
-    icon: "◈",
+    number: "02",
+    title: "Video Ads",
+    items: [
+      "Strategy-backed video briefs",
+      "Scripts + shotlists per angle",
+      "Full video editing + AI B-roll",
+      "Hook, body + CTA variations",
+    ],
+    variant: "light",
   },
   {
-    title: "UX Design",
-    description:
-      "Every email is a visual journey. We artfully blend aesthetics with functionality, ensuring that your brand's message leaves a lasting mark.",
-    icon: "◉",
+    number: "03",
+    title: "Static Ads",
+    items: [
+      "AI product photography",
+      "Graphic design briefs + copy",
+      "Designed per angle",
+      "Senior graphic designer",
+    ],
+    variant: "light",
   },
   {
-    title: "Copywriting",
-    description:
-      "In the realm of content, our words reign supreme. We expertly weave compelling narratives, persuasive CTAs, and attention-grabbing headlines that captivate and convert.",
-    icon: "◎",
+    number: "04",
+    title: "Landing Pages",
+    items: [
+      "Copy + media per section",
+      "Built with your brand assets",
+      "Shopify dev (staging → live)",
+      "Aligned to each ad angle",
+    ],
+    variant: "light",
   },
-];
+  {
+    number: "05",
+    title: "Meta Ads Management",
+    items: [
+      "Optimized account structure",
+      "Active daily optimization",
+      "Ad copy per angle",
+      "Publishing + real-time reporting",
+    ],
+    variant: "accent",
+  },
+] as const;
 
 export default function Services() {
   return (
-    <section className="py-24 px-6" id="services">
+    <section className="py-20 px-6 bg-bg" id="services">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-16">
-          <p className="text-secondary text-sm uppercase tracking-widest mb-3">
-            Services
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-10">
+          <div className="flex flex-col gap-4">
+            <p className="text-xs font-semibold uppercase tracking-widest text-accent" style={{ letterSpacing: "0.14em" }}>
+              What&apos;s Included
+            </p>
+            <h2 className="text-4xl md:text-5xl font-light leading-tight tracking-tight text-primary">
+              Everything needed<br />
+              to go from <strong className="font-bold">$0 to scale.</strong>
+            </h2>
+          </div>
+          <p className="text-sm leading-relaxed md:max-w-xs text-secondary">
+            One engagement. Five integrated service pillars. No loose ends, no hand-offs to contractors you&apos;ve never met.
           </p>
-          <h2 className="text-3xl md:text-5xl font-light leading-tight max-w-xl">
-            Everything you need to dominate email.
-          </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {services.map((s) => (
-            <div
-              key={s.title}
-              className="border border-border rounded-xl p-8 bg-bg-card group hover:border-border-subtle transition-colors"
-            >
-              <div className="text-2xl mb-4 text-secondary">{s.icon}</div>
-              <h3 className="text-xl font-semibold text-primary mb-3">
-                {s.title}
-              </h3>
-              <p className="text-secondary text-sm leading-relaxed">
-                {s.description}
-              </p>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-0.5">
+          {services.map((s) => {
+            const isDark = s.variant === "dark";
+            const isAccent = s.variant === "accent";
+            const bg = isAccent ? "#2563EB" : isDark ? "#0F172A" : "#FFFFFF";
+            const titleColor = isDark || isAccent ? "#F1F5F9" : "#0F172A";
+            const numColor = isAccent ? "rgba(255,255,255,0.6)" : "#2563EB";
+            const bulletColor = isAccent ? "rgba(255,255,255,0.4)" : "#2563EB";
+            const textColor = isAccent ? "rgba(255,255,255,0.72)" : "#64748B";
+
+            return (
+              <div
+                key={s.number}
+                className="flex flex-col gap-5 p-7 rounded-sm border border-border"
+                style={{ backgroundColor: bg, borderColor: isAccent || isDark ? "transparent" : undefined }}
+              >
+                <div className="flex flex-col gap-1.5">
+                  <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: numColor, letterSpacing: "0.12em" }}>
+                    {s.number}
+                  </span>
+                  <h3 className="text-sm font-semibold leading-snug" style={{ color: titleColor }}>
+                    {s.title}
+                  </h3>
+                </div>
+                <ul className="flex flex-col gap-2 flex-1">
+                  {s.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="text-xs leading-relaxed shrink-0 mt-0.5" style={{ color: bulletColor }}>—</span>
+                      <span className="text-xs leading-relaxed" style={{ color: textColor }}>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-6 pt-6 border-t border-border">
+          <p className="text-xs text-tertiary">
+            <span className="font-semibold uppercase tracking-wider" style={{ letterSpacing: "0.1em" }}>Not included: </span>
+            In-house video/photo production · Customer service · Shopify/website management
+          </p>
+          <Link
+            href="#contact"
+            className="inline-flex items-center gap-2 bg-primary text-white rounded px-6 py-3 text-xs font-semibold shrink-0 hover:bg-primary/90 transition-opacity"
+          >
+            Book a free strategy call
+            <span className="text-accent">→</span>
+          </Link>
         </div>
       </div>
     </section>

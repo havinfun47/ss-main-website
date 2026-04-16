@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #141414;
-  --foreground: #fcfcfa;
+  --background: #F5F7FA;
+  --foreground: #0F172A;
 }
 
 body {
@@ -18,12 +18,10 @@ body {
   }
 }
 
-/* Marquee pause on hover */
 .marquee-track:hover {
   animation-play-state: paused;
 }
 
-/* FAQ accordion */
 details summary::-webkit-details-marker {
   display: none;
 }
