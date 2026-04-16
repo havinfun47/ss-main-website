@@ -1,4 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
+
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -55,10 +58,6 @@ export default function Footer() {
         id="contact"
       >
         <div className="max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5 mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block shrink-0" />
-            <span className="text-amber-700 text-xs font-semibold">2 client spots remaining for Q2 2026</span>
-          </div>
           <h2 className="text-3xl md:text-5xl font-light leading-tight mb-6 text-primary tracking-tight">
             Ready to scale{" "}
             <span className="font-bold">profitably?</span>
@@ -77,16 +76,23 @@ export default function Footer() {
           >
             Let&apos;s Chat
           </Link>
+          <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5 mt-5">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block shrink-0" />
+            <span className="text-amber-700 text-xs font-semibold">2 client spots remaining for Q2 2026</span>
+          </div>
         </div>
       </section>
 
       <div className="border-t border-border px-6 py-12">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-          <Link
-            href="/"
-            className="text-primary font-semibold text-lg tracking-tight"
-          >
-            Scale Science
+          <Link href="/">
+            <Image
+              src={`${BASE}/images/scale-science-logo.png`}
+              alt="Scale Science"
+              width={140}
+              height={40}
+              className="h-8 w-auto"
+            />
           </Link>
 
           <nav className="flex flex-wrap items-center gap-6 justify-center">

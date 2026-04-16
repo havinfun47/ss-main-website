@@ -5,15 +5,9 @@ export default function Hero() {
     <section className="pt-40 pb-24 px-6 text-center bg-bg">
       <div className="max-w-4xl mx-auto flex flex-col items-center gap-8">
 
-        <div className="flex flex-col items-center gap-2">
-          <div className="inline-flex items-center gap-2 border border-border bg-bg-card rounded-full px-4 py-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block shrink-0" />
-            <span className="text-secondary text-xs font-medium">Boutique Growth Partner · 6-7 Figure eCom Brands</span>
-          </div>
-          <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block shrink-0" />
-            <span className="text-amber-700 text-xs font-semibold">2 client spots remaining for Q2 2026</span>
-          </div>
+        <div className="inline-flex items-center gap-2 border border-border bg-bg-card rounded-full px-4 py-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block shrink-0" />
+          <span className="text-secondary text-xs font-medium">Boutique Growth Partner · 6-7 Figure eCom Brands</span>
         </div>
 
         <h1 className="text-5xl md:text-7xl font-light leading-[1.06] tracking-tight text-primary">
@@ -41,6 +35,10 @@ export default function Hero() {
           >
             See case studies →
           </Link>
+        </div>
+        <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block shrink-0" />
+          <span className="text-amber-700 text-xs font-semibold">2 client spots remaining for Q2 2026</span>
         </div>
 
       </div>

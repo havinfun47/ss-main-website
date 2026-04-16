@@ -1,6 +1,9 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -16,8 +19,14 @@ export default function Navigation() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-bg-card/95 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="text-primary font-bold text-base tracking-tight">
-          Scale Science
+        <Link href="/">
+          <Image
+            src={`${BASE}/images/scale-science-logo.png`}
+            alt="Scale Science"
+            width={140}
+            height={40}
+            className="h-8 w-auto"
+          />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
