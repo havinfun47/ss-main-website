@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const cases = [
   {
     id: "01",
@@ -98,7 +100,7 @@ export default function Results() {
               {/* Image */}
               <div className="relative w-full aspect-[16/9] overflow-hidden">
                 <Image
-                  src={c.image}
+                  src={`${BASE}${c.image}`}
                   alt={c.title}
                   fill
                   className="object-cover"
