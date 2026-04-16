@@ -98,13 +98,14 @@ export default function Results() {
               style={{ backgroundColor: "#0F172A" }}
             >
               {/* Image */}
-              <div className="relative w-full aspect-[16/9] overflow-hidden">
+              <div className="relative">
                 <Image
                   src={`${BASE}${c.image}`}
                   alt={c.title}
-                  fill
-                  className="object-cover"
+                  width={0}
+                  height={0}
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  className="w-full h-auto block"
                 />
                 {/* Case number badge */}
                 <div className="absolute top-4 left-4">
