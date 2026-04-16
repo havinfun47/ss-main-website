@@ -5,9 +5,15 @@ export default function Hero() {
     <section className="pt-40 pb-24 px-6 text-center bg-bg">
       <div className="max-w-4xl mx-auto flex flex-col items-center gap-8">
 
-        <div className="inline-flex items-center gap-2 border border-border bg-bg-card rounded-full px-4 py-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block shrink-0" />
-          <span className="text-secondary text-xs font-medium">Boutique Growth Partner · 6-7 Figure eCom Brands</span>
+        <div className="flex flex-col items-center gap-2">
+          <div className="inline-flex items-center gap-2 border border-border bg-bg-card rounded-full px-4 py-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block shrink-0" />
+            <span className="text-secondary text-xs font-medium">Boutique Growth Partner · 6-7 Figure eCom Brands</span>
+          </div>
+          <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block shrink-0" />
+            <span className="text-amber-700 text-xs font-semibold">2 client spots remaining for Q2 2026</span>
+          </div>
         </div>
 
         <h1 className="text-5xl md:text-7xl font-light leading-[1.06] tracking-tight text-primary">
@@ -24,7 +30,7 @@ export default function Hero() {
             href="https://calendly.com/graydon-scalescientist/30min" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-accent text-white px-7 py-3.5 rounded text-sm font-semibold hover:bg-accent/90 transition-colors"
           >
-            Book a free strategy call
+            Claim your spot — it&apos;s free
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>

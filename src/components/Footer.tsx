@@ -55,23 +55,27 @@ export default function Footer() {
         id="contact"
       >
         <div className="max-w-2xl mx-auto">
-          <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-4" style={{ letterSpacing: "0.14em" }}>
-            Get Started
-          </p>
+          <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5 mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block shrink-0" />
+            <span className="text-amber-700 text-xs font-semibold">2 client spots remaining for Q2 2026</span>
+          </div>
           <h2 className="text-3xl md:text-5xl font-light leading-tight mb-6 text-primary tracking-tight">
             Ready to scale{" "}
             <span className="font-bold">profitably?</span>
           </h2>
-          <p className="text-secondary mb-10 leading-relaxed text-sm max-w-md mx-auto">
-            Book a free 30-minute strategy call. We&apos;ll audit your ad account,
-            identify where revenue is leaking, and outline exactly what our system
-            would look like for your brand.
+          <p className="text-secondary mb-3 leading-relaxed text-sm max-w-md mx-auto">
+            We only take on brands we&apos;re genuinely confident we can scale. Book a free
+            30-minute strategy call — we&apos;ll audit your ad account, identify where
+            revenue is leaking, and tell you exactly what we&apos;d do differently.
+          </p>
+          <p className="text-tertiary mb-10 text-xs max-w-sm mx-auto">
+            No pitch deck. No hard sell. If we&apos;re not the right fit, we&apos;ll tell you.
           </p>
           <Link
             href="https://calendly.com/graydon-scalescientist/30min" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded text-sm font-semibold hover:bg-accent/90 transition-colors"
           >
-            Book a free strategy call
+            Claim your spot — it&apos;s free
           </Link>
         </div>
       </section>
