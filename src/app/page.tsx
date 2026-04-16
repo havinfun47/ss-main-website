@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import LogoMarquee from "@/components/LogoMarquee";
 import PainPoints from "@/components/PainPoints";
 import Results from "@/components/Results";
 import Process from "@/components/Process";
@@ -14,7 +13,6 @@ export default function Home() {
     <main>
       <Navigation />
       <Hero />
-      <LogoMarquee />
       <PainPoints />
       <Results />
       <Process />

@@ -68,7 +68,7 @@ export default function Footer() {
             would look like for your brand.
           </p>
           <Link
-            href="#contact"
+            href="https://calendly.com/graydon-scalescientist/30min" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded text-sm font-semibold hover:bg-accent/90 transition-colors"
           >
             Book a free strategy call

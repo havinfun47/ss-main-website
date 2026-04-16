@@ -116,7 +116,7 @@ export default function Services() {
 
         <div className="flex justify-end mt-6 pt-6 border-t border-border">
           <Link
-            href="#contact"
+            href="https://calendly.com/graydon-scalescientist/30min" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-primary text-white rounded px-6 py-3 text-xs font-semibold shrink-0 hover:bg-primary/90 transition-opacity w-full sm:w-auto"
           >
             Book a free strategy call

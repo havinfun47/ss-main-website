@@ -21,7 +21,7 @@ export default function Hero() {
 
         <div className="flex flex-col sm:flex-row items-center gap-4">
           <Link
-            href="#contact"
+            href="https://calendly.com/graydon-scalescientist/30min" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-accent text-white px-7 py-3.5 rounded text-sm font-semibold hover:bg-accent/90 transition-colors"
           >
             Book a free strategy call

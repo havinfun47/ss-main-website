@@ -34,7 +34,7 @@ export default function Navigation() {
 
         <div className="hidden md:block">
           <Link
-            href="#contact"
+            href="https://calendly.com/graydon-scalescientist/30min" target="_blank" rel="noopener noreferrer"
             className="bg-accent text-white px-5 py-2.5 rounded text-sm font-semibold hover:bg-accent/90 transition-colors"
           >
             Book a call
@@ -72,7 +72,7 @@ export default function Navigation() {
               </Link>
             ))}
             <Link
-              href="#contact"
+              href="https://calendly.com/graydon-scalescientist/30min" target="_blank" rel="noopener noreferrer"
               className="bg-accent text-white px-4 py-2.5 rounded text-sm font-semibold text-center mt-2"
               onClick={() => setMobileOpen(false)}
             >

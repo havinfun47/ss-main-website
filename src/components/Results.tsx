@@ -152,7 +152,7 @@ export default function Results() {
               {/* CTA */}
               <div className="px-7 py-5 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
                 <Link
-                  href="#contact"
+                  href="https://calendly.com/graydon-scalescientist/30min" target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center justify-center w-full px-5 py-2.5 rounded text-sm font-semibold transition-colors"
                   style={{ backgroundColor: "#2563EB", color: "#FFFFFF" }}
                 >
@@ -165,7 +165,7 @@ export default function Results() {
 
         <div className="text-center mt-10">
           <Link
-            href="#contact"
+            href="https://calendly.com/graydon-scalescientist/30min" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-accent text-white px-7 py-3.5 rounded text-sm font-semibold hover:bg-accent/90 transition-colors"
           >
             Book a free strategy call
