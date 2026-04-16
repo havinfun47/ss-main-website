@@ -7,7 +7,7 @@ const cases = [
   {
     id: "01",
     title: "40% less spend. 89% more revenue.",
-    industry: "Sepura Home · Home Appliances",
+    industry: "Sepura Home · Garbage Disposal Alternative",
     description:
       "Sepura Home was priced at 2× the market leader. Their previous agency was delivering a 1.03 ROAS and 97% MER. We rebuilt the entire funnel — messaging, audiences, landing pages. Turned it around in 60 days.",
     bullets: [
@@ -24,7 +24,7 @@ const cases = [
   {
     id: "02",
     title: "+1,076% Meta revenue in 90 days.",
-    industry: "myco:soul · Health & Wellness",
+    industry: "myco:soul · Mushroom Coffee",
     description:
       "A saturated mushroom coffee market with acquisition costs that blocked profitability. We built a four-stage funnel — educational advertorials through to strategic retargeting — unlocking explosive, sustainable scale.",
     bullets: [
