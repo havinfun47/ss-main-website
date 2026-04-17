@@ -42,19 +42,6 @@ export default function Hero() {
           <span className="text-amber-700 text-xs font-semibold">2 client spots remaining for Q2 2026</span>
         </div>
 
-        {/* Stat cards */}
-        <div className="grid grid-cols-3 gap-4 w-full max-w-lg mt-4">
-          {[
-            { value: "+234%", label: "ROAS Improvement" },
-            { value: "$122K", label: "Revenue in 60 Days" },
-            { value: "−71%", label: "Cost Per Acquisition" },
-          ].map((s) => (
-            <div key={s.label} className="bg-bg-panel rounded-lg px-4 py-5 text-center">
-              <p className="font-serif text-2xl text-primary font-normal">{s.value}</p>
-              <p className="text-xs text-secondary mt-1 leading-tight">{s.label}</p>
-            </div>
-          ))}
-        </div>
 
       </div>
     </section>
