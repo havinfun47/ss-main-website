@@ -19,23 +19,15 @@ export default function Hero() {
           Senior strategists, data-backed creative, and landing pages engineered to convert — built around your customer&apos;s specific buying journey, not a template.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center gap-4">
-          <Link
-            href="https://connect.scalescientist.com/" target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-accent text-white px-7 py-3.5 rounded text-sm font-semibold hover:bg-accent/90 transition-colors"
-          >
-            Let&apos;s Chat
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </Link>
-          <Link
-            href="#results"
-            className="text-sm text-secondary hover:text-primary transition-colors font-medium"
-          >
-            See case studies →
-          </Link>
-        </div>
+        <Link
+          href="https://connect.scalescientist.com/" target="_blank" rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 bg-accent text-white px-7 py-3.5 rounded text-sm font-semibold hover:bg-accent/90 transition-colors w-full sm:w-auto"
+        >
+          Let&apos;s Chat
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </Link>
 
         <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block shrink-0" />

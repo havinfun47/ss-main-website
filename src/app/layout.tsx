@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, DM_Serif_Display } from "next/font/google";
+import { DM_Sans, Manrope } from "next/font/google";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -8,11 +8,10 @@ const dmSans = DM_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
-const dmSerif = DM_Serif_Display({
+const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-dm-serif",
-  weight: ["400"],
-  style: ["normal", "italic"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -50,7 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dmSans.variable} ${dmSerif.variable} font-sans antialiased bg-bg text-primary`}>
+      <body className={`${dmSans.variable} ${manrope.variable} font-sans antialiased bg-bg text-primary`}>
         {children}
       </body>
     </html>
