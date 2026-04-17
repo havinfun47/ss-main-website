@@ -1,4 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
+
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 
 export default function Hero() {
@@ -38,12 +41,9 @@ export default function Hero() {
         </div>
 
         {/* Partner logos */}
-        <div className="flex flex-col items-center gap-3 mt-2">
-          <p className="text-xs text-tertiary uppercase tracking-widest font-medium" style={{ letterSpacing: "0.12em" }}>Works with</p>
-          <div className="flex items-center gap-8">
-            <span className="font-sans text-base font-bold tracking-tight" style={{ color: "#1877F2" }}>meta</span>
-            <span className="font-sans text-base font-bold tracking-tight" style={{ color: "#96BF48" }}>Shopify</span>
-          </div>
+        <div className="flex items-center gap-8 mt-2">
+          <Image src={`${BASE}/images/meta-logo.png`} alt="Meta" width={80} height={24} className="h-6 w-auto opacity-70" />
+          <Image src={`${BASE}/images/shopify-logo.png`} alt="Shopify" width={90} height={24} className="h-6 w-auto opacity-70" />
         </div>
 
       </div>
