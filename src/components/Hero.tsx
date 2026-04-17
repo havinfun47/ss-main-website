@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+
 export default function Hero() {
   return (
     <section className="pt-24 md:pt-40 pb-16 md:pb-28 px-6 text-center bg-bg">
@@ -19,21 +20,31 @@ export default function Hero() {
           Senior strategists, data-backed creative, and landing pages engineered to convert — built around your customer&apos;s specific buying journey, not a template.
         </p>
 
-        <Link
-          href="https://connect.scalescientist.com/" target="_blank" rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 bg-accent text-white px-7 py-3.5 rounded text-sm font-semibold hover:bg-accent/90 transition-colors w-full sm:w-auto"
-        >
-          Let&apos;s Chat
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </Link>
-
-        <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block shrink-0" />
-          <span className="text-amber-700 text-xs font-semibold">2 client spots remaining for Q2 2026</span>
+        {/* Button + pill matched width on desktop */}
+        <div className="flex flex-col items-center gap-3 w-full sm:w-auto">
+          <Link
+            href="https://connect.scalescientist.com/" target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-accent text-white px-7 py-3.5 rounded text-sm font-semibold hover:bg-accent/90 transition-colors w-full"
+          >
+            Let&apos;s Chat
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </Link>
+          <div className="inline-flex items-center justify-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5 w-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block shrink-0" />
+            <span className="text-amber-700 text-xs font-semibold">2 client spots remaining for Q2 2026</span>
+          </div>
         </div>
 
+        {/* Partner logos */}
+        <div className="flex flex-col items-center gap-3 mt-2">
+          <p className="text-xs text-tertiary uppercase tracking-widest font-medium" style={{ letterSpacing: "0.12em" }}>Works with</p>
+          <div className="flex items-center gap-8">
+            <span className="font-sans text-base font-bold tracking-tight" style={{ color: "#1877F2" }}>meta</span>
+            <span className="font-sans text-base font-bold tracking-tight" style={{ color: "#96BF48" }}>Shopify</span>
+          </div>
+        </div>
 
       </div>
     </section>
