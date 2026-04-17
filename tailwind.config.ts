@@ -9,18 +9,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#F5F7FA",
+        bg: "#F5F3EE",
         "bg-card": "#FFFFFF",
-        "bg-dark": "#0F172A",
-        primary: "#0F172A",
-        secondary: "#64748B",
-        tertiary: "#94A3B8",
-        accent: "#2563EB",
-        border: "#E2E8F0",
-        "border-subtle": "#F1F5F9",
+        "bg-panel": "#EDE9E0",
+        "bg-dark": "#1C1C1A",
+        primary: "#1C1C1A",
+        secondary: "#6B6860",
+        tertiary: "#9A9690",
+        accent: "#2D5C3F",
+        border: "#E0DDD6",
+        "border-subtle": "#EDE9E0",
       },
       fontFamily: {
-        sans: ["var(--font-hanken)", "sans-serif"],
+        sans: ["var(--font-dm-sans)", "sans-serif"],
+        serif: ["var(--font-dm-serif)", "serif"],
       },
       keyframes: {
         marquee: {

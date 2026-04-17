@@ -8,7 +8,7 @@ const faqs = [
   },
   {
     q: "What platforms do you run ads on?",
-    a: "Our core expertise is Meta — Facebook and Instagram. We also coordinate with complementary channels including Google and TikTok where the data supports it.",
+    a: "Our core expertise is Meta — Facebook and Instagram. We go deep on one channel rather than spreading thin across five. If you're looking for Google, TikTok, or Pinterest management, we're not the right fit.",
   },
   {
     q: "What ad budget do I need to get started?",
@@ -32,48 +32,46 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="py-24 px-6 bg-bg" id="faqs">
-      <div className="max-w-3xl mx-auto">
-        <div className="mb-16 text-center">
-          <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3" style={{ letterSpacing: "0.14em" }}>
-            FAQs
-          </p>
-          <h2 className="text-3xl md:text-4xl font-light leading-tight text-primary tracking-tight">
-            Common questions, straight answers.
-          </h2>
-        </div>
+    <section className="py-24 px-6 bg-bg-card" id="faqs">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row gap-16 md:gap-24">
 
-        <div className="space-y-3">
-          {faqs.map((faq, i) => (
-            <div
-              key={i}
-              className="border border-border rounded-xl overflow-hidden"
-            >
-              <button
-                className="w-full flex items-center justify-between p-6 text-left hover:bg-bg-card transition-colors"
-                onClick={() => setOpen(open === i ? null : i)}
-              >
-                <span className="text-primary font-medium pr-4">{faq.q}</span>
-                <span
-                  className={`text-secondary shrink-0 transition-transform ${open === i ? "rotate-45" : ""}`}
+          {/* Sticky heading */}
+          <div className="md:w-72 flex-shrink-0">
+            <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-4" style={{ letterSpacing: "0.14em" }}>
+              FAQs
+            </p>
+            <h2 className="font-serif text-4xl md:text-5xl leading-tight text-primary font-normal">
+              Questions we get <em className="italic text-accent">all the time.</em>
+            </h2>
+          </div>
+
+          {/* FAQ list */}
+          <div className="flex-1">
+            {faqs.map((faq, i) => (
+              <div key={i} className={`border-b border-border ${i === 0 ? "border-t" : ""}`}>
+                <button
+                  className="w-full flex items-center justify-between py-6 text-left gap-4"
+                  onClick={() => setOpen(open === i ? null : i)}
                 >
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path
-                      d="M8 3v10M3 8h10"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </span>
-              </button>
-              {open === i && (
-                <div className="px-6 pb-6 text-secondary text-sm leading-relaxed border-t border-border pt-4">
-                  {faq.a}
-                </div>
-              )}
-            </div>
-          ))}
+                  <span className="font-serif text-lg font-normal text-primary leading-snug">{faq.q}</span>
+                  <span
+                    className={`text-accent shrink-0 transition-transform duration-200 ${open === i ? "rotate-45" : ""}`}
+                  >
+                    <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 3v10M3 8h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                    </svg>
+                  </span>
+                </button>
+                {open === i && (
+                  <div className="pb-6 text-secondary text-sm leading-relaxed">
+                    {faq.a}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
         </div>
       </div>
     </section>

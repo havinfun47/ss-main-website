@@ -67,9 +67,9 @@ export default function Services() {
             <p className="text-xs font-semibold uppercase tracking-widest text-accent" style={{ letterSpacing: "0.14em" }}>
               What&apos;s Included
             </p>
-            <h2 className="text-4xl md:text-5xl font-light leading-tight tracking-tight text-primary">
+            <h2 className="font-serif text-4xl md:text-5xl leading-tight tracking-tight text-primary font-normal">
               Everything needed<br />
-              to go from <strong className="font-bold">$0 to scale.</strong>
+              to go from <em className="italic text-accent">$0 to scale.</em>
             </h2>
           </div>
           <p className="text-sm leading-relaxed md:max-w-xs text-secondary">
@@ -81,23 +81,23 @@ export default function Services() {
           {services.map((s) => {
             const isDark = s.variant === "dark";
             const isAccent = s.variant === "accent";
-            const bg = isAccent ? "#2563EB" : isDark ? "#0F172A" : "#FFFFFF";
-            const titleColor = isDark || isAccent ? "#F1F5F9" : "#0F172A";
-            const numColor = isAccent ? "rgba(255,255,255,0.6)" : "#2563EB";
-            const bulletColor = isAccent ? "rgba(255,255,255,0.4)" : "#2563EB";
-            const textColor = isAccent ? "rgba(255,255,255,0.72)" : "#64748B";
+            const bg = isAccent ? "#2D5C3F" : isDark ? "#1C1C1A" : "#EDE9E0";
+            const titleColor = isDark || isAccent ? "#F5F3EE" : "#1C1C1A";
+            const numColor = isAccent ? "rgba(245,243,238,0.5)" : "#2D5C3F";
+            const bulletColor = isAccent ? "rgba(245,243,238,0.35)" : "#2D5C3F";
+            const textColor = isAccent ? "rgba(245,243,238,0.72)" : "#6B6860";
 
             return (
               <div
                 key={s.number}
-                className="flex flex-col gap-5 p-7 rounded-sm border border-border"
-                style={{ backgroundColor: bg, borderColor: isAccent || isDark ? "transparent" : undefined }}
+                className="flex flex-col gap-5 p-7 rounded-sm"
+                style={{ backgroundColor: bg }}
               >
                 <div className="flex flex-col gap-1.5">
                   <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: numColor, letterSpacing: "0.12em" }}>
                     {s.number}
                   </span>
-                  <h3 className="text-sm font-semibold leading-snug" style={{ color: titleColor }}>
+                  <h3 className="font-serif text-base font-normal leading-snug" style={{ color: titleColor }}>
                     {s.title}
                   </h3>
                 </div>
@@ -117,7 +117,7 @@ export default function Services() {
         <div className="flex justify-end mt-6 pt-6 border-t border-border">
           <Link
             href="https://calendly.com/graydon-scalescientist/30min" target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-primary text-white rounded px-6 py-3 text-xs font-semibold shrink-0 hover:bg-primary/90 transition-opacity w-full sm:w-auto"
+            className="inline-flex items-center justify-center gap-2 bg-primary text-bg rounded px-6 py-3 text-xs font-semibold shrink-0 hover:opacity-90 transition-opacity w-full sm:w-auto"
           >
             Book a free strategy call
             <span className="text-accent">→</span>

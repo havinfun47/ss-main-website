@@ -54,36 +54,41 @@ export default function Footer() {
   return (
     <footer>
       <section
-        className="py-24 px-6 text-center border-t border-border"
+        className="py-28 px-6 text-center border-t border-border bg-bg-dark"
         id="contact"
       >
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-light leading-tight mb-6 text-primary tracking-tight">
-            Ready to scale{" "}
-            <span className="font-bold">profitably?</span>
+        <div className="max-w-2xl mx-auto flex flex-col items-center gap-6">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent" style={{ letterSpacing: "0.14em" }}>
+            Ready to scale
+          </p>
+          <h2 className="font-serif text-5xl md:text-6xl font-normal leading-tight text-bg tracking-tight">
+            Ready to scale <em className="italic text-accent">profitably?</em>
           </h2>
-          <p className="text-secondary mb-3 leading-relaxed text-sm max-w-md mx-auto">
+          <p className="text-secondary mb-1 leading-relaxed text-sm max-w-md">
             We only take on brands we&apos;re genuinely confident we can scale. Book a free
             30-minute strategy call — we&apos;ll audit your ad account, identify where
             revenue is leaking, and tell you exactly what we&apos;d do differently.
           </p>
-          <p className="text-tertiary mb-10 text-xs max-w-sm mx-auto">
+          <p className="text-tertiary text-xs max-w-sm" style={{ color: "rgba(245,243,238,0.3)" }}>
             No pitch deck. No hard sell. If we&apos;re not the right fit, we&apos;ll tell you.
           </p>
           <Link
             href="https://connect.scalescientist.com/" target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded text-sm font-semibold hover:bg-accent/90 transition-colors"
+            className="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded text-sm font-semibold hover:bg-accent/90 transition-colors mt-2"
           >
             Let&apos;s Chat
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </Link>
-          <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5 mt-5">
+          <div className="inline-flex items-center gap-2 bg-amber-900/30 border border-amber-700/40 rounded-full px-4 py-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block shrink-0" />
-            <span className="text-amber-700 text-xs font-semibold">2 client spots remaining for Q2 2026</span>
+            <span className="text-amber-400 text-xs font-semibold">2 client spots remaining for Q2 2026</span>
           </div>
         </div>
       </section>
 
-      <div className="border-t border-border px-6 py-12">
+      <div className="border-t px-6 py-12 bg-bg-dark" style={{ borderColor: "rgba(245,243,238,0.08)" }}>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <Link href="/">
             <Image
@@ -91,7 +96,7 @@ export default function Footer() {
               alt="Scale Science"
               width={140}
               height={40}
-              className="h-8 w-auto"
+              className="h-8 w-auto opacity-70"
             />
           </Link>
 
@@ -100,7 +105,8 @@ export default function Footer() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-secondary hover:text-primary transition-colors text-sm"
+                className="hover:text-bg transition-colors text-sm"
+                style={{ color: "rgba(245,243,238,0.45)" }}
               >
                 {link.label}
               </Link>
@@ -112,7 +118,8 @@ export default function Footer() {
               <Link
                 key={s.label}
                 href={s.href}
-                className="text-tertiary hover:text-primary transition-colors"
+                className="hover:text-bg transition-colors"
+                style={{ color: "rgba(245,243,238,0.35)" }}
                 aria-label={s.label}
               >
                 {s.icon}
@@ -121,11 +128,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto mt-8 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-tertiary">
+        <div className="max-w-7xl mx-auto mt-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-3 text-xs" style={{ borderTop: "1px solid rgba(245,243,238,0.06)", color: "rgba(245,243,238,0.2)" }}>
           <p>© {new Date().getFullYear()} Scale Science. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <p>Results may vary. Individual outcomes depend on brand, budget, and market conditions.</p>
-            <Link href="/privacy" className="hover:text-primary transition-colors shrink-0">Privacy Policy</Link>
+            <Link href="/privacy" className="hover:text-bg transition-colors shrink-0" style={{ color: "rgba(245,243,238,0.35)" }}>Privacy Policy</Link>
           </div>
         </div>
       </div>

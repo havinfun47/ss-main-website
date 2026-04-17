@@ -2,20 +2,20 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="pt-40 pb-24 px-6 text-center bg-bg">
+    <section className="pt-40 pb-28 px-6 text-center bg-bg">
       <div className="max-w-4xl mx-auto flex flex-col items-center gap-8">
 
-        <div className="inline-flex items-center gap-2 border border-border bg-bg-card rounded-full px-4 py-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block shrink-0" />
+        <div className="inline-flex items-center gap-2 border border-border bg-bg rounded-full px-4 py-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-accent inline-block shrink-0" />
           <span className="text-secondary text-xs font-medium">Boutique Growth Partner · 6-7 Figure eCom Brands</span>
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-light leading-[1.06] tracking-tight text-primary">
+        <h1 className="font-serif text-5xl md:text-7xl leading-[1.06] tracking-tight text-primary font-normal">
           We build Meta funnels that turn ad spend into{" "}
-          <span className="font-bold text-accent">predictable revenue.</span>
+          <em className="text-accent not-italic italic">predictable revenue.</em>
         </h1>
 
-        <p className="text-secondary text-lg leading-relaxed max-w-xl">
+        <p className="text-secondary text-lg leading-relaxed max-w-xl font-sans">
           Senior strategists, data-backed creative, and landing pages engineered to convert — built around your customer&apos;s specific buying journey, not a template.
         </p>
 
@@ -36,9 +36,24 @@ export default function Hero() {
             See case studies →
           </Link>
         </div>
+
         <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block shrink-0" />
           <span className="text-amber-700 text-xs font-semibold">2 client spots remaining for Q2 2026</span>
+        </div>
+
+        {/* Stat cards */}
+        <div className="grid grid-cols-3 gap-4 w-full max-w-lg mt-4">
+          {[
+            { value: "+234%", label: "ROAS Improvement" },
+            { value: "$122K", label: "Revenue in 60 Days" },
+            { value: "−71%", label: "Cost Per Acquisition" },
+          ].map((s) => (
+            <div key={s.label} className="bg-bg-panel rounded-lg px-4 py-5 text-center">
+              <p className="font-serif text-2xl text-primary font-normal">{s.value}</p>
+              <p className="text-xs text-secondary mt-1 leading-tight">{s.label}</p>
+            </div>
+          ))}
         </div>
 
       </div>

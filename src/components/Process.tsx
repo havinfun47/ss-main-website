@@ -38,19 +38,19 @@ const phases = [
 
 export default function Process() {
   return (
-    <section className="py-20 px-6" id="process" style={{ backgroundColor: "#0F172A" }}>
+    <section className="py-20 px-6 bg-bg-dark" id="process">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest mb-4 text-accent" style={{ letterSpacing: "0.14em" }}>
               How It Works
             </p>
-            <h2 className="text-5xl md:text-6xl leading-tight tracking-tight" style={{ color: "#F1F5F9", fontWeight: 300 }}>
+            <h2 className="font-serif text-5xl md:text-6xl leading-tight tracking-tight text-bg font-normal">
               The Scale Science{" "}
-              <span style={{ fontWeight: 600 }}>Growth System.</span>
+              <span className="font-serif italic text-accent">Growth System.</span>
             </h2>
           </div>
-          <p className="text-sm leading-relaxed md:max-w-sm" style={{ color: "#64748B" }}>
+          <p className="text-sm leading-relaxed md:max-w-sm text-secondary">
             A compounding flywheel — not a one-time setup. Every phase builds on the last so results don&apos;t plateau, they accelerate.
           </p>
         </div>
@@ -61,21 +61,20 @@ export default function Process() {
               key={phase.number}
               className="flex flex-col gap-4 p-7 rounded-sm"
               style={{
-                backgroundColor: phase.highlight ? "#2563EB" : "rgba(255,255,255,0.04)",
-                border: phase.highlight ? "none" : "1px solid transparent",
+                backgroundColor: phase.highlight ? "#2D5C3F" : "rgba(245,243,238,0.04)",
               }}
             >
               <span
-                className="text-5xl font-bold leading-none tracking-tight"
-                style={{ color: phase.highlight ? "#FFFFFF" : "#2563EB" }}
+                className="font-serif text-5xl leading-none font-normal"
+                style={{ color: phase.highlight ? "rgba(245,243,238,0.9)" : "#2D5C3F" }}
               >
                 {phase.number}
               </span>
               <div className="flex flex-col gap-2 flex-1">
-                <h3 className="text-sm font-semibold" style={{ color: phase.highlight ? "#FFFFFF" : "#F1F5F9" }}>
+                <h3 className="text-sm font-semibold" style={{ color: phase.highlight ? "#F5F3EE" : "#E8E4DC" }}>
                   {phase.title}
                 </h3>
-                <p className="text-xs leading-relaxed" style={{ color: phase.highlight ? "rgba(255,255,255,0.7)" : "#64748B" }}>
+                <p className="text-xs leading-relaxed" style={{ color: phase.highlight ? "rgba(245,243,238,0.7)" : "#6B6860" }}>
                   {phase.description}
                 </p>
               </div>
@@ -83,8 +82,8 @@ export default function Process() {
                 className="self-start text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-sm"
                 style={{
                   letterSpacing: "0.08em",
-                  backgroundColor: phase.highlight ? "rgba(255,255,255,0.2)" : "rgba(37,99,235,0.15)",
-                  color: phase.highlight ? "#FFFFFF" : "#2563EB",
+                  backgroundColor: phase.highlight ? "rgba(245,243,238,0.15)" : "rgba(45,92,63,0.2)",
+                  color: phase.highlight ? "#F5F3EE" : "#2D5C3F",
                 }}
               >
                 {phase.outcome}
@@ -96,18 +95,18 @@ export default function Process() {
         <div className="flex justify-center mt-10 overflow-x-auto">
           <div
             className="inline-flex items-center gap-2 px-6 py-4 rounded-sm shrink-0"
-            style={{ backgroundColor: "rgba(255,255,255,0.04)" }}
+            style={{ backgroundColor: "rgba(245,243,238,0.04)" }}
           >
-            <span className="text-xs font-semibold uppercase tracking-widest mr-3 whitespace-nowrap" style={{ color: "#475569", letterSpacing: "0.12em" }}>
+            <span className="text-xs font-semibold uppercase tracking-widest mr-3 whitespace-nowrap" style={{ color: "#4A4A46", letterSpacing: "0.12em" }}>
               Ongoing flywheel
             </span>
             {["Test", "Learn", "Iterate", "Scale"].map((step) => (
               <span key={step} className="flex items-center gap-2">
-                <span className="text-sm font-medium whitespace-nowrap" style={{ color: "#F1F5F9" }}>{step}</span>
-                <span className="text-sm" style={{ color: "#2563EB" }}>→</span>
+                <span className="text-sm font-medium whitespace-nowrap" style={{ color: "#E8E4DC" }}>{step}</span>
+                <span className="text-sm text-accent">→</span>
               </span>
             ))}
-            <span className="text-sm font-semibold whitespace-nowrap" style={{ color: "#2563EB" }}>Repeat</span>
+            <span className="text-sm font-semibold whitespace-nowrap text-accent">Repeat</span>
           </div>
         </div>
       </div>

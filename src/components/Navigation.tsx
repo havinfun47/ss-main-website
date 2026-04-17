@@ -6,7 +6,6 @@ import Image from "next/image";
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const navLinks = [
-  { label: "About", href: "#about" },
   { label: "Results", href: "#results" },
   { label: "Services", href: "#services" },
   { label: "Process", href: "#process" },
@@ -17,7 +16,7 @@ export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-bg-card/95 backdrop-blur-md">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-bg/95 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/">
           <Image
@@ -41,12 +40,16 @@ export default function Navigation() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-3">
+          <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-3 py-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block shrink-0" />
+            <span className="text-amber-700 text-xs font-semibold">2 spots left</span>
+          </div>
           <Link
-            href="https://calendly.com/graydon-scalescientist/30min" target="_blank" rel="noopener noreferrer"
+            href="https://connect.scalescientist.com/" target="_blank" rel="noopener noreferrer"
             className="bg-accent text-white px-5 py-2.5 rounded text-sm font-semibold hover:bg-accent/90 transition-colors"
           >
-            Book a call
+            Let&apos;s Chat
           </Link>
         </div>
 
@@ -68,7 +71,7 @@ export default function Navigation() {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden border-t border-border bg-bg-card px-6 pb-6">
+        <div className="md:hidden border-t border-border bg-bg px-6 pb-6">
           <nav className="flex flex-col gap-4 pt-4">
             {navLinks.map((link) => (
               <Link
@@ -81,11 +84,11 @@ export default function Navigation() {
               </Link>
             ))}
             <Link
-              href="https://calendly.com/graydon-scalescientist/30min" target="_blank" rel="noopener noreferrer"
+              href="https://connect.scalescientist.com/" target="_blank" rel="noopener noreferrer"
               className="bg-accent text-white px-4 py-2.5 rounded text-sm font-semibold text-center mt-2"
               onClick={() => setMobileOpen(false)}
             >
-              Book a call
+              Let&apos;s Chat
             </Link>
           </nav>
         </div>

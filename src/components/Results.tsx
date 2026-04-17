@@ -76,28 +76,29 @@ const cases = [
 
 export default function Results() {
   return (
-    <section className="py-24 px-6 bg-bg-card" id="results">
+    <section className="py-24 px-6 bg-bg" id="results">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-14">
-          <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3" style={{ letterSpacing: "0.14em" }}>
-            Case Studies
-          </p>
-          <h2 className="text-4xl md:text-5xl font-light leading-tight max-w-2xl text-primary tracking-tight mb-3">
-            The results speak for themselves.
-          </h2>
-          <p className="text-secondary max-w-lg leading-relaxed text-sm">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3" style={{ letterSpacing: "0.14em" }}>
+              Case Studies
+            </p>
+            <h2 className="font-serif text-4xl md:text-5xl leading-tight text-primary font-normal tracking-tight">
+              The results speak<br className="hidden md:block" /> for themselves.
+            </h2>
+          </div>
+          <p className="text-secondary max-w-xs leading-relaxed text-sm">
             Real brands, real numbers — across home goods, health & wellness, and more.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 gap-3">
           {cases.map((c) => (
             <div
               key={c.id}
               className="rounded-xl overflow-hidden flex flex-col"
-              style={{ backgroundColor: "#0F172A" }}
+              style={{ backgroundColor: "#1C1C1A" }}
             >
-              {/* Image */}
               <Image
                 src={`${BASE}${c.image}`}
                 alt={c.title}
@@ -107,27 +108,24 @@ export default function Results() {
                 className="w-full h-auto block"
               />
 
-              {/* Content */}
               <div className="flex flex-col gap-4 p-7 flex-1">
                 <div>
-                  <h3 className="text-xl font-semibold leading-snug tracking-tight" style={{ color: "#F1F5F9" }}>
+                  <p className="text-xs font-semibold mb-1.5" style={{ color: "#4A7C5E", letterSpacing: "0.06em" }}>{c.industry}</p>
+                  <h3 className="font-serif text-xl font-normal leading-snug" style={{ color: "#F5F3EE" }}>
                     {c.title}
                   </h3>
-                  <p className="text-xs mt-1 font-medium" style={{ color: "#475569" }}>{c.industry}</p>
                 </div>
 
-                <p className="text-sm leading-relaxed" style={{ color: "#64748B" }}>{c.description}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "#6B6860" }}>{c.description}</p>
 
                 <div>
-                  <p className="text-xs uppercase tracking-widest mb-2.5 font-semibold" style={{ color: "#475569", letterSpacing: "0.1em" }}>
+                  <p className="text-xs uppercase tracking-widest mb-2.5 font-semibold" style={{ color: "#4A4A46", letterSpacing: "0.1em" }}>
                     After Scale Science:
                   </p>
                   <ul className="space-y-1.5">
                     {c.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-2 text-sm" style={{ color: "#94A3B8" }}>
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0 mt-0.5" style={{ color: "#2563EB" }}>
-                          <path d="M2 7l4 4 6-8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
+                      <li key={b} className="flex items-start gap-2 text-sm" style={{ color: "#9A9690" }}>
+                        <span className="shrink-0 mt-1 w-1.5 h-1.5 rounded-full bg-accent inline-block" />
                         {b}
                       </li>
                     ))}
@@ -135,41 +133,30 @@ export default function Results() {
                 </div>
               </div>
 
-              {/* Stats bar */}
-              <div className="grid grid-cols-2 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+              <div className="grid grid-cols-2 border-t" style={{ borderColor: "rgba(245,243,238,0.06)" }}>
                 {c.stats.map((s, i) => (
                   <div
                     key={s.label}
                     className={`px-7 py-5 ${i === 0 ? "border-r" : ""}`}
-                    style={{ borderColor: "rgba(255,255,255,0.06)" }}
+                    style={{ borderColor: "rgba(245,243,238,0.06)" }}
                   >
-                    <p className="text-2xl font-bold tracking-tight" style={{ color: "#F1F5F9" }}>{s.value}</p>
-                    <p className="text-xs mt-1 font-medium" style={{ color: "#475569" }}>{s.label}</p>
+                    <p className="font-serif text-2xl font-normal" style={{ color: "#F5F3EE" }}>{s.value}</p>
+                    <p className="text-xs mt-1 font-medium" style={{ color: "#4A4A46" }}>{s.label}</p>
                   </div>
                 ))}
               </div>
 
-              {/* CTA */}
-              <div className="px-7 py-5 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+              <div className="px-7 py-5 border-t" style={{ borderColor: "rgba(245,243,238,0.06)" }}>
                 <Link
                   href="https://calendly.com/graydon-scalescientist/30min" target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center justify-center w-full px-5 py-2.5 rounded text-sm font-semibold transition-colors"
-                  style={{ backgroundColor: "#2563EB", color: "#FFFFFF" }}
+                  style={{ backgroundColor: "#2D5C3F", color: "#F5F3EE" }}
                 >
                   Get results like this →
                 </Link>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="text-center mt-10">
-          <Link
-            href="https://calendly.com/graydon-scalescientist/30min" target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-accent text-white px-7 py-3.5 rounded text-sm font-semibold hover:bg-accent/90 transition-colors"
-          >
-            Book a free strategy call
-          </Link>
         </div>
       </div>
     </section>
