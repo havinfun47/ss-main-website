@@ -81,7 +81,10 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} Scale Science. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <p>Results may vary. Individual outcomes depend on brand, budget, and market conditions.</p>
-            <Link href="/privacy" className="hover:text-bg transition-colors shrink-0" style={{ color: "rgba(245,243,238,0.35)" }}>Privacy Policy</Link>
+            <div className="flex items-center gap-4 shrink-0">
+              <Link href="/privacy" className="hover:text-bg transition-colors" style={{ color: "rgba(245,243,238,0.35)" }}>Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-bg transition-colors" style={{ color: "rgba(245,243,238,0.35)" }}>Terms of Service</Link>
+            </div>
           </div>
         </div>
       </div>
