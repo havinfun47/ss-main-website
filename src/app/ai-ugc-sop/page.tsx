@@ -300,21 +300,31 @@ export default function AiUgcSop() {
         {/* What's inside */}
         <section className="py-10 border-t border-border">
           <SectionHeader eyebrow="The pipeline" title="What's inside" />
-          <ol className="space-y-3">
+          <ol className="space-y-1">
             {[
-              ["Step 1", "Build Your Customer Avatar From a Winning Ad"],
-              ["Step 2", "Generate Your AI UGC Model"],
-              ["Step 3", "Generate Your Product Reference Image"],
-              ["Step 4", "Write the Script & Scene Prompts"],
-              ["Step 5", "Generate the Videos in Seedance 2.0"],
-              ["Step 6", "Edit and Finish the Ad"],
-              ["Bonus", "100+ Viral UGC Hook Templates"],
-            ].map(([step, title]) => (
-              <li key={step} className="flex items-start gap-4 py-2 border-b border-border-subtle last:border-b-0">
-                <span className="shrink-0 text-xs font-semibold uppercase tracking-widest text-accent w-16 pt-0.5" style={{ letterSpacing: "0.12em" }}>
-                  {step}
-                </span>
-                <span className="text-primary text-base">{title}</span>
+              ["Step 1", "Build Your Customer Avatar From a Winning Ad", "step-1"],
+              ["Step 2", "Generate Your AI UGC Model", "step-2"],
+              ["Step 3", "Generate Your Product Reference Image", "step-3"],
+              ["Step 4", "Write the Script & Scene Prompts", "step-4"],
+              ["Step 5", "Generate the Videos in Seedance 2.0", "step-5"],
+              ["Step 6", "Edit and Finish the Ad", "step-6"],
+              ["Bonus", "100+ Viral UGC Hook Templates", "bonus"],
+            ].map(([step, title, id]) => (
+              <li key={step} className="border-b border-border-subtle last:border-b-0">
+                <a
+                  href={`#${id}`}
+                  className="flex items-center gap-4 py-3 group hover:bg-bg-panel/50 -mx-2 px-2 rounded transition-colors"
+                >
+                  <span className="shrink-0 text-xs font-semibold uppercase tracking-widest text-accent w-16" style={{ letterSpacing: "0.12em" }}>
+                    {step}
+                  </span>
+                  <span className="flex-1 text-primary text-base group-hover:text-accent transition-colors">
+                    {title}
+                  </span>
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="shrink-0 text-tertiary group-hover:text-accent transition-colors">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
               </li>
             ))}
           </ol>
@@ -348,7 +358,7 @@ export default function AiUgcSop() {
         </section>
 
         {/* Step 1 */}
-        <section className="py-10 border-t border-border">
+        <section id="step-1" className="py-10 border-t border-border scroll-mt-20">
           <SectionHeader eyebrow="Step 1" title="Build your customer avatar" />
           <p className="text-sm text-secondary leading-relaxed mb-6">
             Your avatar comes from your winning ads, not your imagination. We&apos;re going to pull
@@ -405,7 +415,7 @@ I need you to create a customer avatar, define the wants and needs of the avatar
         </section>
 
         {/* Step 2 */}
-        <section className="py-10 border-t border-border">
+        <section id="step-2" className="py-10 border-t border-border scroll-mt-20">
           <SectionHeader eyebrow="Step 2" title="Generate your AI UGC model" />
           <p className="text-sm text-secondary leading-relaxed mb-6">
             Now we turn the avatar into a visual character that can talk straight to your audience.
@@ -470,7 +480,7 @@ I need you to create a customer avatar, define the wants and needs of the avatar
         </section>
 
         {/* Step 3 */}
-        <section className="py-10 border-t border-border">
+        <section id="step-3" className="py-10 border-t border-border scroll-mt-20">
           <SectionHeader eyebrow="Step 3" title="Generate your product reference image" />
           <p className="text-sm text-secondary leading-relaxed mb-6">
             Seedance needs a clean, well-lit reference of your product to keep it consistent across
@@ -503,7 +513,7 @@ I need you to create a customer avatar, define the wants and needs of the avatar
         </section>
 
         {/* Step 4 */}
-        <section className="py-10 border-t border-border">
+        <section id="step-4" className="py-10 border-t border-border scroll-mt-20">
           <SectionHeader eyebrow="Step 4" title="Write the script & scene prompts" />
           <p className="text-sm text-secondary leading-relaxed mb-6">
             This step produces two things in one Claude conversation: a short human-sounding UGC
@@ -589,7 +599,7 @@ I need you to create a customer avatar, define the wants and needs of the avatar
         </section>
 
         {/* Step 5 */}
-        <section className="py-10 border-t border-border">
+        <section id="step-5" className="py-10 border-t border-border scroll-mt-20">
           <SectionHeader eyebrow="Step 5" title="Generate the videos in Seedance 2.0" />
           <p className="text-sm text-secondary leading-relaxed mb-6">
             Seedance 2.0 on Kie.ai is where the prompts become actual video. You&apos;ll run each
@@ -646,7 +656,7 @@ I need you to create a customer avatar, define the wants and needs of the avatar
         </section>
 
         {/* Step 6 */}
-        <section className="py-10 border-t border-border">
+        <section id="step-6" className="py-10 border-t border-border scroll-mt-20">
           <SectionHeader eyebrow="Step 6" title="Edit and finish the ad" />
           <p className="text-sm text-secondary leading-relaxed mb-6">
             The raw scenes need a small edit pass to feel native on feed. You can do all of this
@@ -696,7 +706,7 @@ I need you to create a customer avatar, define the wants and needs of the avatar
         </section>
 
         {/* Bonus: Hooks */}
-        <section className="py-10 border-t border-border">
+        <section id="bonus" className="py-10 border-t border-border scroll-mt-20">
           <SectionHeader eyebrow="Bonus" title="100+ viral UGC hook templates" />
           <p className="text-sm text-secondary leading-relaxed mb-6">
             Drop any of these into your Step 4 script prompt. Fill the blank with your product,
