@@ -431,8 +431,7 @@ export default function CaseStudyPage() {
               Most agencies sell{" "}
               <em className="font-serif italic font-normal" style={{ color: "#9A9690" }}>
                 reports.
-              </em>
-              <br />
+              </em>{" "}
               We sell{" "}
               <em className="font-serif italic text-accent font-normal">outcomes.</em>
             </h2>
