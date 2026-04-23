@@ -206,7 +206,7 @@ export default function CaseStudyPage() {
             className="tracking-tight leading-[1.06] text-primary font-medium max-w-5xl"
             style={{ fontSize: "clamp(44px, 7vw, 80px)" }}
           >
-            <em className="font-serif italic text-accent font-normal">$0 &rarr; $122K</em>
+            <em className="font-serif italic text-accent font-normal">$0 to $122K</em>
             <span> in 60 days</span>
             <br />
             E-Commerce Funnel
@@ -278,7 +278,7 @@ export default function CaseStudyPage() {
                 style={{ backgroundColor: "#1C1C1A" }}
               >
                 {c.featured && (
-                  <div className="absolute top-4 left-4 z-10 inline-flex items-center gap-2 rounded-full px-3 py-1.5 shadow-lg"
+                  <div className="absolute top-4 right-4 z-10 inline-flex items-center gap-2 rounded-full px-3 py-1.5 shadow-lg"
                     style={{ backgroundColor: "rgba(45,92,63,0.95)" }}
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-white inline-block" />
