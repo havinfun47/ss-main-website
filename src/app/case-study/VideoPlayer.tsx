@@ -61,7 +61,7 @@ export default function VideoPlayer({ src, poster }: Props) {
           />
 
           {/* Top chrome */}
-          <div className="absolute top-0 left-0 right-0 flex items-start justify-between px-6 pt-6 pointer-events-none">
+          <div className="absolute top-0 left-0 right-0 hidden md:flex items-start justify-between px-6 pt-6 pointer-events-none">
             <div
               className="inline-flex items-center gap-2 rounded-full px-3 py-1.5"
               style={{

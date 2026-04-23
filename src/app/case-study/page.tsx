@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import VideoPlayer from "./VideoPlayer";
 
@@ -12,47 +13,77 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-type ResultCard = {
-  brand: string;
-  category: string;
-  metric: string;
-  metricLabel: string;
-  description: string;
-  featured?: boolean;
-};
-
-const results: ResultCard[] = [
+const results = [
   {
-    brand: "Sepura Home",
-    category: "Garbage Disposal",
-    metric: "+234%",
-    metricLabel: "ROAS Improvement",
+    id: "01",
+    title: "40% less spend. 89% more revenue.",
+    industry: "Sepura Home \u00B7 Garbage Disposal Alternative",
     description:
-      "Rebuilt funnel messaging and audiences from the ground up. Moved blended ROAS from 1.03 \u2192 3.44 in 60 days.",
+      "Sepura Home was priced at 2\u00D7 the market leader. Their previous agency was delivering a 1.03 ROAS and 97% MER. We rebuilt the entire funnel \u2014 messaging, audiences, landing pages. Turned it around in 60 days.",
+    bullets: [
+      "ROAS: 1.03 \u2192 3.44 in 60 days (+234%)",
+      "nCPA: $529 \u2192 $152 (\u221271%)",
+      "Year-end: 60% less spend, 10% more revenue",
+    ],
+    stats: [
+      { label: "ROAS Improvement", value: "+234%" },
+      { label: "Cost Per Acquisition", value: "\u221271%" },
+    ],
+    image: "/images/case-01.jpeg",
+    featured: false,
   },
   {
-    brand: "myco:soul",
-    category: "Mushroom Coffee",
-    metric: "+1,076%",
-    metricLabel: "Meta Revenue",
+    id: "02",
+    title: "+1,076% Meta revenue in 90 days.",
+    industry: "myco:soul \u00B7 Mushroom Coffee",
     description:
-      "Built a four-stage funnel around their avatar. Meta revenue up 10x, cost per purchase down 66%.",
+      "A saturated mushroom coffee market with acquisition costs that blocked profitability. We built a four-stage funnel \u2014 educational advertorials through to strategic retargeting \u2014 unlocking explosive, sustainable scale.",
+    bullets: [
+      "Meta attributed revenue +1,076%",
+      "Cost per purchase \u221266%",
+      "Ad spend scaled +510%",
+    ],
+    stats: [
+      { label: "Meta Revenue", value: "+1,076%" },
+      { label: "ROAS Improvement", value: "+583%" },
+    ],
+    image: "/images/case-02.jpeg",
+    featured: false,
   },
   {
-    brand: "Health & Wellness Brand",
-    category: "Supplements",
-    metric: "+433%",
-    metricLabel: "Profitable Ad Spend",
+    id: "03",
+    title: "+433% ad budget. Target ROAS held.",
+    industry: "Health & Wellness Brand",
     description:
-      "Scaled from $10K \u2192 $36K in monthly Meta spend while holding target ROAS. Hit the quarterly plan by month two.",
+      "Every time this brand tried to scale, ROAS collapsed. We rebuilt the funnel, re-segmented audiences, and produced fresh creative that held efficiency as we tripled their monthly ad investment in under 3 months.",
+    bullets: [
+      "Monthly spend: $10K \u2192 $36K",
+      "Target ROAS maintained throughout",
+      "Full ramp in under 3 months",
+    ],
+    stats: [
+      { label: "Spend Increase", value: "+433%" },
+      { label: "Timeline", value: "90 Days" },
+    ],
+    image: "/images/case-03.jpeg",
+    featured: false,
   },
   {
-    brand: "Kitchen Appliance Brand",
-    category: "Featured above",
-    metric: "$122K",
-    metricLabel: "Monthly Revenue \u00B7 60 Days",
+    id: "04",
+    title: "$0 \u2192 $122K revenue in 60 days.",
+    industry: "Kitchen Appliance Brand",
     description:
-      "Built the full funnel from scratch \u2014 ad account, creative, landing page, offer. 3.17 blended ROAS in 60 days, from $0 baseline.",
+      "No existing Meta presence. We built the full funnel from scratch \u2014 research, creative, audiences, landing pages \u2014 and delivered $122K in revenue at a 3.17 ROAS within the first 60 days.",
+    bullets: [
+      "$0 to $122K in attributed revenue",
+      "3.17 ROAS from day one",
+      "Full funnel live in under 2 weeks",
+    ],
+    stats: [
+      { label: "Revenue", value: "$122K" },
+      { label: "ROAS", value: "3.17\u00D7" },
+    ],
+    image: "/images/case-04.jpeg",
     featured: true,
   },
 ];
@@ -156,7 +187,7 @@ export default function CaseStudyPage() {
   return (
     <main className="min-h-screen bg-bg text-primary">
       {/* Hero */}
-      <section className="pt-20 md:pt-28 pb-14 md:pb-16 px-6">
+      <section className="pt-16 md:pt-28 pb-12 md:pb-16 px-6">
         <div className="max-w-[1216px] mx-auto flex flex-col items-center text-center gap-8 md:gap-10">
           <div
             className="inline-flex items-center gap-2 rounded-full px-4 py-1.5"
@@ -218,7 +249,7 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Results */}
-      <section className="py-20 md:py-24 px-6">
+      <section className="py-16 md:py-24 px-6">
         <div className="max-w-[1216px] mx-auto">
           <div className="flex flex-col items-center text-center gap-4 mb-14">
             <p
@@ -239,89 +270,82 @@ export default function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {results.map((r) => {
-              const dark = !!r.featured;
-              return (
-                <div
-                  key={r.brand}
-                  className="rounded-md flex flex-col gap-6 p-9 relative"
-                  style={{
-                    backgroundColor: dark ? "#1C1C1A" : "#FFFFFF",
-                    border: `1px solid ${dark ? "#2D5C3F" : "#E0DDD6"}`,
-                  }}
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <h3
-                      className="font-serif italic leading-tight"
-                      style={{
-                        fontSize: "clamp(22px, 2.2vw, 28px)",
-                        color: dark ? "#F5F3EE" : "#1C1C1A",
-                      }}
-                    >
-                      {r.brand}
-                    </h3>
-                    {!dark && (
-                      <span
-                        className="inline-flex shrink-0 items-center rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase"
-                        style={{
-                          backgroundColor: "#EDE9E0",
-                          color: "#6B6860",
-                          letterSpacing: "0.1em",
-                        }}
-                      >
-                        {r.category}
-                      </span>
-                    )}
-                    {dark && (
-                      <span
-                        className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase"
-                        style={{
-                          backgroundColor: "rgba(45,92,63,0.25)",
-                          color: "#9CC7A9",
-                          border: "1px solid rgba(45,92,63,0.5)",
-                          letterSpacing: "0.1em",
-                        }}
-                      >
-                        <span
-                          className="w-1.5 h-1.5 rounded-full"
-                          style={{ backgroundColor: "#5C8F6E" }}
-                        />
-                        Featured above
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="flex flex-col gap-2">
-                    <p
-                      className="font-serif italic leading-none"
-                      style={{
-                        fontSize: "clamp(56px, 6.5vw, 80px)",
-                        color: dark ? "#F5F3EE" : "#2D5C3F",
-                      }}
-                    >
-                      {r.metric}
-                    </p>
-                    <p
-                      className="text-[11px] font-semibold uppercase"
-                      style={{
-                        color: dark ? "rgba(245,243,238,0.5)" : "#9A9690",
-                        letterSpacing: "0.14em",
-                      }}
-                    >
-                      {r.metricLabel}
-                    </p>
-                  </div>
-
-                  <p
-                    className="text-sm leading-relaxed"
-                    style={{ color: dark ? "rgba(245,243,238,0.7)" : "#6B6860" }}
+          <div className="grid md:grid-cols-2 gap-3">
+            {results.map((c) => (
+              <div
+                key={c.id}
+                className="rounded-xl overflow-hidden flex flex-col relative"
+                style={{ backgroundColor: "#1C1C1A" }}
+              >
+                {c.featured && (
+                  <div className="absolute top-4 left-4 z-10 inline-flex items-center gap-2 rounded-full px-3 py-1.5 shadow-lg"
+                    style={{ backgroundColor: "rgba(45,92,63,0.95)" }}
                   >
-                    {r.description}
-                  </p>
+                    <span className="w-1.5 h-1.5 rounded-full bg-white inline-block" />
+                    <span className="text-white text-xs font-semibold">Featured above</span>
+                  </div>
+                )}
+
+                <Image
+                  src={`${BASE}${c.image}`}
+                  alt={c.title}
+                  width={0}
+                  height={0}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="w-full h-auto block"
+                />
+
+                <div className="flex flex-col gap-4 p-6 md:p-7 flex-1">
+                  <div>
+                    <p className="text-xs font-semibold mb-1.5" style={{ color: "#4A7C5E", letterSpacing: "0.06em" }}>{c.industry}</p>
+                    <h3 className="font-serif text-lg md:text-xl font-normal leading-snug" style={{ color: "#F5F3EE" }}>
+                      {c.title}
+                    </h3>
+                  </div>
+
+                  <p className="text-sm leading-relaxed" style={{ color: "#6B6860" }}>{c.description}</p>
+
+                  <div>
+                    <p className="text-xs uppercase tracking-widest mb-2.5 font-semibold" style={{ color: "#4A4A46", letterSpacing: "0.1em" }}>
+                      After Scale Science:
+                    </p>
+                    <ul className="space-y-1.5">
+                      {c.bullets.map((b) => (
+                        <li key={b} className="flex items-start gap-2 text-sm" style={{ color: "#9A9690" }}>
+                          <span className="shrink-0 mt-1 w-1.5 h-1.5 rounded-full bg-accent inline-block" />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              );
-            })}
+
+                <div className="grid grid-cols-2 border-t" style={{ borderColor: "rgba(245,243,238,0.06)" }}>
+                  {c.stats.map((s, i) => (
+                    <div
+                      key={s.label}
+                      className={`px-6 md:px-7 py-5 ${i === 0 ? "border-r" : ""}`}
+                      style={{ borderColor: "rgba(245,243,238,0.06)" }}
+                    >
+                      <p className="font-serif text-2xl font-normal" style={{ color: "#F5F3EE" }}>{s.value}</p>
+                      <p className="text-xs mt-1 font-medium" style={{ color: "#4A4A46" }}>{s.label}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="px-6 md:px-7 py-5 border-t" style={{ borderColor: "rgba(245,243,238,0.06)" }}>
+                  <Link
+                    href={CTA_HREF}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-full px-5 py-2.5 rounded text-sm font-semibold transition-colors"
+                    style={{ backgroundColor: "#2D5C3F", color: "#F5F3EE" }}
+                  >
+                    Get results like this &rarr;
+                  </Link>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -391,7 +415,7 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Comparison */}
-      <section className="py-20 md:py-24 px-6">
+      <section className="py-16 md:py-24 px-6">
         <div className="max-w-[1216px] mx-auto">
           <div className="flex flex-col items-center text-center gap-4 mb-14">
             <p
@@ -424,7 +448,7 @@ export default function CaseStudyPage() {
                 Other Agencies
               </p>
               <div
-                className="rounded-[20px] p-11 flex flex-col gap-5 flex-1"
+                className="rounded-[20px] p-7 md:p-11 flex flex-col gap-5 flex-1"
                 style={{
                   backgroundColor: "#EDE9E0",
                   border: "1px solid #E0DDD6",
@@ -448,11 +472,17 @@ export default function CaseStudyPage() {
 
             {/* Scale Science */}
             <div className="flex flex-col gap-6">
-              <p className="font-serif italic text-3xl md:text-4xl text-center text-primary">
-                SCALE SCIENCE.
-              </p>
+              <div className="flex items-center justify-center h-10 md:h-12">
+                <Image
+                  src={`${BASE}/images/scale-science-logo.png`}
+                  alt="Scale Science"
+                  width={200}
+                  height={48}
+                  className="h-8 md:h-10 w-auto"
+                />
+              </div>
               <div
-                className="rounded-[20px] p-11 flex flex-col gap-5 flex-1 relative overflow-hidden"
+                className="rounded-[20px] p-7 md:p-11 flex flex-col gap-5 flex-1 relative overflow-hidden"
                 style={{
                   backgroundColor: "#1C1C1A",
                   border: "1px solid #2D5C3F",
