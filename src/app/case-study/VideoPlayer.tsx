@@ -10,25 +10,24 @@ type Props = {
 export default function VideoPlayer({ src, poster }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [unmuted, setUnmuted] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
     v.muted = true;
-    const tryPlay = () => {
-      v.play().catch(() => {
-        /* autoplay blocked — user will hit unmute which also plays */
-      });
-    };
-    tryPlay();
+    v.play()
+      .then(() => setIsPlaying(true))
+      .catch(() => setIsPlaying(false));
   }, []);
 
-  function handleUnmute() {
+  function handleStart() {
     const v = videoRef.current;
     if (!v) return;
     v.muted = false;
-    if (v.paused) v.play().catch(() => {});
+    v.play().catch(() => {});
     setUnmuted(true);
+    setIsPlaying(true);
   }
 
   return (
@@ -48,6 +47,8 @@ export default function VideoPlayer({ src, poster }: Props) {
         controls={unmuted}
         controlsList="nodownload noplaybackrate"
         disablePictureInPicture
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
         className="absolute inset-0 w-full h-full object-cover"
       />
 
@@ -149,11 +150,11 @@ export default function VideoPlayer({ src, poster }: Props) {
             </div>
           </div>
 
-          {/* Center unmute button */}
+          {/* Center action button — becomes Play if autoplay blocked */}
           <button
             type="button"
-            onClick={handleUnmute}
-            aria-label="Tap to unmute"
+            onClick={handleStart}
+            aria-label={isPlaying ? "Tap to unmute" : "Play the full teardown"}
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-[14px] group focus:outline-none"
           >
             <div
@@ -164,39 +165,39 @@ export default function VideoPlayer({ src, poster }: Props) {
                 boxShadow: "0 10px 40px rgba(0,0,0,0.4)",
               }}
             >
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="none"
-                aria-hidden
-              >
-                <path
-                  d="M13 10L7 14H3V18H7L13 22V10Z"
-                  fill="#F5F3EE"
-                  stroke="#F5F3EE"
-                  strokeWidth="1.5"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M19 12C20.5 13 21.5 14.5 21.5 16C21.5 17.5 20.5 19 19 20"
-                  stroke="#F5F3EE"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M23 9C25.5 10.5 27 13 27 16C27 19 25.5 21.5 23 23"
-                  stroke="#F5F3EE"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                />
-              </svg>
+              {isPlaying ? (
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden>
+                  <path
+                    d="M13 10L7 14H3V18H7L13 22V10Z"
+                    fill="#F5F3EE"
+                    stroke="#F5F3EE"
+                    strokeWidth="1.5"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M19 12C20.5 13 21.5 14.5 21.5 16C21.5 17.5 20.5 19 19 20"
+                    stroke="#F5F3EE"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M23 9C25.5 10.5 27 13 27 16C27 19 25.5 21.5 23 23"
+                    stroke="#F5F3EE"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              ) : (
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
+                  <path d="M9 5L23 14L9 23V5Z" fill="#F5F3EE" />
+                </svg>
+              )}
             </div>
             <span
               className="text-[13px] font-medium tracking-wide"
               style={{ color: "rgba(245,243,238,0.85)", letterSpacing: "0.02em" }}
             >
-              Tap to unmute
+              {isPlaying ? "Tap to unmute" : "Play the full teardown"}
             </span>
           </button>
         </>
