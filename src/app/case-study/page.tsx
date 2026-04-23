@@ -207,9 +207,7 @@ export default function CaseStudyPage() {
             style={{ fontSize: "clamp(44px, 7vw, 80px)" }}
           >
             <em className="font-serif italic text-accent font-normal">$0 to $122K</em>
-            <span> in 60 days</span>
-            <br />
-            E-Commerce Funnel
+            <span> in 60 days E-Commerce Funnel</span>
           </h1>
 
           <p className="text-secondary text-base md:text-lg leading-relaxed max-w-2xl">
