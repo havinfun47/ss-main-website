@@ -203,11 +203,11 @@ export default function CaseStudyPage() {
           </div>
 
           <h1
-            className="tracking-tight leading-[1.06] text-primary font-medium max-w-5xl"
-            style={{ fontSize: "clamp(44px, 7vw, 80px)" }}
+            className="tracking-tight leading-[1.08] text-primary font-medium max-w-5xl"
+            style={{ fontSize: "clamp(34px, 6vw, 80px)", textWrap: "balance" }}
           >
             <em className="font-serif italic text-accent font-normal">$0 to $122K</em>
-            <span> in 60 days E-Commerce Funnel</span>
+            <span> in 60 days E&#8209;Commerce Funnel</span>
           </h1>
 
           <p className="text-secondary text-base md:text-lg leading-relaxed max-w-2xl">
