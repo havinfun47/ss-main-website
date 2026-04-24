@@ -6,8 +6,9 @@ import FAQAccordion from "./FAQAccordion";
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 // Editable fields — update these by hand as the offer runs
-const STRIPE_HREF = "https://checkout.stripe.com/REPLACE-ME";
-const WINS = 0;
+const STRIPE_HREF = "https://buy.stripe.com/3cI6oG6mV1Ed3AGcew3wQ00";
+const VIDEO_SRC = "/videos/beat-your-best-ad-overview.mp4";
+const WINS = 3;
 const LOSSES = 0;
 const LAST_UPDATED = "Launch day";
 const SPOTS_LEFT = 2;
@@ -15,7 +16,7 @@ const SPOTS_LEFT = 2;
 export const metadata: Metadata = {
   title: "Beat Your Best Meta Ad — Or You Don't Pay | Scale Science",
   description:
-    "Send us your best-performing Meta ad. In 5 business days we'll produce a new one designed to beat it. If ours doesn't win on ROAS, CPA, or CTR — full refund. $497.",
+    "Send us your best-performing Meta ad. In 5 business days we'll produce a new one designed to beat it. If ours doesn't win on ROAS, CPA, or amount spent — full refund. $97.",
   alternates: { canonical: "https://scalescientist.com/beat-your-best-ad" },
   openGraph: {
     title: "Beat Your Best Meta Ad — Or You Don't Pay",
@@ -37,7 +38,7 @@ const steps = [
   {
     n: "01",
     title: "You send us your winning ad",
-    body: "Share the Meta ad that's performing best for you right now. Video or static, any angle. Include the last 30 days of performance data (ROAS, CPA, CTR, spend).",
+    body: "Share the Meta ad that's performing best for you right now. Video or static, any angle. Include the last 30 days of performance data (ROAS, CPA, amount spent).",
   },
   {
     n: "02",
@@ -52,7 +53,7 @@ const steps = [
   {
     n: "04",
     title: "You test ours against yours",
-    body: "Same budget. Same audience. Minimum 7 days. You pick the KPI — ROAS, CPA, or CTR.",
+    body: "Same budget. Same audience. Minimum 7 days. You pick the KPI — ROAS, CPA, or amount spent.",
   },
   {
     n: "05",
@@ -90,15 +91,15 @@ const faqs = [
   },
   {
     q: "What counts as \"winning\"?",
-    a: "You pick one KPI before the test starts: ROAS, CPA, or CTR. Our ad needs to beat yours on that metric over at least 7 days of equal-spend testing. That's it.",
+    a: "You pick one KPI before the test starts: ROAS, CPA, or amount spent. Our ad needs to beat yours on that metric over at least 7 days of equal-spend testing. That's it.",
   },
   {
-    q: "Why not \"amount spent\" or \"revenue\"?",
-    a: "Because Meta automatically scales spend toward winning ads — which means our ad could win because it's better, and still technically \"lose\" on revenue if your control happened to get scaled harder. ROAS, CPA, and CTR are clean creative-quality metrics. They prove the ad actually works.",
+    q: "Why 'amount spent' as a KPI?",
+    a: "When you run two ads in the same Meta campaign with the same budget, Meta's algorithm automatically pushes more spend toward the ad it thinks is performing better. So if Meta spent more on ours than on yours over the test window, that's Meta's own algorithm telling you our creative is the stronger one. It's a clean directional signal — and it's the KPI most ecom operators already trust.",
   },
   {
     q: "What if we agree on CPA and my CPA fluctuates wildly week-to-week?",
-    a: "We'll look at the existing 30-day CPA on your control and set the win condition against that baseline. If your numbers are genuinely that volatile, we'll suggest CTR as a cleaner test.",
+    a: "We'll look at the existing 30-day CPA on your control and set the win condition against that baseline. If your numbers are genuinely that volatile, we'll suggest ROAS or amount spent as a cleaner test.",
   },
   {
     q: "Do I need to provide footage?",
@@ -150,7 +151,7 @@ function PrimaryCTA({ className = "" }: { className?: string }) {
       href={STRIPE_HREF}
       className={`inline-flex items-center justify-center gap-2 bg-accent text-white px-8 py-4 rounded text-sm font-semibold hover:bg-accent/90 transition-colors ${className}`}
     >
-      Beat My Best Ad — $497
+      Beat My Best Ad — $97
       <ArrowRight />
     </Link>
   );
@@ -207,9 +208,9 @@ export default function BeatYourBestAdPage() {
           </h1>
 
           <p className="text-secondary text-base md:text-lg leading-relaxed max-w-2xl">
-            Send us the ad that&rsquo;s currently winning for your ecom brand. In 5 business days
-            we&rsquo;ll produce a new one designed to beat it. Test them head&#8209;to&#8209;head. If ours
-            doesn&rsquo;t win on ROAS, CPA, or CTR &mdash; full refund. Keep the ad and the research anyway.
+            Send us your best performing ad and the content library you use to make ads. You&rsquo;ll
+            receive your new winning ad in 5 days. If we don&rsquo;t beat your ad, you get a full
+            refund&hellip; and you still keep all research so you can make more winning ads.
           </p>
 
           <div className="flex flex-col items-center gap-3 w-full sm:w-auto">
@@ -222,91 +223,77 @@ export default function BeatYourBestAdPage() {
       </section>
 
       {/* 2. Win/Loss Scoreboard */}
-      <section className="pb-12 md:pb-16 px-6">
-        <div className="max-w-[1100px] mx-auto">
+      <section className="pb-10 md:pb-14 px-6">
+        <div className="max-w-[720px] mx-auto">
           <div
-            className="rounded-2xl overflow-hidden relative"
+            className="rounded-xl overflow-hidden relative"
             style={{ backgroundColor: "#1C1C1A", border: "1px solid #2D5C3F" }}
           >
             <div
               className="absolute pointer-events-none"
               style={{
-                top: "-120px",
+                top: "-80px",
                 left: "50%",
                 transform: "translateX(-50%)",
-                width: "520px",
-                height: "520px",
+                width: "320px",
+                height: "320px",
                 borderRadius: "999px",
                 background:
-                  "radial-gradient(circle, rgba(45,92,63,0.45) 0%, rgba(45,92,63,0) 70%)",
+                  "radial-gradient(circle, rgba(45,92,63,0.35) 0%, rgba(45,92,63,0) 70%)",
               }}
             />
-            <div className="relative px-6 md:px-10 py-10 md:py-14 flex flex-col items-center text-center gap-6">
-              <p
-                className="text-[11px] font-semibold uppercase"
-                style={{ color: "#9CC7A9", letterSpacing: "0.14em" }}
-              >
-                Challenge record
-              </p>
-              <h2
-                className="font-medium tracking-tight leading-[1.06]"
-                style={{ fontSize: "clamp(28px, 4vw, 48px)", color: "#F5F3EE" }}
-              >
-                Beat Your Best Ad{" "}
-                <em className="font-serif italic font-normal" style={{ color: "#5C8F6E" }}>
-                  scoreboard.
-                </em>
-              </h2>
+            <div className="relative px-6 md:px-8 py-6 md:py-7 flex items-center justify-between gap-5">
+              <div className="flex flex-col gap-1 min-w-0">
+                <div className="flex items-center gap-2">
+                  <span
+                    className="w-1.5 h-1.5 rounded-full inline-block"
+                    style={{ backgroundColor: "#5C8F6E" }}
+                  />
+                  <p
+                    className="text-[10px] font-semibold uppercase"
+                    style={{ color: "#9CC7A9", letterSpacing: "0.14em" }}
+                  >
+                    Challenge record
+                  </p>
+                </div>
+                <p className="text-xs" style={{ color: "rgba(245,243,238,0.45)" }}>
+                  Updated {LAST_UPDATED} · First 10 at $97
+                </p>
+              </div>
 
-              <div className="grid grid-cols-2 gap-6 md:gap-16 w-full max-w-xl mt-4">
+              <div className="flex items-center gap-5 md:gap-7 shrink-0">
                 <div className="flex flex-col items-center">
                   <p
-                    className="text-[11px] font-semibold uppercase"
+                    className="text-[10px] font-semibold uppercase"
                     style={{ color: "rgba(245,243,238,0.4)", letterSpacing: "0.14em" }}
                   >
                     Wins
                   </p>
                   <p
-                    className="font-serif font-normal leading-none mt-3"
-                    style={{ fontSize: "clamp(64px, 10vw, 120px)", color: "#5C8F6E" }}
+                    className="font-serif font-normal leading-none mt-1"
+                    style={{ fontSize: "44px", color: "#5C8F6E" }}
                   >
                     {WINS}
                   </p>
                 </div>
-                <div className="flex flex-col items-center border-l" style={{ borderColor: "rgba(245,243,238,0.1)" }}>
+                <span
+                  className="block w-px h-12"
+                  style={{ backgroundColor: "rgba(245,243,238,0.1)" }}
+                />
+                <div className="flex flex-col items-center">
                   <p
-                    className="text-[11px] font-semibold uppercase"
+                    className="text-[10px] font-semibold uppercase"
                     style={{ color: "rgba(245,243,238,0.4)", letterSpacing: "0.14em" }}
                   >
                     Losses
                   </p>
                   <p
-                    className="font-serif italic font-normal leading-none mt-3"
-                    style={{ fontSize: "clamp(64px, 10vw, 120px)", color: "rgba(245,243,238,0.55)" }}
+                    className="font-serif italic font-normal leading-none mt-1"
+                    style={{ fontSize: "44px", color: "rgba(245,243,238,0.55)" }}
                   >
                     {LOSSES}
                   </p>
                 </div>
-              </div>
-
-              <p className="text-xs" style={{ color: "rgba(245,243,238,0.35)" }}>
-                Last updated: {LAST_UPDATED}
-              </p>
-
-              <div
-                className="mt-4 inline-flex items-center gap-2 rounded-full px-4 py-1.5"
-                style={{
-                  backgroundColor: "rgba(92,143,110,0.15)",
-                  border: "1px solid rgba(92,143,110,0.35)",
-                }}
-              >
-                <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#5C8F6E" }} />
-                <span
-                  className="text-xs font-semibold"
-                  style={{ color: "#9CC7A9" }}
-                >
-                  First 10 challenges: $497 · After that, price goes up
-                </span>
               </div>
             </div>
           </div>
@@ -338,6 +325,33 @@ export default function BeatYourBestAdPage() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Video overview */}
+      <section className="pt-6 md:pt-10 pb-16 md:pb-20 px-6">
+        <div className="max-w-[1100px] mx-auto flex flex-col items-center gap-8 md:gap-10">
+          <h2
+            className="font-medium tracking-tight leading-[1.08] text-primary text-center max-w-3xl"
+            style={{ fontSize: "clamp(28px, 4vw, 44px)" }}
+          >
+            Watch me{" "}
+            <em className="font-serif italic text-accent font-normal">
+              explain the challenge.
+            </em>
+          </h2>
+          <div
+            className="w-full rounded-xl overflow-hidden border"
+            style={{ borderColor: "#E0DDD6", backgroundColor: "#1C1C1A" }}
+          >
+            <video
+              src={VIDEO_SRC}
+              controls
+              playsInline
+              preload="metadata"
+              className="w-full aspect-video block"
+            />
           </div>
         </div>
       </section>
@@ -566,7 +580,7 @@ export default function BeatYourBestAdPage() {
               </p>
               <p>
                 You choose the win condition before the test starts:{" "}
-                <span className="font-semibold" style={{ color: "#F5F3EE" }}>ROAS, CPA, or CTR.</span>
+                <span className="font-semibold" style={{ color: "#F5F3EE" }}>ROAS, CPA, or amount spent.</span>
               </p>
               <p>
                 If our ad doesn&rsquo;t beat yours on that metric,{" "}
@@ -628,15 +642,16 @@ export default function BeatYourBestAdPage() {
             style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
           >
             Why{" "}
-            <em className="font-serif italic text-accent font-normal">$497?</em>
+            <em className="font-serif italic text-accent font-normal">$97?</em>
           </h2>
 
           <div className="flex flex-col gap-5 text-secondary text-base md:text-lg leading-relaxed max-w-2xl">
             <p>Because this is a front-end offer, not a retainer.</p>
             <p>
-              At $497, with the guarantee, most ecom brands say yes before their morning coffee.
+              At $97, with the guarantee, most ecom brands say yes before their morning coffee.
               We deliver. We win. Some of those brands ask us to run their whole account after &mdash;
-              and that&rsquo;s the business.
+              and that&rsquo;s the business. The price goes up every time we beat an ad, so the
+              cheapest this offer will ever be is right now.
             </p>
           </div>
 
@@ -652,20 +667,20 @@ export default function BeatYourBestAdPage() {
             </p>
             <div className="flex flex-col gap-2 text-sm md:text-base">
               <div className="flex items-center justify-between text-primary">
-                <span>First 10 challenges</span>
-                <span className="font-serif text-xl">$497</span>
+                <span>Right now</span>
+                <span className="font-serif text-xl">$97</span>
               </div>
               <div className="flex items-center justify-between text-secondary">
-                <span>After 10 claimed</span>
-                <span className="font-serif text-xl">$697</span>
+                <span>After the next win</span>
+                <span className="font-serif text-xl">$147</span>
               </div>
               <div className="flex items-center justify-between text-tertiary">
-                <span>After 25 claimed</span>
-                <span className="font-serif text-xl">$997</span>
+                <span>After 5 wins</span>
+                <span className="font-serif text-xl">$197+</span>
               </div>
             </div>
             <p className="text-xs text-tertiary mt-2">
-              Price doesn&rsquo;t come back down.
+              Price goes up with every win. It doesn&rsquo;t come back down.
             </p>
           </div>
 
@@ -860,13 +875,13 @@ export default function BeatYourBestAdPage() {
             style={{ color: "rgba(245,243,238,0.7)" }}
           >
             After that, the next available slot is next month. If you want us to produce the ad
-            while the price is still $497, now&rsquo;s the window.
+            while the price is still $97, now&rsquo;s the window.
           </p>
           <Link
             href={STRIPE_HREF}
             className="inline-flex items-center justify-center gap-2 bg-accent text-white px-8 py-4 rounded text-sm font-semibold hover:bg-accent/90 transition-colors"
           >
-            Beat My Best Ad — $497
+            Beat My Best Ad — $97
             <ArrowRight />
           </Link>
           <p className="text-xs" style={{ color: "rgba(245,243,238,0.4)" }}>
@@ -894,7 +909,7 @@ export default function BeatYourBestAdPage() {
               className="text-base md:text-lg leading-relaxed"
               style={{ color: "rgba(245,243,238,0.75)" }}
             >
-              For $497, you find out whether there&rsquo;s a better angle, a sharper hook, or a message
+              For $97, you find out whether there&rsquo;s a better angle, a sharper hook, or a message
               your competitors aren&rsquo;t running. If there is &mdash; you&rsquo;ll have it in a week. If
               there isn&rsquo;t &mdash; you get your money back and a full research report proving your
               current winner is actually winning.
