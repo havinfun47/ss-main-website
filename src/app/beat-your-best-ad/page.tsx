@@ -11,7 +11,22 @@ const VIDEO_SRC = "/videos/beat-your-best-ad-overview.mp4";
 const WINS = 3;
 const LOSSES = 0;
 const LAST_UPDATED = "Launch day";
-const SPOTS_LEFT = 2;
+const SPOTS_LEFT = 5;
+
+const proofScreenshots = [
+  {
+    file: "Screenshot 2026-04-24 at 1.05.19 PM.png",
+    alt: "Meta Ads Manager: 4.04 average ROAS across three video ads, $6,356 revenue from $1,571 spend",
+  },
+  {
+    file: "Screenshot 2026-04-24 at 1.06.21 PM.png",
+    alt: "Meta Ads Manager: 4.12 average ROAS across four static ads, $6,066 revenue from $1,471 spend",
+  },
+  {
+    file: "Screenshot 2026-04-24 at 1.07.55 PM.png",
+    alt: "Meta Ads Manager: 1.29 average ROAS across three video ads, $6,149 revenue from $4,779 spend",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Beat Your Best Meta Ad — Or You Don't Pay | Scale Science",
@@ -213,12 +228,10 @@ export default function BeatYourBestAdPage() {
             refund&hellip; and you still keep all research so you can make more winning ads.
           </p>
 
-          <div className="flex flex-col items-center gap-3 w-full sm:w-auto">
-            <PrimaryCTA />
-            <p className="text-xs text-tertiary">
-              100% guarantee &middot; 5 business day turnaround &middot; {SPOTS_LEFT} spots left this month
-            </p>
-          </div>
+          <p className="text-primary font-semibold text-lg md:text-2xl leading-snug max-w-3xl" style={{ textWrap: "balance" }}>
+            100% refund if I lose. 5 business day turnaround.{" "}
+            <span className="text-accent">{SPOTS_LEFT} spots left this month.</span>
+          </p>
         </div>
       </section>
 
@@ -300,6 +313,50 @@ export default function BeatYourBestAdPage() {
         </div>
       </section>
 
+      {/* Proof: Meta Ads Manager screenshots */}
+      <section className="py-12 md:py-16 px-6">
+        <div className="max-w-[1216px] mx-auto">
+          <div className="flex flex-col items-center text-center gap-3 mb-10">
+            <p
+              className="text-[11px] font-semibold uppercase text-accent"
+              style={{ letterSpacing: "0.14em" }}
+            >
+              Receipts
+            </p>
+            <h2
+              className="font-medium tracking-tight leading-[1.08] text-primary max-w-3xl"
+              style={{ fontSize: "clamp(26px, 3.6vw, 40px)" }}
+            >
+              Real accounts.{" "}
+              <em className="font-serif italic text-accent font-normal">Real numbers.</em>
+            </h2>
+            <p className="text-secondary max-w-xl leading-relaxed text-sm md:text-base">
+              Pulled straight from Meta Ads Manager. These are ads we&rsquo;ve produced and shipped &mdash;
+              no filters, no mock-ups.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {proofScreenshots.map((s) => (
+              <div
+                key={s.file}
+                className="rounded-xl overflow-hidden border"
+                style={{ backgroundColor: "#FFFFFF", borderColor: "#E0DDD6" }}
+              >
+                <Image
+                  src={`${BASE}/images/${encodeURIComponent(s.file)}`}
+                  alt={s.alt}
+                  width={680}
+                  height={400}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="w-full h-auto block"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 3. Social proof strip */}
       <section className="py-16 md:py-20 px-6">
         <div className="max-w-[1216px] mx-auto">
@@ -352,6 +409,12 @@ export default function BeatYourBestAdPage() {
               preload="metadata"
               className="w-full aspect-video block"
             />
+          </div>
+          <div className="flex flex-col items-center gap-3 mt-2">
+            <PrimaryCTA />
+            <p className="text-xs text-tertiary">
+              100% refund if I lose &middot; 5 business day turnaround &middot; {SPOTS_LEFT} spots left this month
+            </p>
           </div>
         </div>
       </section>
