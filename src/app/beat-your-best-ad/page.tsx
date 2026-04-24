@@ -15,15 +15,15 @@ const SPOTS_LEFT = 5;
 
 const proofScreenshots = [
   {
-    file: "Screenshot 2026-04-24 at 1.05.19 PM.png",
+    file: "ads-proof-01.png",
     alt: "Meta Ads Manager: 4.04 average ROAS across three video ads, $6,356 revenue from $1,571 spend",
   },
   {
-    file: "Screenshot 2026-04-24 at 1.06.21 PM.png",
+    file: "ads-proof-02.png",
     alt: "Meta Ads Manager: 4.12 average ROAS across four static ads, $6,066 revenue from $1,471 spend",
   },
   {
-    file: "Screenshot 2026-04-24 at 1.07.55 PM.png",
+    file: "ads-proof-03.png",
     alt: "Meta Ads Manager: 1.29 average ROAS across three video ads, $6,149 revenue from $4,779 spend",
   },
 ];
@@ -344,7 +344,7 @@ export default function BeatYourBestAdPage() {
                 style={{ backgroundColor: "#FFFFFF", borderColor: "#E0DDD6" }}
               >
                 <Image
-                  src={`${BASE}/images/${encodeURIComponent(s.file)}`}
+                  src={`${BASE}/images/${s.file}`}
                   alt={s.alt}
                   width={680}
                   height={400}
