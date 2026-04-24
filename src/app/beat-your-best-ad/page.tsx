@@ -16,15 +16,15 @@ const SPOTS_LEFT = 5;
 const proofScreenshots = [
   {
     file: "ads-proof-01.png",
-    alt: "Meta Ads Manager: 4.04 average ROAS across three video ads, $6,356 revenue from $1,571 spend",
+    alt: "Meta Ads Manager: winning video ad drove 4.26 ROAS on $1,490.74 spend, producing $6,356.83 revenue",
   },
   {
     file: "ads-proof-02.png",
-    alt: "Meta Ads Manager: 4.12 average ROAS across four static ads, $6,066 revenue from $1,471 spend",
+    alt: "Meta Ads Manager: winning static ad drove 5.87 ROAS on $1,033.24 spend, producing $6,066.22 revenue",
   },
   {
     file: "ads-proof-03.png",
-    alt: "Meta Ads Manager: 1.29 average ROAS across three video ads, $6,149 revenue from $4,779 spend",
+    alt: "Meta Ads Manager: winning video ad drove 1.29 ROAS on $4,653.99 spend, producing $5,982.77 revenue",
   },
 ];
 
