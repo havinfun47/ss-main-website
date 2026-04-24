@@ -7,7 +7,6 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 // Editable fields — update these by hand as the offer runs
 const STRIPE_HREF = "https://checkout.stripe.com/REPLACE-ME";
-const CALENDLY_HREF = "https://calendly.com/graydon-scalescientist/30min";
 const WINS = 0;
 const LOSSES = 0;
 const LAST_UPDATED = "Launch day";
@@ -908,18 +907,6 @@ export default function BeatYourBestAdPage() {
             </p>
             <p className="text-sm" style={{ color: "rgba(245,243,238,0.55)" }}>
               &mdash; Graydon, Scale Science
-            </p>
-            <p className="text-sm mt-2" style={{ color: "rgba(245,243,238,0.5)" }}>
-              Not sure it&rsquo;s a fit?{" "}
-              <Link
-                href={CALENDLY_HREF}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-white transition-colors"
-                style={{ color: "#9CC7A9" }}
-              >
-                Book a 15-min call first →
-              </Link>
             </p>
           </div>
         </div>
