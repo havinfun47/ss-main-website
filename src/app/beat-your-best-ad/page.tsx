@@ -13,21 +13,6 @@ const LOSSES = 0;
 const LAST_UPDATED = "Launch day";
 const SPOTS_LEFT = 5;
 
-const proofScreenshots = [
-  {
-    file: "ads-proof-01.png",
-    alt: "Meta Ads Manager: winning video ad drove 4.26 ROAS on $1,490.74 spend, producing $6,356.83 revenue",
-  },
-  {
-    file: "ads-proof-02.png",
-    alt: "Meta Ads Manager: winning static ad drove 5.87 ROAS on $1,033.24 spend, producing $6,066.22 revenue",
-  },
-  {
-    file: "ads-proof-03.png",
-    alt: "Meta Ads Manager: winning video ad drove 1.29 ROAS on $4,653.99 spend, producing $5,982.77 revenue",
-  },
-];
-
 export const metadata: Metadata = {
   title: "Beat Your Best Meta Ad — Or You Don't Pay | Scale Science",
   description:
@@ -222,12 +207,6 @@ export default function BeatYourBestAdPage() {
             </em>
           </h1>
 
-          <p className="text-secondary text-base md:text-lg leading-relaxed max-w-2xl">
-            Send us your best performing ad and the content library you use to make ads. You&rsquo;ll
-            receive your new winning ad in 5 days. If we don&rsquo;t beat your ad, you get a full
-            refund&hellip; and you still keep all research so you can make more winning ads.
-          </p>
-
           <p className="text-primary font-semibold text-lg md:text-2xl leading-snug max-w-3xl" style={{ textWrap: "balance" }}>
             100% refund if I lose. 5 business day turnaround.{" "}
             <span className="text-accent">{SPOTS_LEFT} spots left this month.</span>
@@ -313,79 +292,6 @@ export default function BeatYourBestAdPage() {
         </div>
       </section>
 
-      {/* Proof: Meta Ads Manager screenshots */}
-      <section className="py-12 md:py-16 px-6">
-        <div className="max-w-[1216px] mx-auto">
-          <div className="flex flex-col items-center text-center gap-3 mb-10">
-            <p
-              className="text-[11px] font-semibold uppercase text-accent"
-              style={{ letterSpacing: "0.14em" }}
-            >
-              Receipts
-            </p>
-            <h2
-              className="font-medium tracking-tight leading-[1.08] text-primary max-w-3xl"
-              style={{ fontSize: "clamp(26px, 3.6vw, 40px)" }}
-            >
-              Real accounts.{" "}
-              <em className="font-serif italic text-accent font-normal">Real numbers.</em>
-            </h2>
-            <p className="text-secondary max-w-xl leading-relaxed text-sm md:text-base">
-              Pulled straight from Meta Ads Manager. These are ads we&rsquo;ve produced and shipped &mdash;
-              no filters, no mock-ups.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {proofScreenshots.map((s) => (
-              <div
-                key={s.file}
-                className="rounded-xl overflow-hidden border"
-                style={{ backgroundColor: "#FFFFFF", borderColor: "#E0DDD6" }}
-              >
-                <Image
-                  src={`${BASE}/images/${s.file}`}
-                  alt={s.alt}
-                  width={680}
-                  height={400}
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="w-full h-auto block"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Social proof strip */}
-      <section className="py-16 md:py-20 px-6">
-        <div className="max-w-[1216px] mx-auto">
-          <p className="text-center text-secondary text-sm md:text-base mb-8 max-w-2xl mx-auto leading-relaxed">
-            Why we can make this offer:{" "}
-            <span className="text-primary font-semibold">we do this for a living.</span>
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-            {caseStrip.map((c) => (
-              <div
-                key={c.brand}
-                className="rounded-lg p-5 md:p-6 flex flex-col gap-2"
-                style={{ backgroundColor: "#FFFFFF", border: "1px solid #E0DDD6" }}
-              >
-                <p
-                  className="text-[11px] font-semibold uppercase"
-                  style={{ color: "#4A7C5E", letterSpacing: "0.1em" }}
-                >
-                  {c.brand}
-                </p>
-                <p className="font-serif text-lg md:text-xl text-primary leading-snug">
-                  {c.result}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Video overview */}
       <section className="pt-6 md:pt-10 pb-16 md:pb-20 px-6">
         <div className="max-w-[1100px] mx-auto flex flex-col items-center gap-8 md:gap-10">
@@ -393,9 +299,9 @@ export default function BeatYourBestAdPage() {
             className="font-medium tracking-tight leading-[1.08] text-primary text-center max-w-3xl"
             style={{ fontSize: "clamp(28px, 4vw, 44px)" }}
           >
-            Watch me{" "}
+            Who&rsquo;s the madman{" "}
             <em className="font-serif italic text-accent font-normal">
-              explain the challenge.
+              behind this offer?
             </em>
           </h2>
           <div
@@ -415,6 +321,47 @@ export default function BeatYourBestAdPage() {
             <p className="text-xs text-tertiary">
               100% refund if I lose &middot; 5 business day turnaround &middot; {SPOTS_LEFT} spots left this month
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Social proof strip */}
+      <section className="py-16 md:py-20 px-6">
+        <div className="max-w-[1216px] mx-auto">
+          <div className="flex flex-col items-center text-center gap-4 mb-10 md:mb-12 max-w-3xl mx-auto">
+            <h2
+              className="font-medium tracking-tight leading-[1.1] text-primary"
+              style={{ fontSize: "clamp(26px, 3.2vw, 36px)" }}
+            >
+              Why we can make this offer &mdash;{" "}
+              <em className="font-serif italic text-accent font-normal">
+                we do this for a living.
+              </em>
+            </h2>
+            <p className="text-secondary text-base md:text-lg leading-relaxed">
+              Send us your best performing ad and the content library you use to make ads. You&rsquo;ll
+              receive your new winning ad in 5 days. If we don&rsquo;t beat your ad, you get a full
+              refund&hellip; and you still keep all research so you can make more winning ads.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {caseStrip.map((c) => (
+              <div
+                key={c.brand}
+                className="rounded-lg p-5 md:p-6 flex flex-col gap-2"
+                style={{ backgroundColor: "#FFFFFF", border: "1px solid #E0DDD6" }}
+              >
+                <p
+                  className="text-[11px] font-semibold uppercase"
+                  style={{ color: "#4A7C5E", letterSpacing: "0.1em" }}
+                >
+                  {c.brand}
+                </p>
+                <p className="font-serif text-lg md:text-xl text-primary leading-snug">
+                  {c.result}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -590,6 +537,123 @@ export default function BeatYourBestAdPage() {
 
           <div className="flex justify-center mt-12">
             <PrimaryCTA />
+          </div>
+        </div>
+      </section>
+
+      {/* Sample deliverables — IG reel + Canva research report */}
+      <section
+        className="py-20 md:py-24 px-6"
+        style={{
+          backgroundColor: "#EDE9E0",
+          borderTop: "1px solid #E0DDD6",
+          borderBottom: "1px solid #E0DDD6",
+        }}
+      >
+        <div className="max-w-[1216px] mx-auto">
+          <div className="flex flex-col items-center text-center gap-4 mb-12 md:mb-16 max-w-3xl mx-auto">
+            <p
+              className="text-[11px] font-semibold uppercase text-accent"
+              style={{ letterSpacing: "0.14em" }}
+            >
+              Sample deliverables
+            </p>
+            <h2
+              className="font-medium tracking-tight leading-[1.08] text-primary"
+              style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
+            >
+              See the bar{" "}
+              <em className="font-serif italic text-accent font-normal">
+                we&rsquo;re setting.
+              </em>
+            </h2>
+            <p className="text-secondary text-base md:text-lg leading-relaxed">
+              The winning ad and the psychology report from past work. Same format you&rsquo;ll receive
+              on day five of your challenge.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 items-start">
+            {/* The winning ad */}
+            <div className="lg:col-span-5 flex flex-col gap-5">
+              <div className="flex flex-col gap-2">
+                <p
+                  className="text-[11px] font-semibold uppercase text-accent"
+                  style={{ letterSpacing: "0.14em" }}
+                >
+                  01 &mdash; The winning ad
+                </p>
+                <h3
+                  className="font-medium tracking-tight leading-[1.12] text-primary"
+                  style={{ fontSize: "clamp(24px, 2.6vw, 32px)" }}
+                >
+                  Sepura Home &mdash;{" "}
+                  <em className="font-serif italic text-accent font-normal">27M views.</em>
+                </h3>
+                <p className="text-secondary text-sm md:text-base leading-relaxed">
+                  Script, hook, and edit built from scratch. Scaled to 27M organic reach on
+                  Instagram alone &mdash; the same format of ad we&rsquo;ll produce for your challenge.
+                </p>
+              </div>
+              <div
+                className="relative w-full mx-auto rounded-xl overflow-hidden border"
+                style={{
+                  maxWidth: "420px",
+                  aspectRatio: "9 / 16",
+                  borderColor: "#E0DDD6",
+                  backgroundColor: "#1C1C1A",
+                }}
+              >
+                <iframe
+                  src="https://www.instagram.com/reel/C9iW2vbSMRv/embed"
+                  className="absolute inset-0 w-full h-full"
+                  frameBorder="0"
+                  scrolling="no"
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  title="Sepura Home Instagram reel — 27M views"
+                />
+              </div>
+            </div>
+
+            {/* The psychology report */}
+            <div className="lg:col-span-7 flex flex-col gap-5">
+              <div className="flex flex-col gap-2">
+                <p
+                  className="text-[11px] font-semibold uppercase text-accent"
+                  style={{ letterSpacing: "0.14em" }}
+                >
+                  02 &mdash; The psychology report
+                </p>
+                <h3
+                  className="font-medium tracking-tight leading-[1.12] text-primary"
+                  style={{ fontSize: "clamp(24px, 2.6vw, 32px)" }}
+                >
+                  Avatar &amp; angles &mdash;{" "}
+                  <em className="font-serif italic text-accent font-normal">Blume (fan project).</em>
+                </h3>
+                <p className="text-secondary text-sm md:text-base leading-relaxed">
+                  The same format of customer research you&rsquo;ll receive: buyer avatar, voice&#8209;of&#8209;customer
+                  language, the three angles nobody else is running. Built for Blume as a fan, not a client.
+                </p>
+              </div>
+              <div
+                className="relative w-full rounded-xl overflow-hidden border"
+                style={{
+                  aspectRatio: "4 / 3",
+                  borderColor: "#E0DDD6",
+                  backgroundColor: "#FFFFFF",
+                }}
+              >
+                <iframe
+                  src="https://www.canva.com/design/DAHHzsmFOiw/Lst8z7_873qV5g2loEcwuQ/view?embed"
+                  className="absolute inset-0 w-full h-full"
+                  frameBorder="0"
+                  allowFullScreen
+                  loading="lazy"
+                  title="Blume avatar & psychology breakdown"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
