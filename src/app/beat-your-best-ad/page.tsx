@@ -27,6 +27,21 @@ export const metadata: Metadata = {
   },
 };
 
+const proofScreenshots = [
+  {
+    file: "ads-proof-01.png",
+    alt: "Meta Ads Manager: winning video ad drove 4.26 ROAS on $1,490.74 spend, producing $6,356.83 revenue",
+  },
+  {
+    file: "ads-proof-02.png",
+    alt: "Meta Ads Manager: winning static ad drove 5.87 ROAS on $1,033.24 spend, producing $6,066.22 revenue",
+  },
+  {
+    file: "ads-proof-03.png",
+    alt: "Meta Ads Manager: winning video ad drove 1.29 ROAS on $4,653.99 spend, producing $5,982.77 revenue",
+  },
+];
+
 const briefPreviews = [
   { file: "sepura-brief-01.png", alt: "Sepura Home Customer Avatar Brief — page 1 preview" },
   { file: "sepura-brief-02.png", alt: "Sepura Home Customer Avatar Brief — page 2 preview" },
@@ -218,6 +233,50 @@ export default function BeatYourBestAdPage() {
             100% refund if I lose. 5 business day turnaround.{" "}
             <span className="text-accent">{SPOTS_LEFT} spots left this month.</span>
           </p>
+        </div>
+      </section>
+
+      {/* Proof: Meta Ads Manager screenshots */}
+      <section className="pb-10 md:pb-14 px-6">
+        <div className="max-w-[1216px] mx-auto">
+          <div className="flex flex-col items-center text-center gap-3 mb-8 md:mb-10">
+            <p
+              className="text-[11px] font-semibold uppercase text-accent"
+              style={{ letterSpacing: "0.14em" }}
+            >
+              Receipts
+            </p>
+            <h2
+              className="font-medium tracking-tight leading-[1.08] text-primary max-w-3xl"
+              style={{ fontSize: "clamp(26px, 3.6vw, 40px)" }}
+            >
+              Real accounts.{" "}
+              <em className="font-serif italic text-accent font-normal">Real numbers.</em>
+            </h2>
+            <p className="text-secondary max-w-xl leading-relaxed text-sm md:text-base">
+              Pulled straight from Meta Ads Manager. These are ads we&rsquo;ve produced and shipped &mdash;
+              no filters, no mock-ups.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {proofScreenshots.map((s) => (
+              <div
+                key={s.file}
+                className="rounded-xl overflow-hidden border"
+                style={{ backgroundColor: "#FFFFFF", borderColor: "#E0DDD6" }}
+              >
+                <Image
+                  src={`${BASE}/images/${s.file}`}
+                  alt={s.alt}
+                  width={680}
+                  height={400}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="w-full h-auto block"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
