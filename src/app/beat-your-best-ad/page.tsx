@@ -27,6 +27,13 @@ export const metadata: Metadata = {
   },
 };
 
+const briefPreviews = [
+  { file: "sepura-brief-01.png", alt: "Sepura Home Customer Avatar Brief — page 1 preview" },
+  { file: "sepura-brief-02.png", alt: "Sepura Home Customer Avatar Brief — page 2 preview" },
+  { file: "sepura-brief-03.png", alt: "Sepura Home Customer Avatar Brief — page 3 preview" },
+  { file: "sepura-brief-04.png", alt: "Sepura Home Customer Avatar Brief — page 4 preview" },
+];
+
 const caseStrip = [
   { brand: "Sepura Home", result: "ROAS 1.03 → 3.44 in 60 days" },
   { brand: "myco:soul", result: "Meta revenue +1,076% in 90 days" },
@@ -70,13 +77,13 @@ const deliverables = [
   },
   {
     n: "02",
-    title: "Market psychology report",
-    body: "The customer research that drives the ad. Avatar, top pain points, voice-of-customer language, the three angles nobody else is running, and why they'll work. Use it even if our ad loses.",
+    title: "The Customer Avatar Brief",
+    body: "Who your buyer actually is — beyond demographics. Psychographics, pain points she'd never write on a survey, the specific triggers that tip her into buying, the voice-of-customer language pulled from reviews and forums. The same brief we build for our retainer clients. Use it for your emails, your landing pages, your organic content. Yours to keep regardless of how the test goes.",
   },
   {
     n: "03",
-    title: "The scaling playbook",
-    body: "If our ad wins, here's how to scale it without watching CPA collapse. The exact campaign structure, bid strategy, and budget ramp we'd use if it were our account.",
+    title: "The Psychology of the Winning Ad",
+    body: "A side-by-side breakdown of why our ad beats yours. The 6 beliefs your buyer needs to hold before they buy, which one we attacked, what your old ad was missing, and exactly why the new angle converts. So you can replicate the thinking on every ad you run after this.",
   },
 ];
 
@@ -541,6 +548,60 @@ export default function BeatYourBestAdPage() {
         </div>
       </section>
 
+      {/* Brief preview — page previews from the Sepura avatar brief */}
+      <section className="py-20 md:py-24 px-6">
+        <div className="max-w-[1216px] mx-auto">
+          <div className="flex flex-col items-center text-center gap-4 mb-12 max-w-3xl mx-auto">
+            <p
+              className="text-[11px] font-semibold uppercase text-accent"
+              style={{ letterSpacing: "0.14em" }}
+            >
+              The brief
+            </p>
+            <h2
+              className="font-medium tracking-tight leading-[1.08] text-primary"
+              style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
+            >
+              What the brief{" "}
+              <em className="font-serif italic text-accent font-normal">
+                actually looks like.
+              </em>
+            </h2>
+            <p className="text-secondary text-base md:text-lg leading-relaxed">
+              Here&rsquo;s the avatar brief we built for Sepura Home before we ran a single ad &mdash;
+              the same depth your $97 buys.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 max-w-[1080px] mx-auto">
+            {briefPreviews.map((p) => (
+              <div
+                key={p.file}
+                className="rounded-xl overflow-hidden border"
+                style={{
+                  backgroundColor: "#FFFFFF",
+                  borderColor: "#E0DDD6",
+                  boxShadow: "0 8px 28px rgba(28,28,26,0.06)",
+                }}
+              >
+                <Image
+                  src={`${BASE}/images/${p.file}`}
+                  alt={p.alt}
+                  width={1200}
+                  height={750}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="w-full h-auto block"
+                />
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center text-xs md:text-sm mt-8" style={{ color: "#6B6B66", letterSpacing: "0.02em" }}>
+            Customer Avatar Brief &middot; 15 pages &middot; prepared for Sepura Home, Q2 2026
+          </p>
+        </div>
+      </section>
+
       {/* Sample deliverables — IG reel + Canva research report */}
       <section
         className="py-20 md:py-24 px-6"
@@ -615,25 +676,26 @@ export default function BeatYourBestAdPage() {
               </div>
             </div>
 
-            {/* The psychology report */}
+            {/* The customer avatar brief */}
             <div className="lg:col-span-7 flex flex-col gap-5">
               <div className="flex flex-col gap-2">
                 <p
                   className="text-[11px] font-semibold uppercase text-accent"
                   style={{ letterSpacing: "0.14em" }}
                 >
-                  02 &mdash; The psychology report
+                  02 &mdash; The Customer Avatar Brief
                 </p>
                 <h3
                   className="font-medium tracking-tight leading-[1.12] text-primary"
                   style={{ fontSize: "clamp(24px, 2.6vw, 32px)" }}
                 >
-                  Avatar &amp; angles &mdash;{" "}
-                  <em className="font-serif italic text-accent font-normal">Blume (fan project).</em>
+                  The brief behind{" "}
+                  <em className="font-serif italic text-accent font-normal">Sepura Home.</em>
                 </h3>
                 <p className="text-secondary text-sm md:text-base leading-relaxed">
-                  The same format of customer research you&rsquo;ll receive: buyer avatar, voice&#8209;of&#8209;customer
-                  language, the three angles nobody else is running. Built for Blume as a fan, not a client.
+                  The same depth of customer research you&rsquo;ll receive: psychographics, triggers,
+                  voice&#8209;of&#8209;customer language. This is the actual brief we built for Sepura before
+                  we rebuilt their account around it &mdash; the one that took ROAS from 1.03 to 3.44.
                 </p>
               </div>
               <div
@@ -645,12 +707,12 @@ export default function BeatYourBestAdPage() {
                 }}
               >
                 <iframe
-                  src="https://www.canva.com/design/DAHHzsmFOiw/Lst8z7_873qV5g2loEcwuQ/view?embed"
+                  src="https://www.canva.com/design/DAHHz3V7ugo/dyp5lmbsyIS8LELXUoSc4w/view?embed"
                   className="absolute inset-0 w-full h-full"
                   frameBorder="0"
                   allowFullScreen
                   loading="lazy"
-                  title="Blume avatar & psychology breakdown"
+                  title="Sepura Home customer avatar brief"
                 />
               </div>
             </div>
@@ -878,7 +940,7 @@ export default function BeatYourBestAdPage() {
               {
                 industry: "Sepura Home · Garbage Disposal Alternative",
                 headline: "ROAS 1.03 → 3.44 in 60 days.",
-                body: "Priced at 2× the market leader. Previous agency delivered 1.03 ROAS. We rebuilt the funnel — messaging, audiences, landing pages.",
+                body: "Priced at 2× the market leader. Previous agency delivered 1.03 ROAS. We started with the customer — built the avatar brief, mapped the belief stack, then rebuilt the ads around what was actually true. ROAS hit 3.44 in 60 days.",
                 stat: { label: "ROAS Improvement", value: "+234%" },
                 image: "/images/case-01.jpeg",
               },
