@@ -16,7 +16,7 @@ const SPOTS_LEFT = 5;
 export const metadata: Metadata = {
   title: "Beat Your Best Meta Ad — Or You Don't Pay | Scale Science",
   description:
-    "Send us your best-performing Meta ad. In 5 business days we'll produce a new one designed to beat it. If ours doesn't win on ROAS, CPA, or amount spent — full refund. $97.",
+    "Send us your best-performing Meta ad. In 5 business days we'll produce a new one designed to beat it. Run both inside one adset for 7 days — if ours doesn't win on spend AND ROAS/CPA, full refund. $97.",
   alternates: { canonical: "https://scalescientist.com/beat-your-best-ad" },
   openGraph: {
     title: "Beat Your Best Meta Ad — Or You Don't Pay",
@@ -40,13 +40,6 @@ const proofScreenshots = [
     file: "ads-proof-03.png",
     alt: "Meta Ads Manager: winning video ad drove 1.29 ROAS on $4,653.99 spend, producing $5,982.77 revenue",
   },
-];
-
-const briefPreviews = [
-  { file: "sepura-brief-01.png", alt: "Sepura Home Customer Avatar Brief — page 1 preview" },
-  { file: "sepura-brief-02.png", alt: "Sepura Home Customer Avatar Brief — page 2 preview" },
-  { file: "sepura-brief-03.png", alt: "Sepura Home Customer Avatar Brief — page 3 preview" },
-  { file: "sepura-brief-04.png", alt: "Sepura Home Customer Avatar Brief — page 4 preview" },
 ];
 
 const caseStrip = [
@@ -75,12 +68,12 @@ const steps = [
   {
     n: "04",
     title: "You test ours against yours",
-    body: "Same budget. Same audience. Minimum 7 days. You pick the KPI — ROAS, CPA, or amount spent.",
+    body: "Spin up a new adset inside your existing campaign. Publish both ads in it — yours as a fresh post (no Post ID) so both start at zero social proof. Run for 7 days.",
   },
   {
     n: "05",
     title: "We win or you get your money back",
-    body: "If ours doesn't beat yours, full refund. You keep the new ad. You keep the research. You keep everything.",
+    body: "Our ad has to win on more spend AND better ROAS or CPA. If it doesn't clear both bars in 7 days, screenshot the adset, email me, and I refund 100% — same week.",
   },
 ];
 
@@ -109,19 +102,19 @@ const faqs = [
   },
   {
     q: "What if I'm spending less than $5K/mo on Meta?",
-    a: "The challenge still runs, but your test window may need to be longer than 7 days to get a meaningful sample size. We'll flag this before you buy if it looks like an issue.",
+    a: "The challenge still runs, but the 7-day window may produce a small sample at low budgets. We'll flag this before you buy if it looks like the test won't be conclusive.",
   },
   {
     q: "What counts as \"winning\"?",
-    a: "You pick one KPI before the test starts: ROAS, CPA, or amount spent. Our ad needs to beat yours on that metric over at least 7 days of equal-spend testing. That's it.",
+    a: "Inside the new adset, our ad needs to beat yours on BOTH of the following over 7 days: more total spend allocated by Meta, AND a better ROAS or CPA. If we don't clear both bars, you screenshot the adset, email me, and I refund 100% of your money.",
   },
   {
-    q: "Why 'amount spent' as a KPI?",
-    a: "When you run two ads in the same Meta campaign with the same budget, Meta's algorithm automatically pushes more spend toward the ad it thinks is performing better. So if Meta spent more on ours than on yours over the test window, that's Meta's own algorithm telling you our creative is the stronger one. It's a clean directional signal — and it's the KPI most ecom operators already trust.",
+    q: "Why does my ad have to be published without a Post ID?",
+    a: "If you reuse a Post ID, your ad ports over all of its existing likes, comments, and shares — that's social proof our brand-new ad can't match. Publishing yours as a fresh post puts both ads at zero, so we're competing on the creative itself, not on accumulated history.",
   },
   {
-    q: "What if we agree on CPA and my CPA fluctuates wildly week-to-week?",
-    a: "We'll look at the existing 30-day CPA on your control and set the win condition against that baseline. If your numbers are genuinely that volatile, we'll suggest ROAS or amount spent as a cleaner test.",
+    q: "Why does the win require more spend AND better ROAS/CPA — not just one?",
+    a: "When two ads run in the same adset, Meta's algorithm pushes more budget toward the one it thinks is performing better. More spend means Meta's own algorithm picked our ad. Better ROAS or CPA means it actually paid off. Requiring both is the strictest version of the test — and the only version that proves our creative is genuinely stronger.",
   },
   {
     q: "Do I need to provide footage?",
@@ -236,50 +229,6 @@ export default function BeatYourBestAdPage() {
         </div>
       </section>
 
-      {/* Proof: Meta Ads Manager screenshots */}
-      <section className="pb-10 md:pb-14 px-6">
-        <div className="max-w-[1216px] mx-auto">
-          <div className="flex flex-col items-center text-center gap-3 mb-8 md:mb-10">
-            <p
-              className="text-[11px] font-semibold uppercase text-accent"
-              style={{ letterSpacing: "0.14em" }}
-            >
-              Receipts
-            </p>
-            <h2
-              className="font-medium tracking-tight leading-[1.08] text-primary max-w-3xl"
-              style={{ fontSize: "clamp(26px, 3.6vw, 40px)" }}
-            >
-              Real accounts.{" "}
-              <em className="font-serif italic text-accent font-normal">Real numbers.</em>
-            </h2>
-            <p className="text-secondary max-w-xl leading-relaxed text-sm md:text-base">
-              Pulled straight from Meta Ads Manager. These are ads we&rsquo;ve produced and shipped &mdash;
-              no filters, no mock-ups.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {proofScreenshots.map((s) => (
-              <div
-                key={s.file}
-                className="rounded-xl overflow-hidden border"
-                style={{ backgroundColor: "#FFFFFF", borderColor: "#E0DDD6" }}
-              >
-                <Image
-                  src={`${BASE}/images/${s.file}`}
-                  alt={s.alt}
-                  width={680}
-                  height={400}
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="w-full h-auto block"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* 2. Win/Loss Scoreboard */}
       <section className="pb-10 md:pb-14 px-6">
         <div className="max-w-[720px] mx-auto">
@@ -358,6 +307,50 @@ export default function BeatYourBestAdPage() {
         </div>
       </section>
 
+      {/* Proof: Meta Ads Manager screenshots */}
+      <section className="pb-10 md:pb-14 px-6">
+        <div className="max-w-[1216px] mx-auto">
+          <div className="flex flex-col items-center text-center gap-3 mb-8 md:mb-10">
+            <p
+              className="text-[11px] font-semibold uppercase text-accent"
+              style={{ letterSpacing: "0.14em" }}
+            >
+              Receipts
+            </p>
+            <h2
+              className="font-medium tracking-tight leading-[1.08] text-primary max-w-3xl"
+              style={{ fontSize: "clamp(26px, 3.6vw, 40px)" }}
+            >
+              Real accounts.{" "}
+              <em className="font-serif italic text-accent font-normal">Real numbers.</em>
+            </h2>
+            <p className="text-secondary max-w-xl leading-relaxed text-sm md:text-base">
+              Pulled straight from Meta Ads Manager. These are ads we&rsquo;ve produced and shipped &mdash;
+              no filters, no mock-ups.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {proofScreenshots.map((s) => (
+              <div
+                key={s.file}
+                className="rounded-xl overflow-hidden border"
+                style={{ backgroundColor: "#FFFFFF", borderColor: "#E0DDD6" }}
+              >
+                <Image
+                  src={`${BASE}/images/${s.file}`}
+                  alt={s.alt}
+                  width={680}
+                  height={400}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="w-full h-auto block"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Video overview */}
       <section className="pt-6 md:pt-10 pb-16 md:pb-20 px-6">
         <div className="max-w-[1100px] mx-auto flex flex-col items-center gap-8 md:gap-10">
@@ -428,6 +421,178 @@ export default function BeatYourBestAdPage() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. What you get */}
+      <section
+        className="py-20 md:py-24 px-6"
+        style={{ backgroundColor: "#FFFFFF", borderTop: "1px solid #E0DDD6", borderBottom: "1px solid #E0DDD6" }}
+      >
+        <div className="max-w-[1216px] mx-auto">
+          <div className="flex flex-col items-center text-center gap-4 mb-14">
+            <p
+              className="text-[11px] font-semibold uppercase text-accent"
+              style={{ letterSpacing: "0.14em" }}
+            >
+              What you get
+            </p>
+            <h2
+              className="font-medium tracking-tight leading-[1.08] text-primary max-w-3xl"
+              style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
+            >
+              What&rsquo;s in{" "}
+              <em className="font-serif italic text-accent font-normal">the box.</em>
+            </h2>
+            <p className="text-secondary max-w-xl leading-relaxed">
+              All delivered within 5 business days.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {deliverables.map((d) => (
+              <div
+                key={d.n}
+                className="rounded-xl p-8 flex flex-col gap-5"
+                style={{ backgroundColor: "#F5F3EE", border: "1px solid #E0DDD6" }}
+              >
+                <div
+                  className="w-11 h-11 rounded-md flex items-center justify-center font-serif italic text-lg"
+                  style={{ backgroundColor: "#2D5C3F", color: "#F5F3EE" }}
+                >
+                  {d.n.replace("0", "")}
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-lg md:text-xl font-semibold text-primary leading-snug">
+                    {d.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-secondary">{d.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex justify-center mt-12">
+            <PrimaryCTA />
+          </div>
+        </div>
+      </section>
+
+      {/* Sample deliverables — IG reel + Canva research report */}
+      <section
+        className="py-20 md:py-24 px-6"
+        style={{
+          backgroundColor: "#EDE9E0",
+          borderTop: "1px solid #E0DDD6",
+          borderBottom: "1px solid #E0DDD6",
+        }}
+      >
+        <div className="max-w-[1216px] mx-auto">
+          <div className="flex flex-col items-center text-center gap-4 mb-12 md:mb-16 max-w-3xl mx-auto">
+            <p
+              className="text-[11px] font-semibold uppercase text-accent"
+              style={{ letterSpacing: "0.14em" }}
+            >
+              Sample deliverables
+            </p>
+            <h2
+              className="font-medium tracking-tight leading-[1.08] text-primary"
+              style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
+            >
+              See the bar{" "}
+              <em className="font-serif italic text-accent font-normal">
+                we&rsquo;re setting.
+              </em>
+            </h2>
+            <p className="text-secondary text-base md:text-lg leading-relaxed">
+              The winning ad and the psychology report from past work. Same format you&rsquo;ll receive
+              on day five of your challenge.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 items-start">
+            {/* The winning ad */}
+            <div className="lg:col-span-5 flex flex-col gap-5">
+              <div className="flex flex-col gap-2">
+                <p
+                  className="text-[11px] font-semibold uppercase text-accent"
+                  style={{ letterSpacing: "0.14em" }}
+                >
+                  01 &mdash; The winning ad
+                </p>
+                <h3
+                  className="font-medium tracking-tight leading-[1.12] text-primary"
+                  style={{ fontSize: "clamp(24px, 2.6vw, 32px)" }}
+                >
+                  Sepura Home &mdash;{" "}
+                  <em className="font-serif italic text-accent font-normal">27M views.</em>
+                </h3>
+                <p className="text-secondary text-sm md:text-base leading-relaxed">
+                  Script, hook, and edit built from scratch. Scaled to 27M organic reach on
+                  Instagram alone &mdash; the same format of ad we&rsquo;ll produce for your challenge.
+                </p>
+              </div>
+              <div
+                className="relative w-full mx-auto rounded-xl overflow-hidden border"
+                style={{
+                  maxWidth: "420px",
+                  aspectRatio: "9 / 16",
+                  borderColor: "#E0DDD6",
+                  backgroundColor: "#1C1C1A",
+                }}
+              >
+                <iframe
+                  src="https://www.instagram.com/reel/C9iW2vbSMRv/embed"
+                  className="absolute inset-0 w-full h-full"
+                  frameBorder="0"
+                  scrolling="no"
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  title="Sepura Home Instagram reel — 27M views"
+                />
+              </div>
+            </div>
+
+            {/* The customer avatar brief */}
+            <div className="lg:col-span-7 flex flex-col gap-5">
+              <div className="flex flex-col gap-2">
+                <p
+                  className="text-[11px] font-semibold uppercase text-accent"
+                  style={{ letterSpacing: "0.14em" }}
+                >
+                  02 &mdash; The Customer Avatar Brief
+                </p>
+                <h3
+                  className="font-medium tracking-tight leading-[1.12] text-primary"
+                  style={{ fontSize: "clamp(24px, 2.6vw, 32px)" }}
+                >
+                  The brief behind{" "}
+                  <em className="font-serif italic text-accent font-normal">Sepura Home.</em>
+                </h3>
+                <p className="text-secondary text-sm md:text-base leading-relaxed">
+                  The same depth of customer research you&rsquo;ll receive: psychographics, triggers,
+                  voice&#8209;of&#8209;customer language. This is the actual brief we built for Sepura before
+                  we rebuilt their account around it &mdash; the one that took ROAS from 1.03 to 3.44.
+                </p>
+              </div>
+              <div
+                className="relative w-full rounded-xl overflow-hidden border"
+                style={{
+                  aspectRatio: "4 / 3",
+                  borderColor: "#E0DDD6",
+                  backgroundColor: "#FFFFFF",
+                }}
+              >
+                <iframe
+                  src="https://www.canva.com/design/DAHHz3V7ugo/dyp5lmbsyIS8LELXUoSc4w/view?embed"
+                  className="absolute inset-0 w-full h-full"
+                  frameBorder="0"
+                  allowFullScreen
+                  loading="lazy"
+                  title="Sepura Home customer avatar brief"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -553,232 +718,6 @@ export default function BeatYourBestAdPage() {
         </div>
       </section>
 
-      {/* 6. What you get */}
-      <section
-        className="py-20 md:py-24 px-6"
-        style={{ backgroundColor: "#FFFFFF", borderTop: "1px solid #E0DDD6", borderBottom: "1px solid #E0DDD6" }}
-      >
-        <div className="max-w-[1216px] mx-auto">
-          <div className="flex flex-col items-center text-center gap-4 mb-14">
-            <p
-              className="text-[11px] font-semibold uppercase text-accent"
-              style={{ letterSpacing: "0.14em" }}
-            >
-              What you get
-            </p>
-            <h2
-              className="font-medium tracking-tight leading-[1.08] text-primary max-w-3xl"
-              style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
-            >
-              What&rsquo;s in{" "}
-              <em className="font-serif italic text-accent font-normal">the box.</em>
-            </h2>
-            <p className="text-secondary max-w-xl leading-relaxed">
-              All delivered within 5 business days.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {deliverables.map((d) => (
-              <div
-                key={d.n}
-                className="rounded-xl p-8 flex flex-col gap-5"
-                style={{ backgroundColor: "#F5F3EE", border: "1px solid #E0DDD6" }}
-              >
-                <div
-                  className="w-11 h-11 rounded-md flex items-center justify-center font-serif italic text-lg"
-                  style={{ backgroundColor: "#2D5C3F", color: "#F5F3EE" }}
-                >
-                  {d.n.replace("0", "")}
-                </div>
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-lg md:text-xl font-semibold text-primary leading-snug">
-                    {d.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-secondary">{d.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex justify-center mt-12">
-            <PrimaryCTA />
-          </div>
-        </div>
-      </section>
-
-      {/* Brief preview — page previews from the Sepura avatar brief */}
-      <section className="py-20 md:py-24 px-6">
-        <div className="max-w-[1216px] mx-auto">
-          <div className="flex flex-col items-center text-center gap-4 mb-12 max-w-3xl mx-auto">
-            <p
-              className="text-[11px] font-semibold uppercase text-accent"
-              style={{ letterSpacing: "0.14em" }}
-            >
-              The brief
-            </p>
-            <h2
-              className="font-medium tracking-tight leading-[1.08] text-primary"
-              style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
-            >
-              What the brief{" "}
-              <em className="font-serif italic text-accent font-normal">
-                actually looks like.
-              </em>
-            </h2>
-            <p className="text-secondary text-base md:text-lg leading-relaxed">
-              Here&rsquo;s the avatar brief we built for Sepura Home before we ran a single ad &mdash;
-              the same depth your $97 buys.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 max-w-[1080px] mx-auto">
-            {briefPreviews.map((p) => (
-              <div
-                key={p.file}
-                className="rounded-xl overflow-hidden border"
-                style={{
-                  backgroundColor: "#FFFFFF",
-                  borderColor: "#E0DDD6",
-                  boxShadow: "0 8px 28px rgba(28,28,26,0.06)",
-                }}
-              >
-                <Image
-                  src={`${BASE}/images/${p.file}`}
-                  alt={p.alt}
-                  width={1200}
-                  height={750}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="w-full h-auto block"
-                />
-              </div>
-            ))}
-          </div>
-
-          <p className="text-center text-xs md:text-sm mt-8" style={{ color: "#6B6B66", letterSpacing: "0.02em" }}>
-            Customer Avatar Brief &middot; 15 pages &middot; prepared for Sepura Home, Q2 2026
-          </p>
-        </div>
-      </section>
-
-      {/* Sample deliverables — IG reel + Canva research report */}
-      <section
-        className="py-20 md:py-24 px-6"
-        style={{
-          backgroundColor: "#EDE9E0",
-          borderTop: "1px solid #E0DDD6",
-          borderBottom: "1px solid #E0DDD6",
-        }}
-      >
-        <div className="max-w-[1216px] mx-auto">
-          <div className="flex flex-col items-center text-center gap-4 mb-12 md:mb-16 max-w-3xl mx-auto">
-            <p
-              className="text-[11px] font-semibold uppercase text-accent"
-              style={{ letterSpacing: "0.14em" }}
-            >
-              Sample deliverables
-            </p>
-            <h2
-              className="font-medium tracking-tight leading-[1.08] text-primary"
-              style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
-            >
-              See the bar{" "}
-              <em className="font-serif italic text-accent font-normal">
-                we&rsquo;re setting.
-              </em>
-            </h2>
-            <p className="text-secondary text-base md:text-lg leading-relaxed">
-              The winning ad and the psychology report from past work. Same format you&rsquo;ll receive
-              on day five of your challenge.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 items-start">
-            {/* The winning ad */}
-            <div className="lg:col-span-5 flex flex-col gap-5">
-              <div className="flex flex-col gap-2">
-                <p
-                  className="text-[11px] font-semibold uppercase text-accent"
-                  style={{ letterSpacing: "0.14em" }}
-                >
-                  01 &mdash; The winning ad
-                </p>
-                <h3
-                  className="font-medium tracking-tight leading-[1.12] text-primary"
-                  style={{ fontSize: "clamp(24px, 2.6vw, 32px)" }}
-                >
-                  Sepura Home &mdash;{" "}
-                  <em className="font-serif italic text-accent font-normal">27M views.</em>
-                </h3>
-                <p className="text-secondary text-sm md:text-base leading-relaxed">
-                  Script, hook, and edit built from scratch. Scaled to 27M organic reach on
-                  Instagram alone &mdash; the same format of ad we&rsquo;ll produce for your challenge.
-                </p>
-              </div>
-              <div
-                className="relative w-full mx-auto rounded-xl overflow-hidden border"
-                style={{
-                  maxWidth: "420px",
-                  aspectRatio: "9 / 16",
-                  borderColor: "#E0DDD6",
-                  backgroundColor: "#1C1C1A",
-                }}
-              >
-                <iframe
-                  src="https://www.instagram.com/reel/C9iW2vbSMRv/embed"
-                  className="absolute inset-0 w-full h-full"
-                  frameBorder="0"
-                  scrolling="no"
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  title="Sepura Home Instagram reel — 27M views"
-                />
-              </div>
-            </div>
-
-            {/* The customer avatar brief */}
-            <div className="lg:col-span-7 flex flex-col gap-5">
-              <div className="flex flex-col gap-2">
-                <p
-                  className="text-[11px] font-semibold uppercase text-accent"
-                  style={{ letterSpacing: "0.14em" }}
-                >
-                  02 &mdash; The Customer Avatar Brief
-                </p>
-                <h3
-                  className="font-medium tracking-tight leading-[1.12] text-primary"
-                  style={{ fontSize: "clamp(24px, 2.6vw, 32px)" }}
-                >
-                  The brief behind{" "}
-                  <em className="font-serif italic text-accent font-normal">Sepura Home.</em>
-                </h3>
-                <p className="text-secondary text-sm md:text-base leading-relaxed">
-                  The same depth of customer research you&rsquo;ll receive: psychographics, triggers,
-                  voice&#8209;of&#8209;customer language. This is the actual brief we built for Sepura before
-                  we rebuilt their account around it &mdash; the one that took ROAS from 1.03 to 3.44.
-                </p>
-              </div>
-              <div
-                className="relative w-full rounded-xl overflow-hidden border"
-                style={{
-                  aspectRatio: "4 / 3",
-                  borderColor: "#E0DDD6",
-                  backgroundColor: "#FFFFFF",
-                }}
-              >
-                <iframe
-                  src="https://www.canva.com/design/DAHHz3V7ugo/dyp5lmbsyIS8LELXUoSc4w/view?embed"
-                  className="absolute inset-0 w-full h-full"
-                  frameBorder="0"
-                  allowFullScreen
-                  loading="lazy"
-                  title="Sepura Home customer avatar brief"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* 7. The guarantee */}
       <section
         className="py-20 md:py-24 px-6"
@@ -821,20 +760,34 @@ export default function BeatYourBestAdPage() {
               }}
             />
             <div className="relative flex flex-col gap-5 text-base md:text-lg leading-relaxed" style={{ color: "rgba(245,243,238,0.85)" }}>
-              <p>We&rsquo;ll produce a new Meta ad designed to beat the one you&rsquo;re currently running.</p>
+              <p className="font-semibold" style={{ color: "#F5F3EE" }}>The test runs in your account, on your terms. Here&rsquo;s exactly how it works.</p>
               <p>
-                You test it against yours for at least 7 days, at equal daily budget, to the same
-                audience.
+                You create a{" "}
+                <span className="font-semibold" style={{ color: "#F5F3EE" }}>new adset</span>{" "}
+                inside your existing campaign. Inside that adset, you publish two ads: your control,
+                and the one we built.
               </p>
               <p>
-                You choose the win condition before the test starts:{" "}
-                <span className="font-semibold" style={{ color: "#F5F3EE" }}>ROAS, CPA, or amount spent.</span>
+                You publish your ad{" "}
+                <span className="font-semibold" style={{ color: "#F5F3EE" }}>without using a Post ID</span>{" "}
+                &mdash; so both ads start at zero likes, zero comments, zero social proof. Same starting line.
               </p>
               <p>
-                If our ad doesn&rsquo;t beat yours on that metric,{" "}
-                <span className="font-semibold" style={{ color: "#F5F3EE" }}>
-                  you get every dollar back.
-                </span>
+                Run it for{" "}
+                <span className="font-semibold" style={{ color: "#F5F3EE" }}>7 days.</span>{" "}
+                Meta&rsquo;s algorithm will allocate budget toward whichever ad it thinks is performing better.
+              </p>
+              <p>
+                For us to win, our ad needs to beat yours on{" "}
+                <span className="font-semibold" style={{ color: "#F5F3EE" }}>both</span>{" "}
+                of the following: more total spend allocated by Meta,{" "}
+                <span className="font-semibold" style={{ color: "#F5F3EE" }}>and</span>{" "}
+                a better ROAS or CPA.
+              </p>
+              <p>
+                If our ad doesn&rsquo;t clear both bars after 7 days, you screenshot the adset
+                results, email them to me, and I refund{" "}
+                <span className="font-semibold" style={{ color: "#F5F3EE" }}>100% of your money.</span>
               </p>
               <p>Keep the ad. Keep the research. Keep the playbook.</p>
               <p className="font-serif italic text-xl md:text-2xl" style={{ color: "#5C8F6E" }}>
@@ -854,10 +807,11 @@ export default function BeatYourBestAdPage() {
               </p>
               <ul className="flex flex-col gap-2 text-sm md:text-base" style={{ color: "rgba(245,243,238,0.75)" }}>
                 {[
-                  "Test runs at least 7 days at equal daily budget",
-                  "Both ads run to the same audience and campaign structure",
-                  "We agree on the win KPI before the test starts, in writing",
-                  "Sample size needs to be meaningful — we'll help you confirm this, usually 50+ results per ad",
+                  "New adset in your existing campaign — both ads live inside it together",
+                  "Your ad is published as a new post, not a Post ID, so both ads start at zero social proof",
+                  "Test runs 7 days, no early calls",
+                  "Our ad must win on more spend AND better ROAS or CPA — not just one of the two",
+                  "Screenshot the adset results, email me, and I refund 100% the same week",
                 ].map((r) => (
                   <li key={r} className="flex items-start gap-3">
                     <span
@@ -869,7 +823,7 @@ export default function BeatYourBestAdPage() {
                 ))}
               </ul>
               <p className="text-sm" style={{ color: "rgba(245,243,238,0.5)" }}>
-                That&rsquo;s it. Those rules protect both of us from a test that doesn&rsquo;t actually prove anything.
+                Same campaign, same audience, same starting line. The only variable is the creative.
               </p>
             </div>
           </div>
