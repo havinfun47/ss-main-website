@@ -31,7 +31,7 @@ const caseStrip = [
   { brand: "Sepura Home", result: "ROAS 1.03 → 3.44 in 60 days" },
   { brand: "myco:soul", result: "Meta revenue +1,076% in 90 days" },
   { brand: "Health & wellness brand", result: "Scaled spend 4.3×, ROAS held" },
-  { brand: "Kitchen appliance brand", result: "$0 → $122K in 60 days" },
+  { brand: "Kitchen appliance brand", result: "$0 → $122K in 60 days at 3.17 ROAS" },
 ];
 
 const steps = [
@@ -412,34 +412,54 @@ export default function BeatYourBestAdPage() {
               className="font-medium tracking-tight leading-[1.08] text-primary"
               style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
             >
-              Why we&rsquo;re willing to{" "}
+              Why we can make{" "}
               <em className="font-serif italic text-accent font-normal">
-                put money on this.
+                this guarantee.
               </em>
             </h2>
           </div>
 
           <div className="flex flex-col gap-6 text-secondary text-base md:text-lg leading-relaxed">
+            <p className="text-primary font-semibold">Let me be straight with you.</p>
             <p>
-              Most agencies wouldn&rsquo;t touch a guarantee like this. We will, for three reasons.
+              We&rsquo;ve managed{" "}
+              <span className="font-serif italic text-accent text-2xl md:text-3xl font-normal align-baseline">
+                $346,465
+              </span>{" "}
+              in Meta ad spend across our client portfolio. That&rsquo;s not Fortune 500 numbers &mdash;
+              but it&rsquo;s four documented case studies with real results, and enough live&#8209;fire
+              reps to know what works and what doesn&rsquo;t.
             </p>
             <p>
-              <span className="text-primary font-semibold">One:</span> we manage six&#8209; and
-              seven&#8209;figure monthly budgets for ecom brands. We&rsquo;ve seen what breaks and
-              what scales. Writing a better ad than the one you&rsquo;re running isn&rsquo;t a shot in the
-              dark for us. It&rsquo;s Tuesday.
+              The bigger agencies won&rsquo;t offer a guarantee like this because the math doesn&rsquo;t
+              work for them. At 50 clients, one refund a month is a rounding error. At our size, one
+              refund actually costs us something.
+            </p>
+            <p className="text-primary font-semibold">That&rsquo;s exactly why we can offer it.</p>
+            <p>
+              We&rsquo;d rather put money on the table and earn the next case study than hide behind a
+              pitch deck. If our ad beats yours, that&rsquo;s a client we wanted anyway. If we lose, we
+              eat the cost, learn from it, and the refund proves we weren&rsquo;t bluffing.
             </p>
             <p>
-              <span className="text-primary font-semibold">Two:</span> we don&rsquo;t start with clever
-              headlines. We start with your customer. Two days of research before anyone writes a
-              word. By the time we produce the ad, we know your buyer better than most of your team
-              does.
+              We don&rsquo;t start with clever headlines. We start with your customer. Two days of
+              research before anyone writes a word. Reviews, Reddit, YouTube comments,
+              voice&#8209;of&#8209;customer language. By the time we produce the ad, we know your
+              buyer better than most of your team does.
             </p>
-            <p>
-              <span className="text-primary font-semibold">Three:</span> if our ad wins, you probably
-              want us to run the rest of your account. That&rsquo;s the only reason we can offer this at
-              $497. It&rsquo;s not the whole business &mdash; it&rsquo;s the start of a conversation.
-            </p>
+            <p>That&rsquo;s not a flex. That&rsquo;s just the work.</p>
+            <div
+              className="mt-4 rounded-xl p-6 md:p-8"
+              style={{ backgroundColor: "#FFFFFF", border: "1px solid #E0DDD6" }}
+            >
+              <p className="font-serif italic text-xl md:text-2xl text-primary leading-snug">
+                If you&rsquo;re picking between us and a bigger agency &mdash;{" "}
+                <span className="text-accent">
+                  the bigger agency won&rsquo;t offer you this.
+                </span>{" "}
+                That&rsquo;s the whole point.
+              </p>
+            </div>
           </div>
         </div>
       </section>
