@@ -1,0 +1,936 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import FAQAccordion from "./FAQAccordion";
+
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+// Editable fields — update these by hand as the offer runs
+const STRIPE_HREF = "https://checkout.stripe.com/REPLACE-ME";
+const CALENDLY_HREF = "https://calendly.com/graydon-scalescientist/30min";
+const WINS = 0;
+const LOSSES = 0;
+const LAST_UPDATED = "Launch day";
+const SPOTS_LEFT = 2;
+
+export const metadata: Metadata = {
+  title: "Beat Your Best Meta Ad — Or You Don't Pay | Scale Science",
+  description:
+    "Send us your best-performing Meta ad. In 5 business days we'll produce a new one designed to beat it. If ours doesn't win on ROAS, CPA, or CTR — full refund. $497.",
+  alternates: { canonical: "https://scalescientist.com/beat-your-best-ad" },
+  openGraph: {
+    title: "Beat Your Best Meta Ad — Or You Don't Pay",
+    description:
+      "Send us your best-performing Meta ad. 5 business days. We beat it or you don't pay.",
+    url: "https://scalescientist.com/beat-your-best-ad",
+    type: "website",
+  },
+};
+
+const caseStrip = [
+  { brand: "Sepura Home", result: "ROAS 1.03 → 3.44 in 60 days" },
+  { brand: "myco:soul", result: "Meta revenue +1,076% in 90 days" },
+  { brand: "Health & wellness brand", result: "Scaled spend 4.3×, ROAS held" },
+  { brand: "Kitchen appliance brand", result: "$0 → $122K in 60 days" },
+];
+
+const steps = [
+  {
+    n: "01",
+    title: "You send us your winning ad",
+    body: "Share the Meta ad that's performing best for you right now. Video or static, any angle. Include the last 30 days of performance data (ROAS, CPA, CTR, spend).",
+  },
+  {
+    n: "02",
+    title: "We research your market",
+    body: "Two full days of customer research. Reviews, Reddit, YouTube comments, competitor ads. We find the language your buyers actually use and the angles nobody else is running.",
+  },
+  {
+    n: "03",
+    title: "We produce a new video ad",
+    body: "Full production. New script. New hook. Edited video using your existing footage, AI-generated b-roll, or both. Ready to deploy the moment you upload it.",
+  },
+  {
+    n: "04",
+    title: "You test ours against yours",
+    body: "Same budget. Same audience. Minimum 7 days. You pick the KPI — ROAS, CPA, or CTR.",
+  },
+  {
+    n: "05",
+    title: "We win or you get your money back",
+    body: "If ours doesn't beat yours, full refund. You keep the new ad. You keep the research. You keep everything.",
+  },
+];
+
+const deliverables = [
+  {
+    n: "01",
+    title: "Your new Meta ad",
+    body: "Fully produced video ad. Hook, body, CTA. Edited and ready to upload — no additional work on your end. 9:16 and 1:1 versions included.",
+  },
+  {
+    n: "02",
+    title: "Market psychology report",
+    body: "The customer research that drives the ad. Avatar, top pain points, voice-of-customer language, the three angles nobody else is running, and why they'll work. Use it even if our ad loses.",
+  },
+  {
+    n: "03",
+    title: "The scaling playbook",
+    body: "If our ad wins, here's how to scale it without watching CPA collapse. The exact campaign structure, bid strategy, and budget ramp we'd use if it were our account.",
+  },
+];
+
+const faqs = [
+  {
+    q: "What if my current ad is already crushing it?",
+    a: "Good. That means you have a real control to beat, which means if we win, the upside is enormous. If we lose, you get your money back and a full research report on why your winner works — so you can build more like it.",
+  },
+  {
+    q: "What if I'm spending less than $5K/mo on Meta?",
+    a: "The challenge still runs, but your test window may need to be longer than 7 days to get a meaningful sample size. We'll flag this before you buy if it looks like an issue.",
+  },
+  {
+    q: "What counts as \"winning\"?",
+    a: "You pick one KPI before the test starts: ROAS, CPA, or CTR. Our ad needs to beat yours on that metric over at least 7 days of equal-spend testing. That's it.",
+  },
+  {
+    q: "Why not \"amount spent\" or \"revenue\"?",
+    a: "Because Meta automatically scales spend toward winning ads — which means our ad could win because it's better, and still technically \"lose\" on revenue if your control happened to get scaled harder. ROAS, CPA, and CTR are clean creative-quality metrics. They prove the ad actually works.",
+  },
+  {
+    q: "What if we agree on CPA and my CPA fluctuates wildly week-to-week?",
+    a: "We'll look at the existing 30-day CPA on your control and set the win condition against that baseline. If your numbers are genuinely that volatile, we'll suggest CTR as a cleaner test.",
+  },
+  {
+    q: "Do I need to provide footage?",
+    a: "Helpful but not required. We can work with your existing UGC library, product shots, and brand assets — or produce the entire ad using AI-generated visuals if you don't have footage to work with.",
+  },
+  {
+    q: "What platforms does this work for?",
+    a: "Meta only (Facebook + Instagram). That's what we do. If you want help with TikTok, Google, or anywhere else — not us, and we'll tell you that on the call instead of taking your money.",
+  },
+  {
+    q: "What happens after you beat my ad?",
+    a: "Up to you. Some brands want us to scale the winner, produce more variations, and eventually run their whole Meta account. Others take the ad and research and run it themselves. Zero pressure either way.",
+  },
+  {
+    q: "Will you sign an NDA?",
+    a: "Yes. Happy to, before we see anything.",
+  },
+  {
+    q: "What about my data and the ad copy after the challenge?",
+    a: "It's yours. We don't share, resell, or reuse client ads, research, or data. Ever.",
+  },
+  {
+    q: "How long until I see results?",
+    a: "Ad delivered in 5 business days. Test runs 7 days minimum. So: meaningful performance data inside of 3 weeks from the day you buy.",
+  },
+  {
+    q: "Can I buy multiple challenges?",
+    a: "Not in the same month. We cap at a set number of slots per month to protect delivery quality. If you want to work with us at scale, book a strategy call instead — link below.",
+  },
+];
+
+function ArrowRight() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path
+        d="M3 8h10M9 4l4 4-4 4"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function PrimaryCTA({ className = "" }: { className?: string }) {
+  return (
+    <Link
+      href={STRIPE_HREF}
+      className={`inline-flex items-center justify-center gap-2 bg-accent text-white px-8 py-4 rounded text-sm font-semibold hover:bg-accent/90 transition-colors ${className}`}
+    >
+      Beat My Best Ad — $497
+      <ArrowRight />
+    </Link>
+  );
+}
+
+export default function BeatYourBestAdPage() {
+  return (
+    <main className="min-h-screen bg-bg text-primary">
+      {/* Minimal top bar */}
+      <header className="px-6 pt-6 pb-2">
+        <div className="max-w-[1216px] mx-auto flex items-center justify-between">
+          <Link href="/" className="inline-block">
+            <Image
+              src={`${BASE}/images/scale-science-logo.png`}
+              alt="Scale Science"
+              width={160}
+              height={40}
+              className="h-8 w-auto"
+            />
+          </Link>
+          <Link
+            href="/"
+            className="text-xs md:text-sm font-medium text-secondary hover:text-primary transition-colors"
+          >
+            Back to main site →
+          </Link>
+        </div>
+      </header>
+
+      {/* 1. Hero */}
+      <section className="pt-10 md:pt-20 pb-12 md:pb-16 px-6">
+        <div className="max-w-[1100px] mx-auto flex flex-col items-center text-center gap-7 md:gap-9">
+          <div
+            className="inline-flex items-center gap-2 rounded-full px-4 py-1.5"
+            style={{ border: "1px solid #E0DDD6", backgroundColor: "#FFFFFF" }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-accent inline-block" />
+            <span
+              className="text-[11px] font-semibold uppercase text-secondary"
+              style={{ letterSpacing: "0.14em" }}
+            >
+              The Beat Your Best Ad Challenge
+            </span>
+          </div>
+
+          <h1
+            className="tracking-tight leading-[1.05] text-primary font-medium max-w-5xl"
+            style={{ fontSize: "clamp(36px, 6.2vw, 84px)", textWrap: "balance" }}
+          >
+            We&rsquo;ll beat your best Meta ad{" "}
+            <em className="font-serif italic text-accent font-normal">
+              &mdash; or you don&rsquo;t pay.
+            </em>
+          </h1>
+
+          <p className="text-secondary text-base md:text-lg leading-relaxed max-w-2xl">
+            Send us the ad that&rsquo;s currently winning for your ecom brand. In 5 business days
+            we&rsquo;ll produce a new one designed to beat it. Test them head&#8209;to&#8209;head. If ours
+            doesn&rsquo;t win on ROAS, CPA, or CTR &mdash; full refund. Keep the ad and the research anyway.
+          </p>
+
+          <div className="flex flex-col items-center gap-3 w-full sm:w-auto">
+            <PrimaryCTA />
+            <p className="text-xs text-tertiary">
+              100% guarantee &middot; 5 business day turnaround &middot; {SPOTS_LEFT} spots left this month
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Win/Loss Scoreboard */}
+      <section className="pb-12 md:pb-16 px-6">
+        <div className="max-w-[1100px] mx-auto">
+          <div
+            className="rounded-2xl overflow-hidden relative"
+            style={{ backgroundColor: "#1C1C1A", border: "1px solid #2D5C3F" }}
+          >
+            <div
+              className="absolute pointer-events-none"
+              style={{
+                top: "-120px",
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: "520px",
+                height: "520px",
+                borderRadius: "999px",
+                background:
+                  "radial-gradient(circle, rgba(45,92,63,0.45) 0%, rgba(45,92,63,0) 70%)",
+              }}
+            />
+            <div className="relative px-6 md:px-10 py-10 md:py-14 flex flex-col items-center text-center gap-6">
+              <p
+                className="text-[11px] font-semibold uppercase"
+                style={{ color: "#9CC7A9", letterSpacing: "0.14em" }}
+              >
+                Challenge record
+              </p>
+              <h2
+                className="font-medium tracking-tight leading-[1.06]"
+                style={{ fontSize: "clamp(28px, 4vw, 48px)", color: "#F5F3EE" }}
+              >
+                Beat Your Best Ad{" "}
+                <em className="font-serif italic font-normal" style={{ color: "#5C8F6E" }}>
+                  scoreboard.
+                </em>
+              </h2>
+
+              <div className="grid grid-cols-2 gap-6 md:gap-16 w-full max-w-xl mt-4">
+                <div className="flex flex-col items-center">
+                  <p
+                    className="text-[11px] font-semibold uppercase"
+                    style={{ color: "rgba(245,243,238,0.4)", letterSpacing: "0.14em" }}
+                  >
+                    Wins
+                  </p>
+                  <p
+                    className="font-serif font-normal leading-none mt-3"
+                    style={{ fontSize: "clamp(64px, 10vw, 120px)", color: "#5C8F6E" }}
+                  >
+                    {WINS}
+                  </p>
+                </div>
+                <div className="flex flex-col items-center border-l" style={{ borderColor: "rgba(245,243,238,0.1)" }}>
+                  <p
+                    className="text-[11px] font-semibold uppercase"
+                    style={{ color: "rgba(245,243,238,0.4)", letterSpacing: "0.14em" }}
+                  >
+                    Losses
+                  </p>
+                  <p
+                    className="font-serif italic font-normal leading-none mt-3"
+                    style={{ fontSize: "clamp(64px, 10vw, 120px)", color: "rgba(245,243,238,0.55)" }}
+                  >
+                    {LOSSES}
+                  </p>
+                </div>
+              </div>
+
+              <p className="text-xs" style={{ color: "rgba(245,243,238,0.35)" }}>
+                Last updated: {LAST_UPDATED}
+              </p>
+
+              <div
+                className="mt-4 inline-flex items-center gap-2 rounded-full px-4 py-1.5"
+                style={{
+                  backgroundColor: "rgba(92,143,110,0.15)",
+                  border: "1px solid rgba(92,143,110,0.35)",
+                }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#5C8F6E" }} />
+                <span
+                  className="text-xs font-semibold"
+                  style={{ color: "#9CC7A9" }}
+                >
+                  First 10 challenges: $497 · After that, price goes up
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Social proof strip */}
+      <section className="py-16 md:py-20 px-6">
+        <div className="max-w-[1216px] mx-auto">
+          <p className="text-center text-secondary text-sm md:text-base mb-8 max-w-2xl mx-auto leading-relaxed">
+            Why we can make this offer:{" "}
+            <span className="text-primary font-semibold">we do this for a living.</span>
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {caseStrip.map((c) => (
+              <div
+                key={c.brand}
+                className="rounded-lg p-5 md:p-6 flex flex-col gap-2"
+                style={{ backgroundColor: "#FFFFFF", border: "1px solid #E0DDD6" }}
+              >
+                <p
+                  className="text-[11px] font-semibold uppercase"
+                  style={{ color: "#4A7C5E", letterSpacing: "0.1em" }}
+                >
+                  {c.brand}
+                </p>
+                <p className="font-serif text-lg md:text-xl text-primary leading-snug">
+                  {c.result}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. How it works */}
+      <section
+        className="py-20 md:py-24 px-6"
+        style={{
+          backgroundColor: "#EDE9E0",
+          borderTop: "1px solid #E0DDD6",
+          borderBottom: "1px solid #E0DDD6",
+        }}
+      >
+        <div className="max-w-[1216px] mx-auto">
+          <div className="flex flex-col items-center text-center gap-4 mb-14">
+            <p
+              className="text-[11px] font-semibold uppercase text-accent"
+              style={{ letterSpacing: "0.14em" }}
+            >
+              The process
+            </p>
+            <h2
+              className="font-medium tracking-tight leading-[1.08] text-primary max-w-3xl"
+              style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
+            >
+              Simple. 5 steps.{" "}
+              <em className="font-serif italic text-accent font-normal">
+                5 business days.
+              </em>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            {steps.map((s) => (
+              <div
+                key={s.n}
+                className="rounded-md p-7 flex flex-col gap-4"
+                style={{ backgroundColor: "#FFFFFF", border: "1px solid #E0DDD6" }}
+              >
+                <div className="flex items-center justify-between">
+                  <span
+                    className="font-serif italic text-2xl"
+                    style={{ color: "#2D5C3F" }}
+                  >
+                    {s.n}
+                  </span>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-base md:text-lg font-semibold text-primary leading-snug">
+                    {s.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-secondary">{s.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Why we can guarantee */}
+      <section className="py-20 md:py-24 px-6">
+        <div className="max-w-[900px] mx-auto">
+          <div className="flex flex-col items-center text-center gap-4 mb-10 md:mb-14">
+            <p
+              className="text-[11px] font-semibold uppercase text-accent"
+              style={{ letterSpacing: "0.14em" }}
+            >
+              Credibility
+            </p>
+            <h2
+              className="font-medium tracking-tight leading-[1.08] text-primary"
+              style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
+            >
+              Why we&rsquo;re willing to{" "}
+              <em className="font-serif italic text-accent font-normal">
+                put money on this.
+              </em>
+            </h2>
+          </div>
+
+          <div className="flex flex-col gap-6 text-secondary text-base md:text-lg leading-relaxed">
+            <p>
+              Most agencies wouldn&rsquo;t touch a guarantee like this. We will, for three reasons.
+            </p>
+            <p>
+              <span className="text-primary font-semibold">One:</span> we manage six&#8209; and
+              seven&#8209;figure monthly budgets for ecom brands. We&rsquo;ve seen what breaks and
+              what scales. Writing a better ad than the one you&rsquo;re running isn&rsquo;t a shot in the
+              dark for us. It&rsquo;s Tuesday.
+            </p>
+            <p>
+              <span className="text-primary font-semibold">Two:</span> we don&rsquo;t start with clever
+              headlines. We start with your customer. Two days of research before anyone writes a
+              word. By the time we produce the ad, we know your buyer better than most of your team
+              does.
+            </p>
+            <p>
+              <span className="text-primary font-semibold">Three:</span> if our ad wins, you probably
+              want us to run the rest of your account. That&rsquo;s the only reason we can offer this at
+              $497. It&rsquo;s not the whole business &mdash; it&rsquo;s the start of a conversation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. What you get */}
+      <section
+        className="py-20 md:py-24 px-6"
+        style={{ backgroundColor: "#FFFFFF", borderTop: "1px solid #E0DDD6", borderBottom: "1px solid #E0DDD6" }}
+      >
+        <div className="max-w-[1216px] mx-auto">
+          <div className="flex flex-col items-center text-center gap-4 mb-14">
+            <p
+              className="text-[11px] font-semibold uppercase text-accent"
+              style={{ letterSpacing: "0.14em" }}
+            >
+              What you get
+            </p>
+            <h2
+              className="font-medium tracking-tight leading-[1.08] text-primary max-w-3xl"
+              style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
+            >
+              What&rsquo;s in{" "}
+              <em className="font-serif italic text-accent font-normal">the box.</em>
+            </h2>
+            <p className="text-secondary max-w-xl leading-relaxed">
+              All delivered within 5 business days.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {deliverables.map((d) => (
+              <div
+                key={d.n}
+                className="rounded-xl p-8 flex flex-col gap-5"
+                style={{ backgroundColor: "#F5F3EE", border: "1px solid #E0DDD6" }}
+              >
+                <div
+                  className="w-11 h-11 rounded-md flex items-center justify-center font-serif italic text-lg"
+                  style={{ backgroundColor: "#2D5C3F", color: "#F5F3EE" }}
+                >
+                  {d.n.replace("0", "")}
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-lg md:text-xl font-semibold text-primary leading-snug">
+                    {d.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-secondary">{d.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex justify-center mt-12">
+            <PrimaryCTA />
+          </div>
+        </div>
+      </section>
+
+      {/* 7. The guarantee */}
+      <section
+        className="py-20 md:py-24 px-6"
+        style={{ backgroundColor: "#1C1C1A" }}
+      >
+        <div className="max-w-[1000px] mx-auto">
+          <div className="flex flex-col items-center text-center gap-4 mb-10">
+            <p
+              className="text-[11px] font-semibold uppercase"
+              style={{ color: "#9CC7A9", letterSpacing: "0.14em" }}
+            >
+              The guarantee
+            </p>
+            <h2
+              className="font-medium tracking-tight leading-[1.06]"
+              style={{ fontSize: "clamp(34px, 5vw, 64px)", color: "#F5F3EE" }}
+            >
+              The{" "}
+              <em className="font-serif italic font-normal" style={{ color: "#5C8F6E" }}>
+                Beat Your Best Ad
+              </em>{" "}
+              guarantee.
+            </h2>
+          </div>
+
+          <div
+            className="rounded-[20px] p-8 md:p-12 flex flex-col gap-5 relative overflow-hidden"
+            style={{ backgroundColor: "#232320", border: "2px solid #2D5C3F" }}
+          >
+            <div
+              className="absolute pointer-events-none"
+              style={{
+                top: "-120px",
+                right: "-120px",
+                width: "380px",
+                height: "380px",
+                borderRadius: "999px",
+                background:
+                  "radial-gradient(circle, rgba(45,92,63,0.55) 0%, rgba(45,92,63,0) 70%)",
+              }}
+            />
+            <div className="relative flex flex-col gap-5 text-base md:text-lg leading-relaxed" style={{ color: "rgba(245,243,238,0.85)" }}>
+              <p>We&rsquo;ll produce a new Meta ad designed to beat the one you&rsquo;re currently running.</p>
+              <p>
+                You test it against yours for at least 7 days, at equal daily budget, to the same
+                audience.
+              </p>
+              <p>
+                You choose the win condition before the test starts:{" "}
+                <span className="font-semibold" style={{ color: "#F5F3EE" }}>ROAS, CPA, or CTR.</span>
+              </p>
+              <p>
+                If our ad doesn&rsquo;t beat yours on that metric,{" "}
+                <span className="font-semibold" style={{ color: "#F5F3EE" }}>
+                  you get every dollar back.
+                </span>
+              </p>
+              <p>Keep the ad. Keep the research. Keep the playbook.</p>
+              <p className="font-serif italic text-xl md:text-2xl" style={{ color: "#5C8F6E" }}>
+                No questions. No claw&#8209;back. No &ldquo;terms and conditions apply&rdquo; fine print.
+              </p>
+            </div>
+
+            <div
+              className="relative mt-4 rounded-lg p-5 md:p-6 flex flex-col gap-3"
+              style={{ backgroundColor: "rgba(245,243,238,0.04)", border: "1px solid rgba(245,243,238,0.08)" }}
+            >
+              <p
+                className="text-[11px] font-semibold uppercase"
+                style={{ color: "rgba(245,243,238,0.45)", letterSpacing: "0.14em" }}
+              >
+                The only rules
+              </p>
+              <ul className="flex flex-col gap-2 text-sm md:text-base" style={{ color: "rgba(245,243,238,0.75)" }}>
+                {[
+                  "Test runs at least 7 days at equal daily budget",
+                  "Both ads run to the same audience and campaign structure",
+                  "We agree on the win KPI before the test starts, in writing",
+                  "Sample size needs to be meaningful — we'll help you confirm this, usually 50+ results per ad",
+                ].map((r) => (
+                  <li key={r} className="flex items-start gap-3">
+                    <span
+                      className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full"
+                      style={{ backgroundColor: "#5C8F6E" }}
+                    />
+                    <span>{r}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-sm" style={{ color: "rgba(245,243,238,0.5)" }}>
+                That&rsquo;s it. Those rules protect both of us from a test that doesn&rsquo;t actually prove anything.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. Pricing */}
+      <section className="py-20 md:py-24 px-6">
+        <div className="max-w-[900px] mx-auto flex flex-col items-center text-center gap-6">
+          <p
+            className="text-[11px] font-semibold uppercase text-accent"
+            style={{ letterSpacing: "0.14em" }}
+          >
+            Pricing
+          </p>
+          <h2
+            className="font-medium tracking-tight leading-[1.08] text-primary"
+            style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
+          >
+            Why{" "}
+            <em className="font-serif italic text-accent font-normal">$497?</em>
+          </h2>
+
+          <div className="flex flex-col gap-5 text-secondary text-base md:text-lg leading-relaxed max-w-2xl">
+            <p>Because this is a front-end offer, not a retainer.</p>
+            <p>
+              At $497, with the guarantee, most ecom brands say yes before their morning coffee.
+              We deliver. We win. Some of those brands ask us to run their whole account after &mdash;
+              and that&rsquo;s the business.
+            </p>
+          </div>
+
+          <div
+            className="mt-4 rounded-xl p-6 md:p-8 w-full max-w-xl flex flex-col gap-3"
+            style={{ backgroundColor: "#FFFFFF", border: "1px solid #E0DDD6" }}
+          >
+            <p
+              className="text-[11px] font-semibold uppercase text-accent"
+              style={{ letterSpacing: "0.14em" }}
+            >
+              Launch pricing
+            </p>
+            <div className="flex flex-col gap-2 text-sm md:text-base">
+              <div className="flex items-center justify-between text-primary">
+                <span>First 10 challenges</span>
+                <span className="font-serif text-xl">$497</span>
+              </div>
+              <div className="flex items-center justify-between text-secondary">
+                <span>After 10 claimed</span>
+                <span className="font-serif text-xl">$697</span>
+              </div>
+              <div className="flex items-center justify-between text-tertiary">
+                <span>After 25 claimed</span>
+                <span className="font-serif text-xl">$997</span>
+              </div>
+            </div>
+            <p className="text-xs text-tertiary mt-2">
+              Price doesn&rsquo;t come back down.
+            </p>
+          </div>
+
+          <PrimaryCTA className="mt-4" />
+        </div>
+      </section>
+
+      {/* 9. Loss ledger */}
+      <section
+        className="py-20 md:py-24 px-6"
+        style={{ backgroundColor: "#EDE9E0", borderTop: "1px solid #E0DDD6", borderBottom: "1px solid #E0DDD6" }}
+      >
+        <div className="max-w-[900px] mx-auto">
+          <div className="flex flex-col items-center text-center gap-4 mb-10">
+            <p
+              className="text-[11px] font-semibold uppercase text-accent"
+              style={{ letterSpacing: "0.14em" }}
+            >
+              Loss ledger
+            </p>
+            <h2
+              className="font-medium tracking-tight leading-[1.08] text-primary max-w-3xl"
+              style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
+            >
+              When we lose,{" "}
+              <em className="font-serif italic text-accent font-normal">we show it.</em>
+            </h2>
+            <p className="text-secondary max-w-xl leading-relaxed">
+              Every refund we&rsquo;ve issued will be listed here, in order, with the reason. Not because
+              we&rsquo;re proud of losing &mdash; because the win record means nothing if you can&rsquo;t see
+              the losses too.
+            </p>
+          </div>
+
+          <div
+            className="rounded-xl p-8 md:p-10 flex flex-col items-center text-center gap-2"
+            style={{ backgroundColor: "#FFFFFF", border: "1px solid #E0DDD6" }}
+          >
+            <p className="font-serif italic text-2xl text-primary">No losses yet.</p>
+            <p className="text-sm text-secondary">
+              When we get our first one, it&rsquo;ll be here.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 10. Testimonials / case study callouts */}
+      <section className="py-20 md:py-24 px-6">
+        <div className="max-w-[1216px] mx-auto">
+          <div className="flex flex-col items-center text-center gap-4 mb-12">
+            <p
+              className="text-[11px] font-semibold uppercase text-accent"
+              style={{ letterSpacing: "0.14em" }}
+            >
+              Proof
+            </p>
+            <h2
+              className="font-medium tracking-tight leading-[1.08] text-primary max-w-3xl"
+              style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
+            >
+              What happens{" "}
+              <em className="font-serif italic text-accent font-normal">after we beat the ad.</em>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              {
+                industry: "Sepura Home · Garbage Disposal Alternative",
+                headline: "ROAS 1.03 → 3.44 in 60 days.",
+                body: "Priced at 2× the market leader. Previous agency delivered 1.03 ROAS. We rebuilt the funnel — messaging, audiences, landing pages.",
+                stat: { label: "ROAS Improvement", value: "+234%" },
+                image: "/images/case-01.jpeg",
+              },
+              {
+                industry: "myco:soul · Mushroom Coffee",
+                headline: "+1,076% Meta revenue in 90 days.",
+                body: "Saturated category. We built a four-stage funnel — advertorials through to retargeting — unlocking explosive, sustainable scale.",
+                stat: { label: "Meta Revenue", value: "+1,076%" },
+                image: "/images/case-02.jpeg",
+              },
+              {
+                industry: "Kitchen Appliance Brand",
+                headline: "$0 → $122K in 60 days.",
+                body: "No existing Meta presence. We built the full funnel from scratch and delivered $122K at a 3.17 ROAS within 60 days.",
+                stat: { label: "Revenue", value: "$122K" },
+                image: "/images/case-04.jpeg",
+              },
+            ].map((t) => (
+              <div
+                key={t.industry}
+                className="rounded-xl overflow-hidden flex flex-col"
+                style={{ backgroundColor: "#1C1C1A" }}
+              >
+                <Image
+                  src={`${BASE}${t.image}`}
+                  alt={t.headline}
+                  width={0}
+                  height={0}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="w-full h-auto block"
+                />
+                <div className="flex flex-col gap-3 p-6 flex-1">
+                  <p
+                    className="text-xs font-semibold"
+                    style={{ color: "#4A7C5E", letterSpacing: "0.06em" }}
+                  >
+                    {t.industry}
+                  </p>
+                  <h3
+                    className="font-serif text-lg md:text-xl font-normal leading-snug"
+                    style={{ color: "#F5F3EE" }}
+                  >
+                    {t.headline}
+                  </h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "#9A9690" }}>
+                    {t.body}
+                  </p>
+                </div>
+                <div
+                  className="px-6 py-5 border-t"
+                  style={{ borderColor: "rgba(245,243,238,0.06)" }}
+                >
+                  <p
+                    className="font-serif text-2xl font-normal"
+                    style={{ color: "#F5F3EE" }}
+                  >
+                    {t.stat.value}
+                  </p>
+                  <p
+                    className="text-xs mt-1 font-medium"
+                    style={{ color: "#4A4A46" }}
+                  >
+                    {t.stat.label}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 11. FAQ */}
+      <section
+        className="py-20 md:py-24 px-6"
+        style={{ backgroundColor: "#FFFFFF", borderTop: "1px solid #E0DDD6", borderBottom: "1px solid #E0DDD6" }}
+      >
+        <div className="max-w-[1216px] mx-auto">
+          <div className="flex flex-col md:flex-row gap-12 md:gap-20">
+            <div className="md:w-72 flex-shrink-0">
+              <p
+                className="text-[11px] font-semibold uppercase text-accent mb-4"
+                style={{ letterSpacing: "0.14em" }}
+              >
+                FAQ
+              </p>
+              <h2 className="font-serif text-4xl md:text-5xl leading-tight text-primary font-normal">
+                Questions before{" "}
+                <em className="italic text-accent">you buy.</em>
+              </h2>
+            </div>
+            <div className="flex-1">
+              <FAQAccordion faqs={faqs} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 12. Final CTA + P.S. */}
+      <section
+        className="py-24 md:py-28 px-6"
+        style={{ backgroundColor: "#1C1C1A" }}
+      >
+        <div className="max-w-3xl mx-auto flex flex-col items-center text-center gap-6">
+          <p
+            className="text-[11px] font-semibold uppercase"
+            style={{ color: "#9CC7A9", letterSpacing: "0.14em" }}
+          >
+            Last call
+          </p>
+          <h2
+            className="font-medium tracking-tight leading-[1.06]"
+            style={{ fontSize: "clamp(36px, 5vw, 64px)", color: "#F5F3EE" }}
+          >
+            {SPOTS_LEFT} spots left{" "}
+            <em className="font-serif italic font-normal" style={{ color: "#5C8F6E" }}>
+              this month.
+            </em>
+          </h2>
+          <p
+            className="text-base md:text-lg leading-relaxed max-w-xl"
+            style={{ color: "rgba(245,243,238,0.7)" }}
+          >
+            After that, the next available slot is next month. If you want us to produce the ad
+            while the price is still $497, now&rsquo;s the window.
+          </p>
+          <Link
+            href={STRIPE_HREF}
+            className="inline-flex items-center justify-center gap-2 bg-accent text-white px-8 py-4 rounded text-sm font-semibold hover:bg-accent/90 transition-colors"
+          >
+            Beat My Best Ad — $497
+            <ArrowRight />
+          </Link>
+          <p className="text-xs" style={{ color: "rgba(245,243,238,0.4)" }}>
+            100% guarantee · 5 business day delivery · Full refund if we don&rsquo;t win
+          </p>
+
+          <div
+            className="mt-10 pt-10 w-full max-w-2xl flex flex-col gap-4 text-left"
+            style={{ borderTop: "1px solid rgba(245,243,238,0.1)" }}
+          >
+            <p
+              className="text-[11px] font-semibold uppercase"
+              style={{ color: "rgba(245,243,238,0.4)", letterSpacing: "0.14em" }}
+            >
+              P.S.
+            </p>
+            <p
+              className="text-base md:text-lg leading-relaxed"
+              style={{ color: "rgba(245,243,238,0.75)" }}
+            >
+              Every day you keep running the same ad is a day you&rsquo;re finding out less about your
+              market, not more.
+            </p>
+            <p
+              className="text-base md:text-lg leading-relaxed"
+              style={{ color: "rgba(245,243,238,0.75)" }}
+            >
+              For $497, you find out whether there&rsquo;s a better angle, a sharper hook, or a message
+              your competitors aren&rsquo;t running. If there is &mdash; you&rsquo;ll have it in a week. If
+              there isn&rsquo;t &mdash; you get your money back and a full research report proving your
+              current winner is actually winning.
+            </p>
+            <p
+              className="text-base md:text-lg leading-relaxed font-serif italic"
+              style={{ color: "#F5F3EE" }}
+            >
+              Either way, you know more on Friday than you do today.
+            </p>
+            <p className="text-sm" style={{ color: "rgba(245,243,238,0.55)" }}>
+              &mdash; Graydon, Scale Science
+            </p>
+            <p className="text-sm mt-2" style={{ color: "rgba(245,243,238,0.5)" }}>
+              Not sure it&rsquo;s a fit?{" "}
+              <Link
+                href={CALENDLY_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-white transition-colors"
+                style={{ color: "#9CC7A9" }}
+              >
+                Book a 15-min call first →
+              </Link>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Minimal footer */}
+      <footer
+        className="px-6 py-10"
+        style={{ backgroundColor: "#1C1C1A", borderTop: "1px solid rgba(245,243,238,0.08)" }}
+      >
+        <div className="max-w-[1216px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style={{ color: "rgba(245,243,238,0.35)" }}>
+          <Link href="/">
+            <Image
+              src={`${BASE}/images/scale-science-logo.png`}
+              alt="Scale Science"
+              width={120}
+              height={32}
+              className="h-6 w-auto opacity-70"
+            />
+          </Link>
+          <p>© {new Date().getFullYear()} Scale Science. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy" className="hover:text-white transition-colors">
+              Privacy
+            </Link>
+            <Link href="/terms" className="hover:text-white transition-colors">
+              Terms
+            </Link>
+          </div>
+        </div>
+      </footer>
+    </main>
+  );
+}
