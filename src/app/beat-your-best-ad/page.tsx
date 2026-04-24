@@ -403,7 +403,7 @@ export default function BeatYourBestAdPage() {
             style={{ borderColor: "#E0DDD6", backgroundColor: "#1C1C1A" }}
           >
             <video
-              src={VIDEO_SRC}
+              src={`${VIDEO_SRC}#t=0.1`}
               controls
               playsInline
               preload="metadata"
