@@ -4,7 +4,6 @@ import Link from "next/link";
 import Script from "next/script";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-const PIXEL_ID = "1839545210149861";
 const PURCHASE_VALUE = 147;
 
 export const metadata: Metadata = {
@@ -80,25 +79,14 @@ function ArrowRight() {
 export default function ThankYouPage() {
   return (
     <main className="min-h-screen bg-bg text-primary">
-      {/* Meta Pixel — base + Purchase event on the thank-you page */}
-      <Script id="meta-pixel-base" strategy="afterInteractive">
+      {/* Meta Pixel base + PageView fire from the root layout. Only the Purchase event fires here. */}
+      <Script id="meta-pixel-purchase" strategy="afterInteractive">
         {`
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '${PIXEL_ID}');
-fbq('track', 'PageView');
-fbq('track', 'Purchase', {value: ${PURCHASE_VALUE}, currency: 'CAD'});
+if (typeof fbq === 'function') {
+  fbq('track', 'Purchase', {value: ${PURCHASE_VALUE}, currency: 'CAD'});
+}
         `}
       </Script>
-      <noscript>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          height="1"
-          width="1"
-          style={{ display: "none" }}
-          src={`https://www.facebook.com/tr?id=${PIXEL_ID}&ev=PageView&noscript=1`}
-          alt=""
-        />
-      </noscript>
 
       {/* Top bar */}
       <header className="px-6 pt-6 pb-2">
