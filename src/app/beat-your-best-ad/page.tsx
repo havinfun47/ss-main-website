@@ -956,6 +956,15 @@ export default function BeatYourBestAdPage() {
               <span className="text-primary font-semibold">2 client spots available</span>{" "}
               (as of April 24, 2026). Interested? Click below.
             </p>
+            <Link
+              href="https://connect.scalescientist.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded text-sm font-semibold transition-colors border-2 border-accent text-accent bg-transparent hover:bg-accent hover:text-white mt-2"
+            >
+              I Want To Scale My Meta Ads
+              <ArrowRight />
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -1031,18 +1040,6 @@ export default function BeatYourBestAdPage() {
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="flex justify-center mt-12">
-            <Link
-              href="https://connect.scalescientist.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded text-sm font-semibold transition-colors border-2 border-accent text-accent bg-transparent hover:bg-accent hover:text-white"
-            >
-              I Want To Scale My Meta Ads
-              <ArrowRight />
-            </Link>
           </div>
         </div>
       </section>
