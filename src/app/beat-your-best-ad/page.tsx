@@ -63,7 +63,7 @@ const steps = [
   {
     n: "03",
     title: "We produce a new video ad",
-    body: "Full production. New script. New hook. Edited video using your existing footage, AI-generated b-roll, or both. Ready to deploy the moment you upload it.",
+    body: "Full production. New script. New hook. Edited video using your existing footage and content library. Ready to deploy the moment you upload it.",
   },
   {
     n: "04",
@@ -118,7 +118,7 @@ const faqs = [
   },
   {
     q: "Do I need to provide footage?",
-    a: "Helpful but not required. We can work with your existing UGC library, product shots, and brand assets — or produce the entire ad using AI-generated visuals if you don't have footage to work with.",
+    a: "Yes — we work from your existing content library. UGC, product shots, brand b-roll, anything you've shot. The richer the library, the sharper the final ad. If you're light on assets, flag it on the order form and we'll let you know whether there's enough to work with before we charge you.",
   },
   {
     q: "What platforms does this work for?",
@@ -592,6 +592,25 @@ export default function BeatYourBestAdPage() {
                   title="Sepura Home customer avatar brief"
                 />
               </div>
+              <div>
+                <Link
+                  href="https://canva.link/ebtdeh6u3tfrp81"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-primary transition-colors"
+                >
+                  View full screen
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
+                    <path
+                      d="M5.5 2H2v3.5M8.5 12H12V8.5M2 12l4.5-4.5M12 2L7.5 6.5"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -811,7 +830,7 @@ export default function BeatYourBestAdPage() {
                   "Your ad is published as a new post, not a Post ID, so both ads start at zero social proof",
                   "Test runs 7 days, no early calls",
                   "Our ad must win on more spend AND better ROAS or CPA — not just one of the two",
-                  "Screenshot the adset results, email me, and I refund 100% the same week",
+                  "Screenshot the adset results, email me, and if my ad lost, I'll refund 100% of the money back",
                 ].map((r) => (
                   <li key={r} className="flex items-start gap-3">
                     <span
@@ -1089,6 +1108,27 @@ export default function BeatYourBestAdPage() {
           <p className="text-xs" style={{ color: "rgba(245,243,238,0.4)" }}>
             100% guarantee · 5 business day delivery · Full refund if we don&rsquo;t win
           </p>
+
+          <div className="flex flex-col items-center gap-2 mt-6">
+            <p className="text-xs uppercase font-semibold" style={{ color: "rgba(245,243,238,0.4)", letterSpacing: "0.14em" }}>
+              Questions before you buy?
+            </p>
+            <Link
+              href="mailto:graydon@scalescientist.com"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded text-sm font-semibold transition-colors"
+              style={{
+                backgroundColor: "transparent",
+                color: "#F5F3EE",
+                border: "1px solid rgba(245,243,238,0.25)",
+              }}
+            >
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden>
+                <rect x="2" y="3.5" width="12" height="9" rx="1.25" stroke="currentColor" strokeWidth="1.4" />
+                <path d="M2.5 4.5L8 9l5.5-4.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              Email me — graydon@scalescientist.com
+            </Link>
+          </div>
 
           <div
             className="mt-10 pt-10 w-full max-w-2xl flex flex-col gap-4 text-left"
