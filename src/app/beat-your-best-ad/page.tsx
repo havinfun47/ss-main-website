@@ -494,7 +494,7 @@ export default function BeatYourBestAdPage() {
               className="text-[11px] font-semibold uppercase text-accent"
               style={{ letterSpacing: "0.14em" }}
             >
-              Sample deliverables
+              What to expect
             </p>
             <h2
               className="font-medium tracking-tight leading-[1.08] text-primary"
