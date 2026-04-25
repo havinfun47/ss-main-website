@@ -90,8 +90,8 @@ const deliverables = [
   },
   {
     n: "03",
-    title: "The Psychology of the Winning Ad",
-    body: "A side-by-side breakdown of why our ad beats yours. The 6 beliefs your buyer needs to hold before they buy, which one we attacked, what your old ad was missing, and exactly why the new angle converts. So you can replicate the thinking on every ad you run after this.",
+    title: "The Buyer Belief Chain",
+    body: "The six psychological gates every buyer has to pass through — in this order — before they purchase. We map your audience to the chain, name the belief your control was missing, and show you which gate we attacked instead. From here on, every ad you run has a specific job and a specific place in the sequence, not just a hook. The diagnostic tool that separates creative that scales from creative that plateaus.",
   },
 ];
 
@@ -560,19 +560,21 @@ export default function BeatYourBestAdPage() {
                   className="text-[11px] font-semibold uppercase text-accent"
                   style={{ letterSpacing: "0.14em" }}
                 >
-                  02 &mdash; The Customer Avatar Brief
+                  02 &mdash; The Avatar + Belief Chain Brief
                 </p>
                 <h3
                   className="font-medium tracking-tight leading-[1.12] text-primary"
                   style={{ fontSize: "clamp(24px, 2.6vw, 32px)" }}
                 >
-                  The brief behind{" "}
+                  The avatar and belief chain behind{" "}
                   <em className="font-serif italic text-accent font-normal">Sepura Home.</em>
                 </h3>
                 <p className="text-secondary text-sm md:text-base leading-relaxed">
-                  The same depth of customer research you&rsquo;ll receive: psychographics, triggers,
-                  voice&#8209;of&#8209;customer language. This is the actual brief we built for Sepura before
-                  we rebuilt their account around it &mdash; the one that took ROAS from 1.03 to 3.44.
+                  Both deliverables in one document. The customer avatar &mdash; psychographics, triggers,
+                  voice&#8209;of&#8209;customer language &mdash; plus the full six&#8209;gate belief chain
+                  mapped to her, with the missing belief named and the angle we attacked called out. This
+                  is the actual brief we built for Sepura before we rebuilt their account around it &mdash;
+                  the one that took ROAS from 1.03 to 3.44.
                 </p>
               </div>
               <div
