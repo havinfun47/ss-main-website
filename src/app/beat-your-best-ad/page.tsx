@@ -490,19 +490,13 @@ export default function BeatYourBestAdPage() {
       >
         <div className="max-w-[1216px] mx-auto">
           <div className="flex flex-col items-center text-center gap-4 mb-12 md:mb-16 max-w-3xl mx-auto">
-            <p
-              className="text-[11px] font-semibold uppercase text-accent"
-              style={{ letterSpacing: "0.14em" }}
-            >
-              What to expect
-            </p>
             <h2
               className="font-medium tracking-tight leading-[1.08] text-primary"
               style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
             >
-              See the bar{" "}
+              What To Expect{" "}
               <em className="font-serif italic text-accent font-normal">
-                we&rsquo;re setting.
+                in 5 Days.
               </em>
             </h2>
             <p className="text-secondary text-base md:text-lg leading-relaxed">
