@@ -677,12 +677,6 @@ export default function BeatYourBestAdPage() {
       <section className="py-20 md:py-24 px-6">
         <div className="max-w-[900px] mx-auto">
           <div className="flex flex-col items-center text-center gap-4 mb-10 md:mb-14">
-            <p
-              className="text-[11px] font-semibold uppercase text-accent"
-              style={{ letterSpacing: "0.14em" }}
-            >
-              Credibility
-            </p>
             <h2
               className="font-medium tracking-tight leading-[1.08] text-primary"
               style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
@@ -950,23 +944,24 @@ export default function BeatYourBestAdPage() {
         </div>
       </section>
 
-      {/* 10. Testimonials / case study callouts */}
+      {/* 10. Retainer upsell — case study callouts */}
       <section className="py-20 md:py-24 px-6">
         <div className="max-w-[1216px] mx-auto">
-          <div className="flex flex-col items-center text-center gap-4 mb-12">
-            <p
-              className="text-[11px] font-semibold uppercase text-accent"
-              style={{ letterSpacing: "0.14em" }}
-            >
-              Proof
-            </p>
+          <div className="flex flex-col items-center text-center gap-4 mb-12 max-w-3xl mx-auto">
             <h2
-              className="font-medium tracking-tight leading-[1.08] text-primary max-w-3xl"
+              className="font-medium tracking-tight leading-[1.08] text-primary"
               style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
             >
-              What happens{" "}
-              <em className="font-serif italic text-accent font-normal">after we beat the ad.</em>
+              If you want to take this{" "}
+              <em className="font-serif italic text-accent font-normal">a step further&hellip;</em>
             </h2>
+            <p className="text-secondary text-base md:text-lg leading-relaxed">
+              Our winning ads + high&#8209;converting funnel = our happy clients. Below is what we
+              helped our clients achieve. We only work with a handful of clients at a time, and only
+              with brands we know we can help. Only{" "}
+              <span className="text-primary font-semibold">2 client spots available</span>{" "}
+              (as of April 24, 2026). Interested? Click below.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -1042,6 +1037,18 @@ export default function BeatYourBestAdPage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="flex justify-center mt-12">
+            <Link
+              href="https://connect.scalescientist.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded text-sm font-semibold transition-colors border-2 border-accent text-accent bg-transparent hover:bg-accent hover:text-white"
+            >
+              I Want To Scale My Meta Ads
+              <ArrowRight />
+            </Link>
           </div>
         </div>
       </section>
