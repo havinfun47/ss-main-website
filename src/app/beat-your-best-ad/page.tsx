@@ -16,7 +16,7 @@ const SPOTS_LEFT = 5;
 export const metadata: Metadata = {
   title: "Beat Your Best Meta Ad — Or You Don't Pay | Scale Science",
   description:
-    "Send us your best-performing Meta ad. In 5 business days we'll produce a new one designed to beat it. Run both inside one adset for 7 days — if ours doesn't win on spend AND ROAS/CPA, full refund. $97.",
+    "Send us your best-performing Meta ad. In 5 business days we'll produce a new one designed to beat it. Run both inside one adset for 7 days — if ours doesn't win on spend AND ROAS/CPA, full refund. $147.",
   alternates: { canonical: "https://scalescientist.com/beat-your-best-ad" },
   openGraph: {
     title: "Beat Your Best Meta Ad — Or You Don't Pay",
@@ -166,7 +166,7 @@ function PrimaryCTA({ className = "" }: { className?: string }) {
       href={STRIPE_HREF}
       className={`inline-flex items-center justify-center gap-2 bg-accent text-white px-8 py-4 rounded text-sm font-semibold hover:bg-accent/90 transition-colors ${className}`}
     >
-      Beat My Best Ad — $97
+      Beat My Best Ad — $147
       <ArrowRight />
     </Link>
   );
@@ -264,7 +264,7 @@ export default function BeatYourBestAdPage() {
                   </p>
                 </div>
                 <p className="text-xs" style={{ color: "rgba(245,243,238,0.45)" }}>
-                  Updated {LAST_UPDATED} · First 10 at $97
+                  Updated {LAST_UPDATED} · First 10 at $147
                 </p>
               </div>
 
@@ -863,13 +863,13 @@ export default function BeatYourBestAdPage() {
             style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
           >
             Why{" "}
-            <em className="font-serif italic text-accent font-normal">$97?</em>
+            <em className="font-serif italic text-accent font-normal">$147?</em>
           </h2>
 
           <div className="flex flex-col gap-5 text-secondary text-base md:text-lg leading-relaxed max-w-2xl">
             <p>Because this is a front-end offer, not a retainer.</p>
             <p>
-              At $97, with the guarantee, most ecom brands say yes before their morning coffee.
+              At $147, with the guarantee, most ecom brands say yes before their morning coffee.
               We deliver. We win. Some of those brands ask us to run their whole account after &mdash;
               and that&rsquo;s the business. The price goes up every time we beat an ad, so the
               cheapest this offer will ever be is right now.
@@ -889,15 +889,15 @@ export default function BeatYourBestAdPage() {
             <div className="flex flex-col gap-2 text-sm md:text-base">
               <div className="flex items-center justify-between text-primary">
                 <span>Right now</span>
-                <span className="font-serif text-xl">$97</span>
+                <span className="font-serif text-xl">$147</span>
               </div>
               <div className="flex items-center justify-between text-secondary">
                 <span>After the next win</span>
-                <span className="font-serif text-xl">$147</span>
+                <span className="font-serif text-xl">$197</span>
               </div>
               <div className="flex items-center justify-between text-tertiary">
                 <span>After 5 wins</span>
-                <span className="font-serif text-xl">$197+</span>
+                <span className="font-serif text-xl">$247+</span>
               </div>
             </div>
             <p className="text-xs text-tertiary mt-2">
@@ -1096,13 +1096,13 @@ export default function BeatYourBestAdPage() {
             style={{ color: "rgba(245,243,238,0.7)" }}
           >
             After that, the next available slot is next month. If you want us to produce the ad
-            while the price is still $97, now&rsquo;s the window.
+            while the price is still $147, now&rsquo;s the window.
           </p>
           <Link
             href={STRIPE_HREF}
             className="inline-flex items-center justify-center gap-2 bg-accent text-white px-8 py-4 rounded text-sm font-semibold hover:bg-accent/90 transition-colors"
           >
-            Beat My Best Ad — $97
+            Beat My Best Ad — $147
             <ArrowRight />
           </Link>
           <p className="text-xs" style={{ color: "rgba(245,243,238,0.4)" }}>
@@ -1151,7 +1151,7 @@ export default function BeatYourBestAdPage() {
               className="text-base md:text-lg leading-relaxed"
               style={{ color: "rgba(245,243,238,0.75)" }}
             >
-              For $97, you find out whether there&rsquo;s a better angle, a sharper hook, or a message
+              For $147, you find out whether there&rsquo;s a better angle, a sharper hook, or a message
               your competitors aren&rsquo;t running. If there is &mdash; you&rsquo;ll have it in a week. If
               there isn&rsquo;t &mdash; you get your money back and a full research report proving your
               current winner is actually winning.
