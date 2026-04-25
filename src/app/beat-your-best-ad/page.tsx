@@ -6,7 +6,7 @@ import FAQAccordion from "./FAQAccordion";
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 // Editable fields — update these by hand as the offer runs
-const STRIPE_HREF = "https://buy.stripe.com/3cI6oG6mV1Ed3AGcew3wQ00";
+const STRIPE_HREF = "https://buy.stripe.com/dRm3cudPnaaJ6MS3I03wQ01";
 const VIDEO_SRC = "/videos/beat-your-best-ad-overview.mp4";
 const WINS = 3;
 const LOSSES = 0;
@@ -166,7 +166,7 @@ function PrimaryCTA({ className = "" }: { className?: string }) {
       href={STRIPE_HREF}
       className={`inline-flex items-center justify-center gap-2 bg-accent text-white px-8 py-4 rounded text-sm font-semibold hover:bg-accent/90 transition-colors ${className}`}
     >
-      Beat My Best Ad — $147
+      Get Your Ad Beat — $147
       <ArrowRight />
     </Link>
   );
@@ -1102,7 +1102,7 @@ export default function BeatYourBestAdPage() {
             href={STRIPE_HREF}
             className="inline-flex items-center justify-center gap-2 bg-accent text-white px-8 py-4 rounded text-sm font-semibold hover:bg-accent/90 transition-colors"
           >
-            Beat My Best Ad — $147
+            Get Your Ad Beat — $147
             <ArrowRight />
           </Link>
           <p className="text-xs" style={{ color: "rgba(245,243,238,0.4)" }}>
