@@ -37,7 +37,7 @@ const proofScreenshots = [
     alt: "Meta Ads Manager: winning static ad drove 5.87 ROAS on $1,033.24 spend, producing $6,066.22 revenue",
   },
   {
-    file: "ads-proof-03.png",
+    file: "ads-proof-03.1.png",
     alt: "Meta Ads Manager: winning video ad drove 1.29 ROAS on $4,653.99 spend, producing $5,982.77 revenue",
   },
 ];
