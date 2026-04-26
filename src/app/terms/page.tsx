@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — Ad Management by Scale Science",
-  description: "Terms of service for the Ad Management application by Scale Science.",
+  title: "Terms of Service — Scale Scientist",
+  description: "Terms of service for Scale Scientist, the Meta ads management application by Scale Scientist Inc.",
 };
 
-const LAST_UPDATED = "April 19, 2026";
-const CONTACT_EMAIL = "support@scalescientist.com";
+const LAST_UPDATED = "April 20, 2026";
+const SUPPORT_EMAIL = "support@scalescientist.com";
+const BILLING_EMAIL = "billing@scalescientist.com";
+const PRIVACY_EMAIL = "privacy@scalescientist.com";
+const SECURITY_EMAIL = "security@scalescientist.com";
 
 export default function TermsOfService() {
   return (
@@ -15,9 +18,9 @@ export default function TermsOfService() {
       <header className="border-b border-border bg-bg-card px-6 py-4">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
           <Link href="/" className="text-primary font-bold text-base tracking-tight">
-            Scale Science
+            Scale Scientist
           </Link>
-          <span className="text-tertiary text-xs">Ad Management · Terms of Service</span>
+          <span className="text-tertiary text-xs">Terms of Service</span>
         </div>
       </header>
 
@@ -28,26 +31,47 @@ export default function TermsOfService() {
           </p>
           <h1 className="text-4xl font-light tracking-tight text-primary mb-3">Terms of Service</h1>
           <p className="text-secondary text-sm">
-            <strong className="text-primary font-semibold">Ad Management</strong> by Scale Science &nbsp;·&nbsp; Last updated: {LAST_UPDATED}
+            <strong className="text-primary font-semibold">Scale Scientist</strong> &nbsp;·&nbsp; Last updated: {LAST_UPDATED}
           </p>
         </div>
 
         <div className="prose-custom space-y-10 text-secondary text-sm leading-relaxed">
 
           <section>
-            <h2 className="text-base font-semibold text-primary mb-3">1. Acceptance of Terms</h2>
+            <h2 className="text-base font-semibold text-primary mb-3">1. Acceptance of These Terms</h2>
             <p>
-              These Terms of Service (&ldquo;Terms&rdquo;) govern your access to and use of <strong className="text-primary">Ad Management</strong> (&ldquo;the App,&rdquo; &ldquo;we,&rdquo; &ldquo;our&rdquo;), a Meta platform application operated by Scale Science. By authorising the App through Meta Login or otherwise accessing or using the App, you (&ldquo;you,&rdquo; &ldquo;user&rdquo;) agree to be bound by these Terms. If you do not agree, you must not use the App.
+              These Terms of Service (&ldquo;Terms&rdquo;) govern your access to and use of <strong className="text-primary">Scale Scientist</strong> (&ldquo;Scale Scientist,&rdquo; &ldquo;the App,&rdquo; &ldquo;we,&rdquo; &ldquo;our,&rdquo; &ldquo;us&rdquo;), operated by Scale Scientist Inc., a company registered in British Columbia, Canada.
+            </p>
+            <p className="mt-3">
+              By authorizing the App via Facebook Login, creating an account, or otherwise accessing the App, you (&ldquo;you,&rdquo; &ldquo;the User&rdquo;) agree to these Terms and to our{" "}
+              <Link href="/privacy" className="text-accent hover:text-accent/80 underline underline-offset-2">
+                Privacy Policy
+              </Link>. If you do not agree, do not authorize or continue to use the App.
             </p>
           </section>
 
           <section>
             <h2 className="text-base font-semibold text-primary mb-3">2. Description of the Service</h2>
             <p>
-              The App enables authorised users to manage, publish, and optimise Meta advertising campaigns by connecting to Meta&rsquo;s APIs via OAuth. The App provides campaign creation, editing, performance analytics, creative review, and AI-assisted optimisation recommendations powered by third-party AI services (see Section 8).
+              Scale Scientist is a software product that integrates with Meta&rsquo;s (Facebook and Instagram) Marketing API to help you manage, publish, and optimize Meta advertising campaigns. The App allows you to:
             </p>
+            <ul className="mt-3 space-y-2 list-none">
+              {[
+                "Connect one or more Meta ad accounts via OAuth.",
+                "View campaigns, ad sets, ads, and performance metrics.",
+                "Create, edit, pause, and optimize campaigns.",
+                "Configure rules (“SOPs”) that trigger automated actions based on conditions you define.",
+                "Review an audit log of every action the App has taken on your behalf.",
+                "Receive AI-assisted optimization recommendations (see Section 8).",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="shrink-0 mt-1 w-1.5 h-1.5 rounded-full bg-accent inline-block" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
             <p className="mt-3">
-              The App is a tool that operates on your behalf according to the operating procedures you configure. You remain solely responsible for all advertising activity performed through your Meta ad accounts.
+              You remain solely responsible for your advertising activity, including compliance with Meta&rsquo;s advertising policies and applicable law.
             </p>
           </section>
 
@@ -56,10 +80,10 @@ export default function TermsOfService() {
             <p>To use the App you must:</p>
             <ul className="mt-3 space-y-2 list-none">
               {[
-                "Be at least 18 years of age and legally capable of entering binding contracts.",
-                "Be an authorised representative of a business with an active Meta advertising account.",
-                "Comply with Meta's Commerce Policies, Advertising Standards, Platform Terms, and Community Standards.",
-                "Not be a competitor of Scale Science using the App solely to evaluate it for competitive purposes.",
+                "Be at least 18 years of age and legally capable of entering into a binding contract.",
+                "Be an authorized representative of the business whose Meta ad account(s) you intend to connect.",
+                "Have an active Meta (Facebook) account and access to the ad accounts you wish to manage.",
+                "Comply with Meta's Platform Terms, Advertising Standards, and Community Standards.",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0 text-accent mt-0.5">
@@ -69,20 +93,29 @@ export default function TermsOfService() {
                 </li>
               ))}
             </ul>
+            <p className="mt-3">
+              You may not use the App if you are a competitor accessing it for the purpose of building a competing product, or if you are on any government sanctions list applicable to our operations.
+            </p>
           </section>
 
           <section>
-            <h2 className="text-base font-semibold text-primary mb-3">4. Account Access and Authorisation</h2>
-            <p>
-              Access to the App is granted by connecting your Meta account via OAuth. You authorise the App to access your Meta data and perform actions on your behalf according to the permissions you grant. You are responsible for:
-            </p>
-            <ul className="mt-3 space-y-2 list-none">
+            <h2 className="text-base font-semibold text-primary mb-3">4. Account and Authorization</h2>
+            <ul className="space-y-2 list-none">
               {[
-                "Maintaining the security of your Meta login credentials.",
-                "Any activity that occurs under your authorised session, including actions taken by the AI based on rules you configure.",
-                "Promptly revoking access via your Facebook App Settings if you suspect unauthorised use.",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
+                <>You grant the App access to your Meta data through Facebook Login. You may revoke this access at any time via{" "}
+                  <a href="https://www.facebook.com/settings?tab=business_tools" className="text-accent hover:text-accent/80 underline underline-offset-2" target="_blank" rel="noopener noreferrer">
+                    Facebook Business Integrations
+                  </a>.
+                </>,
+                "You are responsible for the security of your Meta credentials and for all activity that occurs under your authenticated session.",
+                <>If you suspect unauthorized use of your account, you must notify us promptly at{" "}
+                  <a href={`mailto:${SECURITY_EMAIL}`} className="text-accent hover:text-accent/80 underline underline-offset-2">
+                    {SECURITY_EMAIL}
+                  </a>.
+                </>,
+                "We may require additional verification steps (including proof of authority over an ad account) before enabling certain features.",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
                   <span className="shrink-0 mt-1 w-1.5 h-1.5 rounded-full bg-accent inline-block" />
                   <span>{item}</span>
                 </li>
@@ -92,15 +125,14 @@ export default function TermsOfService() {
 
           <section>
             <h2 className="text-base font-semibold text-primary mb-3">5. User Responsibilities</h2>
-            <p>When using the App you agree to:</p>
+            <p>You agree that you will:</p>
             <ul className="mt-3 space-y-2 list-none">
               {[
-                "Comply with all applicable laws, including advertising, consumer protection, data protection, and tax laws in the jurisdictions where you operate.",
-                "Comply with Meta's Advertising Policies, Platform Terms, Commerce Policies, and Community Standards at all times.",
-                "Only advertise products and services you have the legal right to market.",
-                "Ensure all creative assets, copy, and targeting comply with applicable laws and platform policies.",
-                "Not use the App to engage in deceptive, fraudulent, or misleading advertising.",
-                "Not attempt to circumvent Meta's ad review systems, policy enforcement, or account restrictions.",
+                "Comply with all applicable laws, regulations, and industry codes of your jurisdiction and any jurisdiction in which your ads are delivered.",
+                "Comply at all times with Meta's Platform Terms, Advertising Standards, Community Standards, and any other Meta policies applicable to your use of Meta's APIs.",
+                "Advertise only legal products, services, and content, and ensure your ad creative is truthful and not misleading.",
+                "Obtain and maintain all consents, authorizations, and rights necessary for the content, targeting, and conversion data you use in your ads.",
+                "Not use the App to violate the rights of any person or entity, including intellectual property and privacy rights.",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span className="shrink-0 mt-1 w-1.5 h-1.5 rounded-full bg-accent inline-block" />
@@ -108,19 +140,123 @@ export default function TermsOfService() {
                 </li>
               ))}
             </ul>
+            <p className="mt-3">
+              You acknowledge that Scale Scientist executes actions on your behalf based on the rules you configure, and that you are solely responsible for reviewing those rules and the outcomes they produce.
+            </p>
           </section>
 
           <section>
             <h2 className="text-base font-semibold text-primary mb-3">6. Prohibited Conduct</h2>
-            <p>You must not, and must not permit any third party to:</p>
+            <p>You will not:</p>
             <ul className="mt-3 space-y-2 list-none">
               {[
-                "Reverse engineer, decompile, disassemble, or attempt to extract source code from the App.",
-                "Interfere with, disrupt, or impose an unreasonable load on the App's infrastructure or Meta's APIs.",
-                "Use the App to scrape, harvest, or collect Meta user data in violation of Meta's Platform Terms.",
-                "Resell, sublicense, or make the App available to unauthorised third parties.",
-                "Use the App to publish content prohibited by Meta's Advertising Policies (including but not limited to illegal products, hate speech, misinformation, and prohibited financial products).",
-                "Use the App for any purpose other than managing your own (or your authorised client's) Meta advertising accounts.",
+                "Reverse engineer, decompile, or attempt to extract the source code of the App, except to the extent such restriction is prohibited by applicable law.",
+                "Probe, scan, or test the vulnerability of the App, or breach or circumvent any security or authentication measures.",
+                "Scrape, harvest, or otherwise collect data from the App for any purpose other than managing your own ad accounts.",
+                "Resell, sublicense, or share access to the App with any third party.",
+                "Use the App to send spam, phishing messages, or any form of unsolicited or harassing communication.",
+                "Use the App to serve ads that violate Meta's Advertising Standards.",
+                "Impersonate any person or entity, or misrepresent your affiliation with any person or entity.",
+                "Use the App to build a competing product or service.",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="shrink-0 mt-1 w-1.5 h-1.5 rounded-full bg-accent inline-block" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-3">
+              Violation of this Section may result in immediate suspension or termination of your account.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-base font-semibold text-primary mb-3">7. Meta Platform Compliance</h2>
+            <p>
+              The App uses Meta&rsquo;s APIs and is subject to Meta&rsquo;s Platform Terms and Developer Policies. Your access to Meta data through the App is also subject to Meta&rsquo;s policies. You agree that:
+            </p>
+            <ul className="mt-3 space-y-2 list-none">
+              {[
+                <>Your use of Meta data through the App is limited to the purposes described in the{" "}
+                  <Link href="/privacy" className="text-accent hover:text-accent/80 underline underline-offset-2">
+                    Privacy Policy
+                  </Link>.
+                </>,
+                "You will not use Meta data in any manner inconsistent with Meta's terms.",
+                "Meta may suspend or revoke the App's access to its APIs at any time, which may interrupt or disable features.",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="shrink-0 mt-1 w-1.5 h-1.5 rounded-full bg-accent inline-block" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4">
+              <strong className="text-primary">Disclaimer of Affiliation.</strong> Scale Scientist is an independent product and is <strong className="text-primary">not</strong> affiliated with, endorsed by, or sponsored by Meta Platforms, Inc. &ldquo;Meta,&rdquo; &ldquo;Facebook,&rdquo; &ldquo;Instagram,&rdquo; and related marks are trademarks of Meta Platforms, Inc.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-base font-semibold text-primary mb-3">8. AI-Assisted Recommendations</h2>
+            <p>
+              The App uses Anthropic&rsquo;s Claude AI to generate optimization recommendations and, where you have explicitly enabled automated rules, to trigger actions on your ad accounts.
+            </p>
+            <ul className="mt-3 space-y-2 list-none">
+              {[
+                <>AI-generated outputs may be <strong className="text-primary">incomplete, inaccurate, or suboptimal</strong> and must be reviewed by you.</>,
+                "You are solely responsible for every automated action taken under a rule you have enabled, including its effect on ad spend and campaign performance.",
+                "We make no performance guarantee of any kind (return on ad spend, conversions, reach, engagement, or otherwise).",
+                "You may disable AI features and automated rules at any time from within the App.",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="shrink-0 mt-1 w-1.5 h-1.5 rounded-full bg-accent inline-block" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-base font-semibold text-primary mb-3">9. Third-Party Services</h2>
+            <p>
+              The App integrates with third-party services, including Meta Platforms, Inc. and Anthropic PBC, and is hosted on infrastructure provided by Vercel Inc. Your use of those services is also subject to the respective provider&rsquo;s terms. Scale Scientist is not responsible for the availability, accuracy, or behavior of any third-party service, and disruptions to those services may affect the App.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-base font-semibold text-primary mb-3">10. Fees, Billing, and Cancellation</h2>
+            <ul className="space-y-2 list-none">
+              {[
+                <><strong className="text-primary">Subscription fees</strong> (where applicable) are disclosed at signup and billed in advance on a recurring basis in the currency shown at checkout.</>,
+                <><strong className="text-primary">Ad spend is paid directly to Meta</strong> and is not a charge from Scale Scientist. Scale Scientist has no control over, and does not take responsibility for, amounts you spend on Meta ads.</>,
+                <><strong className="text-primary">Price changes</strong> require at least 30 days&rsquo; notice to you via email or in-app notice before taking effect. Continued use after the notice period constitutes acceptance of the new pricing.</>,
+                <><strong className="text-primary">Cancellation.</strong> You may cancel your subscription at any time from within the App or by emailing{" "}
+                  <a href={`mailto:${BILLING_EMAIL}`} className="text-accent hover:text-accent/80 underline underline-offset-2">
+                    {BILLING_EMAIL}
+                  </a>. Cancellation takes effect at the end of the current billing period, and you retain access through that period.
+                </>,
+                <><strong className="text-primary">Refunds.</strong> Fees already paid are non-refundable except where refunds are required by applicable consumer protection law.</>,
+                <><strong className="text-primary">Account data after cancellation</strong> is retained and deleted according to Section 7 of our{" "}
+                  <Link href="/privacy" className="text-accent hover:text-accent/80 underline underline-offset-2">
+                    Privacy Policy
+                  </Link>.
+                </>,
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="shrink-0 mt-1 w-1.5 h-1.5 rounded-full bg-accent inline-block" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-base font-semibold text-primary mb-3">11. Intellectual Property</h2>
+            <ul className="space-y-2 list-none">
+              {[
+                "The App, including its software, interfaces, documentation, and design, is owned by Scale Scientist Inc. and protected by applicable intellectual property laws. These Terms grant you a limited, non-exclusive, non-transferable, revocable license to use the App in accordance with these Terms.",
+                "You retain all rights to your ad creative, campaign configurations, rule definitions, and other content you supply or that we access on your behalf (“User Content”). You grant Scale Scientist a worldwide, non-exclusive, royalty-free license to host, process, and display User Content solely to operate the App for you.",
+                "Feedback you voluntarily provide may be used by us without restriction and without obligation to you.",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span className="shrink-0 mt-1 w-1.5 h-1.5 rounded-full bg-accent inline-block" />
@@ -131,119 +267,110 @@ export default function TermsOfService() {
           </section>
 
           <section>
-            <h2 className="text-base font-semibold text-primary mb-3">7. AI-Assisted Recommendations and Actions</h2>
+            <h2 className="text-base font-semibold text-primary mb-3">12. Disclaimer of Warranties</h2>
             <p>
-              The App uses artificial intelligence — including Anthropic&rsquo;s Claude — to generate recommendations and, where you have configured it to do so, to execute changes to your campaigns automatically.
+              <strong className="text-primary">THE APP IS PROVIDED &ldquo;AS IS&rdquo; AND &ldquo;AS AVAILABLE&rdquo; WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</strong>
             </p>
-            <p className="mt-3">
-              AI-generated outputs may be incomplete, inaccurate, or suboptimal. Advertising performance depends on many factors outside the App&rsquo;s control, including market conditions, creative quality, landing page conversion, and Meta&rsquo;s own algorithms. <strong className="text-primary">You are solely responsible for reviewing and approving any material changes and for all outcomes — including ad spend, campaign results, and compliance with platform policies.</strong>
-            </p>
-            <p className="mt-3">
-              We make no guarantee of any specific advertising performance, return on ad spend, or business outcome.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-base font-semibold text-primary mb-3">8. Third-Party Services</h2>
-            <p>The App integrates with third-party services. Your use of the App is also governed by their terms:</p>
+            <p className="mt-3">Without limiting the foregoing, Scale Scientist does not warrant that:</p>
             <ul className="mt-3 space-y-2 list-none">
               {[
-                ["Meta Platforms, Inc.", "All interactions with Meta's APIs are subject to Meta's Platform Terms, Advertising Policies, and Data Policy."],
-                ["Anthropic PBC (Claude AI)", "AI features are powered by Anthropic's Claude API and are subject to Anthropic's Usage Policy and Commercial Terms of Service."],
-              ].map(([party, desc]) => (
-                <li key={party} className="flex items-start gap-3">
+                "The App will be uninterrupted, error-free, secure, or free of harmful components.",
+                "Any particular advertising result will be achieved.",
+                "Meta's APIs will remain available, unchanged, or compatible with the App.",
+                "AI-generated recommendations will be accurate or appropriate for your situation.",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
                   <span className="shrink-0 mt-1 w-1.5 h-1.5 rounded-full bg-accent inline-block" />
-                  <span><strong className="text-primary font-medium">{party}:</strong> {desc}</span>
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
             <p className="mt-3">
-              We are not responsible for third-party services or any actions they take. Disruption, policy changes, or termination of access to third-party services may affect the App&rsquo;s availability or functionality.
+              Some jurisdictions do not allow the exclusion of implied warranties; in those jurisdictions, the above disclaimer applies to the maximum extent permitted by law.
             </p>
           </section>
 
           <section>
-            <h2 className="text-base font-semibold text-primary mb-3">9. Fees and Billing</h2>
+            <h2 className="text-base font-semibold text-primary mb-3">13. Limitation of Liability</h2>
             <p>
-              Use of the App may be subject to subscription fees, as disclosed to you at the time of signup. All fees are billed in advance and are non-refundable except where required by law. Ad spend is charged directly by Meta to the payment method on your Meta ad account — Scale Science does not collect or hold ad spend funds on your behalf.
+              <strong className="text-primary">TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW</strong>, Scale Scientist Inc., its officers, directors, employees, and agents shall not be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages, including but not limited to damages for lost profits, lost revenue, lost goodwill, lost data, or wasted advertising spend, whether arising in contract, tort, or otherwise, and whether or not foreseeable.
             </p>
             <p className="mt-3">
-              We reserve the right to modify pricing with at least 30 days&rsquo; notice. Continued use of the App after the effective date constitutes acceptance of the updated pricing.
+              The aggregate liability of Scale Scientist to you for any claim arising out of or relating to the App or these Terms shall not exceed the greater of:
+            </p>
+            <ul className="mt-3 space-y-2 list-none">
+              <li className="flex items-start gap-3">
+                <span className="shrink-0 mt-1 w-1.5 h-1.5 rounded-full bg-accent inline-block" />
+                <span>(a) the fees you paid to Scale Scientist in the twelve (12) months preceding the event giving rise to the claim; or</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="shrink-0 mt-1 w-1.5 h-1.5 rounded-full bg-accent inline-block" />
+                <span>(b) one hundred Canadian dollars (CAD $100).</span>
+              </li>
+            </ul>
+            <p className="mt-3">
+              Nothing in these Terms limits liability that cannot be limited by law, including for fraud, gross negligence, or willful misconduct.
             </p>
           </section>
 
           <section>
-            <h2 className="text-base font-semibold text-primary mb-3">10. Intellectual Property</h2>
+            <h2 className="text-base font-semibold text-primary mb-3">14. Indemnification</h2>
             <p>
-              The App, including all software, interfaces, designs, logos, and content (excluding your data and assets), is the exclusive property of Scale Science and is protected by copyright, trademark, and other intellectual property laws. These Terms grant you a limited, non-exclusive, non-transferable, revocable licence to use the App solely for its intended purpose.
+              You agree to indemnify, defend, and hold harmless Scale Scientist Inc. and its officers, directors, employees, and agents from and against any and all claims, damages, liabilities, costs, and expenses (including reasonable legal fees) arising out of or relating to: (a) your use of the App; (b) the content of your advertisements and targeting; (c) your violation of these Terms or any applicable law or Meta policy; or (d) your infringement of any third-party right.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-base font-semibold text-primary mb-3">15. Termination</h2>
+            <ul className="space-y-2 list-none">
+              {[
+                <><strong className="text-primary">By you:</strong> you may terminate at any time by cancelling your subscription and revoking the App&rsquo;s access via{" "}
+                  <a href="https://www.facebook.com/settings?tab=business_tools" className="text-accent hover:text-accent/80 underline underline-offset-2" target="_blank" rel="noopener noreferrer">
+                    Facebook Business Integrations
+                  </a>.
+                </>,
+                <><strong className="text-primary">By us:</strong> we may suspend or terminate your access at any time, with or without notice, if we reasonably believe you have violated these Terms, Meta&rsquo;s policies, or applicable law, or if required by law or Meta.</>,
+                <><strong className="text-primary">Effect of termination:</strong> your right to use the App ends immediately. Provisions that by their nature should survive termination (including Sections 11, 12, 13, 14, 17, and 18) will survive.</>,
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="shrink-0 mt-1 w-1.5 h-1.5 rounded-full bg-accent inline-block" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-base font-semibold text-primary mb-3">16. Changes to These Terms</h2>
+            <p>
+              We may update these Terms from time to time. Material changes will be communicated via email to registered users or via a prominent in-app notice at least 14 days before taking effect. The &ldquo;Last updated&rdquo; date at the top of this page reflects the most recent revision. Continued use of the App after changes take effect constitutes acceptance of the updated Terms.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-base font-semibold text-primary mb-3">17. Governing Law and Dispute Resolution</h2>
+            <p>
+              These Terms are governed by and construed in accordance with the laws of the <strong className="text-primary">Province of British Columbia, Canada</strong> and the federal laws of Canada applicable therein, without regard to conflict of laws principles.
             </p>
             <p className="mt-3">
-              You retain all rights to your advertising assets, creative content, and data accessed through the App. By using the App, you grant Scale Science a limited licence to process your data solely as required to deliver the App&rsquo;s functionality.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-base font-semibold text-primary mb-3">11. Disclaimers</h2>
-            <p>
-              <strong className="text-primary">THE APP IS PROVIDED &ldquo;AS IS&rdquo; AND &ldquo;AS AVAILABLE&rdquo; WITHOUT WARRANTIES OF ANY KIND</strong>, whether express, implied, statutory, or otherwise, including but not limited to warranties of merchantability, fitness for a particular purpose, non-infringement, accuracy, reliability, or uninterrupted availability.
+              Any dispute, controversy, or claim arising out of or relating to these Terms or the App shall be brought exclusively in the courts of the Province of British Columbia located in Vancouver, and you and Scale Scientist hereby consent to the personal jurisdiction and venue of those courts. Nothing in this Section prevents either party from seeking injunctive or equitable relief in any court of competent jurisdiction to protect intellectual property or confidential information.
             </p>
             <p className="mt-3">
-              We do not warrant that the App will be error-free, that AI-generated outputs will be accurate, that defects will be corrected, or that the App or Meta&rsquo;s APIs will be available at any particular time.
+              If you are a consumer, mandatory consumer protection laws of your place of residence may apply in addition to the above.
             </p>
           </section>
 
           <section>
-            <h2 className="text-base font-semibold text-primary mb-3">12. Limitation of Liability</h2>
-            <p>
-              <strong className="text-primary">TO THE MAXIMUM EXTENT PERMITTED BY LAW</strong>, Scale Science and its officers, employees, and agents will not be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages, including but not limited to lost profits, lost revenue, lost advertising spend, loss of business opportunities, or loss of data, arising out of or related to your use of the App — even if advised of the possibility of such damages.
-            </p>
-            <p className="mt-3">
-              Our aggregate liability to you for any claim arising out of or related to these Terms or the App shall not exceed the greater of (a) the fees you paid to Scale Science for the App in the 12 months preceding the claim, or (b) USD $100.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-base font-semibold text-primary mb-3">13. Indemnification</h2>
-            <p>
-              You agree to indemnify, defend, and hold harmless Scale Science and its officers, employees, and agents from and against any claims, liabilities, damages, losses, and expenses (including reasonable legal fees) arising out of or related to: (a) your use or misuse of the App; (b) your advertising content, campaigns, or targeting; (c) your violation of these Terms, Meta&rsquo;s policies, or applicable law; or (d) your violation of any third-party rights.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-base font-semibold text-primary mb-3">14. Termination</h2>
-            <p>
-              You may terminate your use of the App at any time by revoking access in your{" "}
-              <a href="https://www.facebook.com/settings?tab=applications" className="text-accent hover:text-accent/80 underline underline-offset-2" target="_blank" rel="noopener noreferrer">
-                Facebook App Settings
-              </a>.
-            </p>
-            <p className="mt-3">
-              We may suspend or terminate your access to the App at any time, with or without notice, if we reasonably believe you have violated these Terms, Meta&rsquo;s policies, or applicable law, or if required to comply with a legal obligation. Sections 10 (Intellectual Property), 11 (Disclaimers), 12 (Limitation of Liability), 13 (Indemnification), and 16 (Governing Law) survive termination.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-base font-semibold text-primary mb-3">15. Changes to These Terms</h2>
-            <p>
-              We may update these Terms from time to time. Material changes will be communicated via email to registered users or via a notice within the App. The &ldquo;Last updated&rdquo; date at the top of this page reflects the most recent revision. Continued use of the App after changes are posted constitutes acceptance of the updated Terms.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-base font-semibold text-primary mb-3">16. Governing Law and Dispute Resolution</h2>
-            <p>
-              These Terms are governed by the laws of the jurisdiction in which Scale Science is established, without regard to conflict-of-laws principles. Any dispute arising out of or related to these Terms or the App shall be resolved in the competent courts of that jurisdiction, unless otherwise required by applicable consumer protection law.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-base font-semibold text-primary mb-3">17. Miscellaneous</h2>
+            <h2 className="text-base font-semibold text-primary mb-3">18. Miscellaneous</h2>
             <ul className="mt-3 space-y-2 list-none">
               {[
-                ["Entire agreement", "These Terms, together with the Privacy Policy, constitute the entire agreement between you and Scale Science regarding the App."],
-                ["Severability", "If any provision of these Terms is held unenforceable, the remaining provisions will remain in full force and effect."],
-                ["No waiver", "Our failure to enforce any provision does not constitute a waiver of that provision or any other."],
-                ["Assignment", "You may not assign these Terms without our prior written consent. We may assign these Terms in connection with a merger, acquisition, or sale of assets."],
+                ["Entire agreement", "These Terms, together with the Privacy Policy and any policies referenced herein, constitute the entire agreement between you and Scale Scientist regarding the App."],
+                ["Severability", "If any provision of these Terms is held unenforceable, the remaining provisions remain in full force and effect."],
+                ["No waiver", "Our failure to enforce any provision is not a waiver of our right to do so later."],
+                ["Assignment", "You may not assign these Terms without our prior written consent. We may assign these Terms in connection with a merger, acquisition, reorganization, or sale of assets."],
+                ["Notices", "Notices to you may be sent to the email address associated with your account; notices to us must be sent to the address in Section 19."],
+                ["Force majeure", "Neither party is liable for failure to perform due to events outside its reasonable control, including acts of God, war, terrorism, labor disputes, internet or utility outages, or acts of government."],
+                ["Relationship", "Nothing in these Terms creates a partnership, employment, agency, or joint venture between the parties."],
               ].map(([label, desc]) => (
                 <li key={label} className="flex items-start gap-3">
                   <span className="shrink-0 mt-1 w-1.5 h-1.5 rounded-full bg-accent inline-block" />
@@ -254,18 +381,36 @@ export default function TermsOfService() {
           </section>
 
           <section>
-            <h2 className="text-base font-semibold text-primary mb-3">18. Contact</h2>
-            <p>
-              For any questions regarding these Terms, contact:
-            </p>
+            <h2 className="text-base font-semibold text-primary mb-3">19. Contact</h2>
             <div className="mt-4 border border-border rounded-lg p-5 bg-bg-card">
-              <p className="font-semibold text-primary">Scale Science</p>
-              <p className="mt-1">
-                <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:text-accent/80 underline underline-offset-2">
-                  {CONTACT_EMAIL}
-                </a>
+              <p className="font-semibold text-primary">Scale Scientist Inc.</p>
+              <p className="text-tertiary text-xs mt-1">British Columbia, Canada</p>
+              <p className="mt-3 space-y-1">
+                <span className="block">
+                  General:{" "}
+                  <a href={`mailto:${SUPPORT_EMAIL}`} className="text-accent hover:text-accent/80 underline underline-offset-2">
+                    {SUPPORT_EMAIL}
+                  </a>
+                </span>
+                <span className="block">
+                  Billing:{" "}
+                  <a href={`mailto:${BILLING_EMAIL}`} className="text-accent hover:text-accent/80 underline underline-offset-2">
+                    {BILLING_EMAIL}
+                  </a>
+                </span>
+                <span className="block">
+                  Legal &amp; privacy:{" "}
+                  <a href={`mailto:${PRIVACY_EMAIL}`} className="text-accent hover:text-accent/80 underline underline-offset-2">
+                    {PRIVACY_EMAIL}
+                  </a>
+                </span>
+                <span className="block">
+                  Security:{" "}
+                  <a href={`mailto:${SECURITY_EMAIL}`} className="text-accent hover:text-accent/80 underline underline-offset-2">
+                    {SECURITY_EMAIL}
+                  </a>
+                </span>
               </p>
-              <p className="text-tertiary text-xs mt-2">App: Ad Management · Developer: Scale Science</p>
             </div>
           </section>
 
@@ -274,8 +419,8 @@ export default function TermsOfService() {
 
       <footer className="border-t border-border px-6 py-8 mt-8">
         <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-tertiary">
-          <p>© {new Date().getFullYear()} Scale Science. All rights reserved.</p>
-          <Link href="/" className="hover:text-primary transition-colors">← Back to Scale Science</Link>
+          <p>© {new Date().getFullYear()} Scale Scientist Inc. All rights reserved.</p>
+          <Link href="/" className="hover:text-primary transition-colors">← Back to Scale Scientist</Link>
         </div>
       </footer>
     </div>
