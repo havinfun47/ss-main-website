@@ -8,14 +8,14 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 export const metadata: Metadata = {
   title: "Free Meta Ad Account Audit — 7 Day Bottleneck Report | Scale Science",
   description:
-    "Spending $15k+/mo on Meta ads? We'll audit your account, find your bottleneck, and email you an actionable plan to scale. Free.",
+    "Spending $10k+/mo on Meta ads? We'll audit your account, find your bottleneck, and email you an actionable plan to scale. Free.",
   alternates: {
     canonical: "https://scalescientist.com/meta-audit",
   },
   openGraph: {
     title: "We'll Find Your Meta Ad Account Bottleneck in 7 Days, For Free",
     description:
-      "Spending $15k+/mo on Meta ads? We'll audit your account and email you an actionable plan to scale.",
+      "Spending $10k+/mo on Meta ads? We'll audit your account and email you an actionable plan to scale.",
     url: "https://scalescientist.com/meta-audit",
     type: "website",
   },
@@ -75,7 +75,7 @@ export default function MetaAuditPage() {
           >
             <p>
               If you&rsquo;re spending{" "}
-              <span className="text-primary font-semibold">$15k+ on Meta ads per month</span>, we&rsquo;ll
+              <span className="text-primary font-semibold">$10k+ on Meta ads per month</span>, we&rsquo;ll
               audit your account, find your bottleneck, and email you an actionable plan to scale.
             </p>
             <p>
