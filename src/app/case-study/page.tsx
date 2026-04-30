@@ -4,12 +4,12 @@ import Link from "next/link";
 import VideoPlayer from "./VideoPlayer";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-const CTA_HREF = "https://connect.scalescientist.com/";
+const CTA_HREF = "/meta-audit";
 
 export const metadata: Metadata = {
   title: "$0 → $122K in 60 days — E-Commerce Funnel Case Study · Scale Science",
   description:
-    "Full breakdown of the exact ad account, creative, and landing page that took a kitchen appliance brand from $0 to $122K in 60 days. Built for funded DTC brands spending $20K+/month on Meta.",
+    "Full breakdown of the exact ad account, creative, and landing page that took a kitchen appliance brand from $0 to $122K in 60 days. Built for funded DTC brands spending $10k+/month on Meta.",
   robots: { index: false, follow: false },
 };
 
@@ -211,7 +211,7 @@ export default function CaseStudyPage() {
           </h1>
 
           <p className="text-secondary text-base md:text-lg leading-relaxed max-w-2xl">
-            Watch the full breakdown of the exact ad account structure, creative angles, landing page, and testing cadence that got us there. Built for funded DTC brands spending $20K+/month on Meta and ready to scale past the plateau.
+            Watch the full breakdown of the exact ad account structure, creative angles, landing page, and testing cadence that got us there. Built for funded DTC brands spending $10k+/month on Meta and ready to scale past the plateau.
           </p>
 
           <div className="w-full">
@@ -224,11 +224,9 @@ export default function CaseStudyPage() {
           <div className="flex flex-col items-center gap-3 w-full sm:w-auto max-w-sm">
             <Link
               href={CTA_HREF}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-accent text-white px-8 py-4 rounded text-sm font-semibold hover:bg-accent/90 transition-colors w-full"
             >
-              Book a call
+              Find my bottleneck — free
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -334,12 +332,10 @@ export default function CaseStudyPage() {
                 <div className="px-6 md:px-7 py-5 border-t" style={{ borderColor: "rgba(245,243,238,0.06)" }}>
                   <Link
                     href={CTA_HREF}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center w-full px-5 py-2.5 rounded text-sm font-semibold transition-colors"
                     style={{ backgroundColor: "#2D5C3F", color: "#F5F3EE" }}
                   >
-                    Get results like this &rarr;
+                    Find my bottleneck &mdash; free &rarr;
                   </Link>
                 </div>
               </div>
@@ -528,30 +524,30 @@ export default function CaseStudyPage() {
             className="text-[11px] font-semibold uppercase"
             style={{ color: "#9CC7A9", letterSpacing: "0.14em" }}
           >
-            Ready to scale
+            Free Meta ad audit
           </p>
           <h2
             className="font-medium tracking-tight leading-[1.06]"
             style={{ fontSize: "clamp(36px, 5vw, 64px)", color: "#F5F3EE" }}
           >
-            Ready to scale{" "}
+            Find your scaling bottleneck{" "}
             <em className="font-serif italic font-normal" style={{ color: "#5C8F6E" }}>
-              profitably?
+              in 7 days, for free.
             </em>
           </h2>
           <p
             className="text-base md:text-lg leading-relaxed max-w-xl"
             style={{ color: "rgba(245,243,238,0.7)" }}
           >
-            Book a 30-minute strategy call. We&rsquo;ll audit your ad account, identify where revenue is leaking, and tell you if we can help.
+            We&rsquo;ll audit your Meta ad account, find your biggest bottleneck, and email you an
+            actionable plan to scale &mdash; in 7 days, free. Open to brands spending{" "}
+            <span style={{ color: "#F5F3EE" }} className="font-semibold">$10k+/month</span> on Meta.
           </p>
           <Link
             href={CTA_HREF}
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-accent text-white px-8 py-4 rounded text-sm font-semibold hover:bg-accent/90 transition-colors"
           >
-            Book a strategy call
+            Find my bottleneck &mdash; free
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
