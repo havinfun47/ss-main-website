@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CopyablePortfolioId from "./CopyablePortfolioId";
+import FireLeadEvent from "./FireLeadEvent";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -45,6 +46,7 @@ function StepNumber({ n }: { n: string }) {
 export default function GrantAccessPage() {
   return (
     <main className="min-h-screen bg-bg text-primary">
+      <FireLeadEvent />
       {/* Top bar */}
       <header className="px-6 pt-6 pb-2">
         <div className="max-w-[1216px] mx-auto flex items-center justify-between">

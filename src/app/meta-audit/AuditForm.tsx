@@ -87,16 +87,7 @@ export default function AuditForm() {
       mode: "no-cors",
     })
       .then(() => {
-        try {
-          const w = window as unknown as { fbq?: (...args: unknown[]) => void };
-          if (typeof w.fbq === "function") {
-            w.fbq("track", "Lead", {
-              content_name: qualifies
-                ? "Meta Ad Audit Request — Qualified"
-                : "Meta Ad Audit Request — Below Threshold",
-            });
-          }
-        } catch {}
+        // Lead event fires on /meta-audit/access for qualified submitters only.
         setOutcome(qualifies ? "qualified" : "disqualified");
       })
       .catch(() => {
