@@ -226,7 +226,7 @@ export default function CaseStudyPage() {
               href={CTA_HREF}
               className="inline-flex items-center justify-center gap-2 bg-accent text-white px-8 py-4 rounded text-sm font-semibold hover:bg-accent/90 transition-colors w-full"
             >
-              Find my bottleneck — free
+              Get a Free Meta Ad Account Audit
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -240,6 +240,47 @@ export default function CaseStudyPage() {
                 2 client slots remaining for Q2 2026
               </span>
             </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 w-full max-w-3xl">
+            {[
+              {
+                title: "Performance Trends + Quick Wins",
+                body: "We analyze your historical performance, identify what's working, and surface immediate quick wins you can ship this week.",
+              },
+              {
+                title: "Scaling Bottlenecks",
+                body: "We pinpoint exactly what's holding your account back from the next plateau — creative, audiences, funnel, or attribution.",
+              },
+              {
+                title: "Plan of Action",
+                body: "A clear, prioritized plan of what to change and the order to change it in — so you know exactly what's needed to scale.",
+              },
+            ].map((c) => (
+              <div
+                key={c.title}
+                className="rounded-lg p-5 flex flex-col gap-2 text-left"
+                style={{ backgroundColor: "#FFFFFF", border: "1px solid #E0DDD6" }}
+              >
+                <span className="text-accent inline-flex w-7 h-7 items-center justify-center rounded-full" style={{ backgroundColor: "#EAF1ED" }}>
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden>
+                    <path
+                      d="M3 8.5l3 3 7-7"
+                      stroke="currentColor"
+                      strokeWidth="1.7"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+                <p className="text-[15px] md:text-base font-semibold text-primary leading-snug">
+                  {c.title}
+                </p>
+                <p className="text-xs md:text-sm text-secondary leading-relaxed">
+                  {c.body}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
