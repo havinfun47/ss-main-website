@@ -1,12 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const APPS_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbxAESDc0GS8aJztfEv4r328Z8NC2Q4hPqoWzu_aprMDzl-rF9VXWVpTHFgW_N7hXaym/exec";
 
+const DISQUALIFYING_SPEND = "$0–$9k";
+const ACCESS_PAGE_PATH = "/meta-audit/access";
+const REDIRECT_DELAY_MS = 1500;
+
 const AD_SPEND_OPTIONS = [
-  "$0–$9k",
+  DISQUALIFYING_SPEND,
   "$10k–$15k",
   "$15k–$25k",
   "$25k–$50k",
@@ -14,8 +20,10 @@ const AD_SPEND_OPTIONS = [
 ];
 
 type Errors = Partial<Record<"fullName" | "companyName" | "website" | "email" | "adSpend", string>>;
+type Outcome = "pending" | "qualified" | "disqualified";
 
 export default function AuditForm() {
+  const router = useRouter();
   const [fullName, setFullName] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [website, setWebsite] = useState("");
@@ -23,8 +31,17 @@ export default function AuditForm() {
   const [adSpend, setAdSpend] = useState("");
   const [errors, setErrors] = useState<Errors>({});
   const [submitting, setSubmitting] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [outcome, setOutcome] = useState<Outcome>("pending");
   const [submitError, setSubmitError] = useState(false);
+
+  useEffect(() => {
+    if (outcome !== "qualified") return;
+    router.prefetch(ACCESS_PAGE_PATH);
+    const t = setTimeout(() => {
+      router.push(ACCESS_PAGE_PATH);
+    }, REDIRECT_DELAY_MS);
+    return () => clearTimeout(t);
+  }, [outcome, router]);
 
   function validate(): Errors {
     const next: Errors = {};
@@ -63,6 +80,8 @@ export default function AuditForm() {
       adSpend: adSpend,
     });
 
+    const qualifies = adSpend !== DISQUALIFYING_SPEND;
+
     fetch(`${APPS_SCRIPT_URL}?${params.toString()}`, {
       method: "GET",
       mode: "no-cors",
@@ -71,10 +90,14 @@ export default function AuditForm() {
         try {
           const w = window as unknown as { fbq?: (...args: unknown[]) => void };
           if (typeof w.fbq === "function") {
-            w.fbq("track", "Lead", { content_name: "Meta Ad Audit Request" });
+            w.fbq("track", "Lead", {
+              content_name: qualifies
+                ? "Meta Ad Audit Request — Qualified"
+                : "Meta Ad Audit Request — Below Threshold",
+            });
           }
         } catch {}
-        setSuccess(true);
+        setOutcome(qualifies ? "qualified" : "disqualified");
       })
       .catch(() => {
         setSubmitError(true);
@@ -82,7 +105,7 @@ export default function AuditForm() {
       });
   }
 
-  if (success) {
+  if (outcome === "qualified") {
     return (
       <div
         className="rounded-2xl p-10 md:p-12 flex flex-col items-center text-center gap-4"
@@ -108,11 +131,47 @@ export default function AuditForm() {
           </svg>
         </div>
         <h2 className="font-serif text-2xl md:text-3xl text-primary leading-snug">
-          You&rsquo;re all set.
+          You qualify. Redirecting&hellip;
         </h2>
         <p className="text-secondary leading-relaxed max-w-md">
-          Thanks for reaching out. If you qualify, you&rsquo;ll get an email within 48 hours with the
-          next steps to grant view&#8209;only access so we can start the audit.
+          Sending you to the access instructions now. If it doesn&rsquo;t load automatically,{" "}
+          <Link href={ACCESS_PAGE_PATH} className="text-accent font-semibold underline underline-offset-2 hover:text-primary transition-colors">
+            click here
+          </Link>
+          .
+        </p>
+      </div>
+    );
+  }
+
+  if (outcome === "disqualified") {
+    return (
+      <div
+        className="rounded-2xl p-10 md:p-12 flex flex-col items-center text-center gap-4"
+        style={{
+          backgroundColor: "#FFFFFF",
+          border: "1px solid #E0DDD6",
+          boxShadow: "0 1px 2px rgba(28,28,26,0.04), 0 4px 16px rgba(28,28,26,0.06)",
+        }}
+      >
+        <h2 className="font-serif text-2xl md:text-3xl text-primary leading-snug">
+          Thanks for reaching out.
+        </h2>
+        <p className="text-secondary leading-relaxed max-w-md">
+          Right now we only provide free audits for accounts spending{" "}
+          <span className="text-primary font-semibold">over $10k/month</span> on Meta. The framework
+          needs that much spend to draw real conclusions from the data.
+        </p>
+        <p className="text-secondary leading-relaxed max-w-md">
+          Once you&rsquo;re past that threshold, come back and we&rsquo;ll dig in. In the meantime, if
+          you have questions, email us at{" "}
+          <Link
+            href="mailto:support@scalescientist.com"
+            className="text-accent font-semibold underline underline-offset-2 hover:text-primary transition-colors"
+          >
+            support@scalescientist.com
+          </Link>
+          .
         </p>
       </div>
     );
