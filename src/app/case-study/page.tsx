@@ -186,8 +186,23 @@ const comparisonUs = [
 export default function CaseStudyPage() {
   return (
     <main className="min-h-screen bg-bg text-primary">
+      {/* Top bar — centered logo */}
+      <header className="px-6 pt-8 pb-2">
+        <div className="max-w-[1216px] mx-auto flex justify-center">
+          <Link href="/" className="inline-block" aria-label="Scale Science home">
+            <Image
+              src={`${BASE}/images/scale-science-logo.png`}
+              alt="Scale Science"
+              width={160}
+              height={40}
+              className="h-9 w-auto"
+            />
+          </Link>
+        </div>
+      </header>
+
       {/* Hero */}
-      <section className="pt-16 md:pt-28 pb-12 md:pb-16 px-6">
+      <section className="pt-10 md:pt-16 pb-12 md:pb-16 px-6">
         <div className="max-w-[1216px] mx-auto flex flex-col items-center text-center gap-8 md:gap-10">
           <div
             className="inline-flex items-center gap-2 rounded-full px-4 py-1.5"
