@@ -26,11 +26,11 @@ const cases = [
     title: "100M+ organic views from the same creative.",
     industry: "Sepura Home · Garbage Disposal Alternative",
     description:
-      "Same brand. We didn't stop at paid. The reels we built for their ad account got reposted organically — the top hook hit 27M views on a single Instagram reel, and total organic reach across the catalog has crossed 100 million views.",
+      "Same brand, no extra shoots. We edited their existing footage into the reels that ran in their ad account, then they reposted them organically — the top hook hit 27M views on a single Instagram reel, and total organic reach across Instagram and Facebook has crossed 100 million views.",
     bullets: [
-      "100M+ organic views across Instagram and TikTok",
+      "100M+ organic views across Instagram and Facebook",
       "27M views on a single repurposed reel",
-      "Compounding brand awareness with zero added ad spend",
+      "Built from their existing content — zero new videography",
     ],
     stats: [
       { label: "Organic Views", value: "100M+" },
