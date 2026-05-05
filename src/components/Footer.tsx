@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import ConnectLeadForm from "./ConnectLeadForm";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -16,36 +17,27 @@ export default function Footer() {
   return (
     <footer>
       <section
-        className="py-28 px-6 text-center border-t border-border bg-bg-dark"
+        className="py-24 md:py-28 px-6 border-t border-border bg-bg-dark"
         id="contact"
       >
-        <div className="max-w-2xl mx-auto flex flex-col items-center gap-6">
+        <div className="max-w-[560px] mx-auto flex flex-col items-center gap-6 text-center">
           <p className="text-xs font-semibold uppercase tracking-widest text-accent" style={{ letterSpacing: "0.14em" }}>
-            Ready to scale
+            Let&rsquo;s work together
           </p>
           <h2 className="font-serif text-5xl md:text-6xl font-normal leading-tight text-bg tracking-tight">
             Ready to scale <em className="italic text-accent">profitably?</em>
           </h2>
           <p className="text-secondary mb-1 leading-relaxed text-sm max-w-md">
-            We only take on brands we&apos;re genuinely confident we can scale. Book a free
-            30-minute strategy call — we&apos;ll audit your ad account, identify where
-            revenue is leaking, and tell you exactly what we&apos;d do differently.
+            Tell us a bit about your brand. If we&apos;re a fit, we&apos;ll be in touch within 48 hours
+            with the next steps &mdash; no pitch deck, no hard sell.
           </p>
-          <p className="text-tertiary text-xs max-w-sm" style={{ color: "rgba(245,243,238,0.3)" }}>
-            No pitch deck. No hard sell. If we&apos;re not the right fit, we&apos;ll tell you.
-          </p>
-          <Link
-            href="https://connect.scalescientist.com/" target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded text-sm font-semibold hover:bg-accent/90 transition-colors mt-2"
-          >
-            Let&apos;s Chat
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </Link>
           <div className="inline-flex items-center gap-2 bg-amber-900/30 border border-amber-700/40 rounded-full px-4 py-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block shrink-0" />
             <span className="text-amber-400 text-xs font-semibold">2 client spots remaining for Q2 2026</span>
+          </div>
+
+          <div className="w-full mt-4">
+            <ConnectLeadForm />
           </div>
         </div>
       </section>
