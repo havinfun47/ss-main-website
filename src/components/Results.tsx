@@ -22,6 +22,23 @@ const cases = [
     image: "/images/case-01.jpeg",
   },
   {
+    id: "viral-reels",
+    title: "100M+ organic views from the same creative.",
+    industry: "Sepura Home · Garbage Disposal Alternative",
+    description:
+      "Same brand. We didn't stop at paid. The reels we built for their ad account got reposted organically — the top hook hit 27M views on a single Instagram reel, and total organic reach across the catalog has crossed 100 million views.",
+    bullets: [
+      "100M+ organic views across Instagram and TikTok",
+      "27M views on a single repurposed reel",
+      "Compounding brand awareness with zero added ad spend",
+    ],
+    stats: [
+      { label: "Organic Views", value: "100M+" },
+      { label: "Top Reel", value: "27M" },
+    ],
+    image: "/images/viral-reels.png",
+  },
+  {
     id: "02",
     title: "+1,076% Meta revenue in 90 days.",
     industry: "myco:soul · Mushroom Coffee",
