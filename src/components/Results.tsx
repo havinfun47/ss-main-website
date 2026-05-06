@@ -165,11 +165,11 @@ export default function Results() {
 
               <div className="px-7 py-5 border-t" style={{ borderColor: "rgba(245,243,238,0.06)" }}>
                 <Link
-                  href="https://calendly.com/graydon-scalescientist/30min" target="_blank" rel="noopener noreferrer"
+                  href="#contact"
                   className="inline-flex items-center justify-center w-full px-5 py-2.5 rounded text-sm font-semibold transition-colors"
                   style={{ backgroundColor: "#2D5C3F", color: "#F5F3EE" }}
                 >
-                  Get results like this →
+                  Apply for a free audit →
                 </Link>
               </div>
             </div>

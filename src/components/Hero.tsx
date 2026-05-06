@@ -11,32 +11,41 @@ export default function Hero() {
 
         <div className="inline-flex items-center gap-2 border border-border bg-bg rounded-full px-4 py-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-accent inline-block shrink-0" />
-          <span className="text-secondary text-xs font-medium">Boutique Growth Partner · 6-7 Figure eCom Brands</span>
+          <span className="text-secondary text-xs font-medium uppercase" style={{ letterSpacing: "0.14em" }}>
+            For Funded DTC E&#8209;commerce Startups
+          </span>
         </div>
 
         <h1 className="font-serif text-5xl md:text-7xl leading-[1.06] tracking-tight text-primary font-normal">
-          We build Meta funnels that turn ad spend into{" "}
-          <em className="text-accent not-italic italic">predictable revenue.</em>
+          More revenue. Better margins.{" "}
+          <em className="text-accent not-italic italic">Without the agency rollercoaster.</em>
         </h1>
 
-        <p className="text-secondary text-lg leading-relaxed max-w-xl font-sans">
-          Senior strategists, data-backed creative, and landing pages engineered to convert — built around your customer&apos;s specific buying journey, not a template.
+        <p className="text-secondary text-lg leading-relaxed max-w-2xl font-sans">
+          Scale Science is the Meta growth system for DTC brands doing $30k&ndash;$80k MRR who are
+          ready to grow without watching profit collapse. Senior strategists, data&#8209;backed
+          creative, and landing pages built around your customer&apos;s actual buying journey.
         </p>
 
-        {/* Button + pill matched width on desktop */}
-        <div className="flex flex-col items-center gap-3 w-full sm:w-auto">
+        <div className="flex flex-col items-center gap-3 w-full sm:w-auto sm:max-w-md">
           <Link
-            href="https://connect.scalescientist.com/" target="_blank" rel="noopener noreferrer"
+            href="#contact"
             className="inline-flex items-center justify-center gap-2 bg-accent text-white px-7 py-3.5 rounded text-sm font-semibold hover:bg-accent/90 transition-colors w-full"
           >
-            Let&apos;s Chat
+            Apply for a free Meta funnel audit
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </Link>
-          <div className="inline-flex items-center justify-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5 w-full">
+          <p className="text-tertiary text-xs leading-relaxed max-w-md text-center">
+            Tell us about your brand. If we&apos;re a fit, we&apos;ll audit your account on our own
+            time and walk you through what we&apos;d change on a 30&#8209;min call.
+          </p>
+          <div className="inline-flex items-center justify-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5 mt-1">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block shrink-0" />
-            <span className="text-amber-700 text-xs font-semibold">2 client spots remaining for Q2 2026</span>
+            <span className="text-amber-700 text-xs font-semibold">
+              Currently accepting 2 new clients for Q2 2026. Once full, the next opening is Q3.
+            </span>
           </div>
         </div>
 

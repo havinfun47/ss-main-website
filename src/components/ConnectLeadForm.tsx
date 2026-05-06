@@ -5,8 +5,25 @@ import { useState } from "react";
 const APPS_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbxAESDc0GS8aJztfEv4r328Z8NC2Q4hPqoWzu_aprMDzl-rF9VXWVpTHFgW_N7hXaym/exec";
 
+const REVENUE_OPTIONS = [
+  "Under $30k MRR",
+  "$30k–$50k MRR",
+  "$50k–$100k MRR",
+  "$100k+ MRR",
+];
+
+const AD_SPEND_OPTIONS = [
+  "Under $15k/month",
+  "$15k–$30k/month",
+  "$30k–$50k/month",
+  "$50k+/month",
+];
+
 type Errors = Partial<
-  Record<"fullName" | "companyName" | "website" | "email" | "revenue", string>
+  Record<
+    "fullName" | "companyName" | "website" | "email" | "revenue" | "adSpend",
+    string
+  >
 >;
 
 export default function ConnectLeadForm() {
@@ -15,6 +32,8 @@ export default function ConnectLeadForm() {
   const [website, setWebsite] = useState("");
   const [email, setEmail] = useState("");
   const [revenue, setRevenue] = useState("");
+  const [adSpend, setAdSpend] = useState("");
+  const [topFix, setTopFix] = useState("");
   const [errors, setErrors] = useState<Errors>({});
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -23,7 +42,8 @@ export default function ConnectLeadForm() {
   function validate(): Errors {
     const next: Errors = {};
     if (fullName.trim().length < 2) next.fullName = "Please enter your full name.";
-    if (companyName.trim().length < 1) next.companyName = "Please enter your company name.";
+    if (companyName.trim().length < 1)
+      next.companyName = "Please enter your brand or company name.";
     try {
       const u = new URL(website.trim());
       if (u.protocol !== "https:" && u.protocol !== "http:") {
@@ -35,9 +55,8 @@ export default function ConnectLeadForm() {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
       next.email = "Please enter a valid email address.";
     }
-    if (revenue.trim().length < 1) {
-      next.revenue = "Please enter your average monthly revenue.";
-    }
+    if (!revenue) next.revenue = "Please select your current monthly revenue.";
+    if (!adSpend) next.adSpend = "Please select your current monthly Meta ad spend.";
     return next;
   }
 
@@ -51,11 +70,14 @@ export default function ConnectLeadForm() {
     setSubmitError(false);
 
     const params = new URLSearchParams({
+      source: "connect",
       fullName: fullName.trim(),
       companyName: companyName.trim(),
       website: website.trim(),
       email: email.trim(),
-      revenue: revenue.trim(),
+      revenue: revenue,
+      adSpend: adSpend,
+      topFix: topFix.trim(),
     });
 
     fetch(`${APPS_SCRIPT_URL}?${params.toString()}`, {
@@ -106,7 +128,7 @@ export default function ConnectLeadForm() {
           You&rsquo;re all set.
         </h3>
         <p className="text-secondary leading-relaxed max-w-sm">
-          Thanks for reaching out. We&rsquo;ll be in touch within 48 hours.
+          If we&rsquo;re a fit, we&rsquo;ll be in touch within 48 hours with next steps.
         </p>
       </div>
     );
@@ -114,6 +136,18 @@ export default function ConnectLeadForm() {
 
   const inputClass =
     "w-full px-3.5 py-3 text-[15px] rounded-md border-[1.5px] bg-white outline-none transition focus:border-primary focus:shadow-[0_0_0_3px_rgba(28,28,26,0.07)]";
+
+  const selectStyle = (value: string, errored: boolean) => ({
+    borderColor: errored ? "#DC2626" : "#E0DDD6",
+    boxShadow: errored ? "0 0 0 3px rgba(220,38,38,0.08)" : undefined,
+    color: value ? "#1c1c1a" : "#9A9690",
+    appearance: "none" as const,
+    backgroundImage:
+      "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%231c1c1a' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>\")",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "right 14px center",
+    paddingRight: "36px",
+  });
 
   return (
     <form
@@ -153,7 +187,7 @@ export default function ConnectLeadForm() {
 
       <div className="flex flex-col gap-1.5">
         <label htmlFor="connect-companyName" className="text-sm font-medium text-primary">
-          Company Name
+          Brand / Company Name
         </label>
         <input
           id="connect-companyName"
@@ -178,7 +212,7 @@ export default function ConnectLeadForm() {
 
       <div className="flex flex-col gap-1.5">
         <label htmlFor="connect-website" className="text-sm font-medium text-primary">
-          Website
+          Brand Website
         </label>
         <input
           id="connect-website"
@@ -228,27 +262,75 @@ export default function ConnectLeadForm() {
 
       <div className="flex flex-col gap-1.5">
         <label htmlFor="connect-revenue" className="text-sm font-medium text-primary">
-          Average Monthly Revenue
+          Current Monthly Revenue
         </label>
-        <input
+        <select
           id="connect-revenue"
           name="revenue"
-          type="text"
-          inputMode="numeric"
-          placeholder="e.g. $50,000"
           value={revenue}
           onChange={(e) => setRevenue(e.target.value)}
           className={inputClass}
-          style={{
-            borderColor: errors.revenue ? "#DC2626" : "#E0DDD6",
-            boxShadow: errors.revenue ? "0 0 0 3px rgba(220,38,38,0.08)" : undefined,
-          }}
-        />
+          style={selectStyle(revenue, !!errors.revenue)}
+        >
+          <option value="" disabled>
+            Select a range
+          </option>
+          {REVENUE_OPTIONS.map((opt) => (
+            <option key={opt} value={opt}>
+              {opt}
+            </option>
+          ))}
+        </select>
         {errors.revenue && (
           <span className="text-[13px] mt-0.5" style={{ color: "#DC2626" }}>
             {errors.revenue}
           </span>
         )}
+      </div>
+
+      <div className="flex flex-col gap-1.5">
+        <label htmlFor="connect-adSpend" className="text-sm font-medium text-primary">
+          Current Monthly Meta Ad Spend
+        </label>
+        <select
+          id="connect-adSpend"
+          name="adSpend"
+          value={adSpend}
+          onChange={(e) => setAdSpend(e.target.value)}
+          className={inputClass}
+          style={selectStyle(adSpend, !!errors.adSpend)}
+        >
+          <option value="" disabled>
+            Select a range
+          </option>
+          {AD_SPEND_OPTIONS.map((opt) => (
+            <option key={opt} value={opt}>
+              {opt}
+            </option>
+          ))}
+        </select>
+        {errors.adSpend && (
+          <span className="text-[13px] mt-0.5" style={{ color: "#DC2626" }}>
+            {errors.adSpend}
+          </span>
+        )}
+      </div>
+
+      <div className="flex flex-col gap-1.5">
+        <label htmlFor="connect-topFix" className="text-sm font-medium text-primary">
+          What&rsquo;s the #1 thing you want to fix on Meta right now?{" "}
+          <span className="text-tertiary font-normal">(optional)</span>
+        </label>
+        <textarea
+          id="connect-topFix"
+          name="topFix"
+          rows={3}
+          placeholder="e.g. CPMs spiked, ROAS keeps collapsing when we scale, creative is stale…"
+          value={topFix}
+          onChange={(e) => setTopFix(e.target.value)}
+          className={`${inputClass} resize-y`}
+          style={{ borderColor: "#E0DDD6" }}
+        />
       </div>
 
       <div className="flex flex-col items-center gap-3 mt-2">
@@ -257,9 +339,11 @@ export default function ConnectLeadForm() {
           disabled={submitting}
           className="w-full px-6 py-3.5 rounded-md text-[15px] font-semibold text-white bg-accent hover:bg-accent/90 transition-colors disabled:opacity-70"
         >
-          {submitting ? "Sending…" : "Get in Touch"}
+          {submitting ? "Sending…" : "Apply for My Free Audit"}
         </button>
-        <p className="text-xs text-tertiary">We&rsquo;ll email you within 48 hours</p>
+        <p className="text-xs text-tertiary text-center">
+          If we&rsquo;re a fit, we&rsquo;ll be in touch within 48 hours with next steps.
+        </p>
         {submitError && (
           <p className="text-[13px]" style={{ color: "#DC2626" }}>
             Something went wrong. Please try again.

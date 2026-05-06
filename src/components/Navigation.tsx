@@ -41,15 +41,11 @@ export default function Navigation() {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
-          <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-3 py-1">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block shrink-0" />
-            <span className="text-amber-700 text-xs font-semibold">2 spots left</span>
-          </div>
           <Link
-            href="https://connect.scalescientist.com/" target="_blank" rel="noopener noreferrer"
+            href="#contact"
             className="bg-accent text-white px-5 py-2.5 rounded text-sm font-semibold hover:bg-accent/90 transition-colors"
           >
-            Let&apos;s Chat
+            Apply for Audit
           </Link>
         </div>
 
@@ -84,11 +80,11 @@ export default function Navigation() {
               </Link>
             ))}
             <Link
-              href="https://connect.scalescientist.com/" target="_blank" rel="noopener noreferrer"
+              href="#contact"
               className="bg-accent text-white px-4 py-2.5 rounded text-sm font-semibold text-center mt-2"
               onClick={() => setMobileOpen(false)}
             >
-              Let&apos;s Chat
+              Apply for Audit
             </Link>
           </nav>
         </div>

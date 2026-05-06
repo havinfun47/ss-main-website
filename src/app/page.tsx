@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Results from "@/components/Results";
+import Founder from "@/components/Founder";
 import Process from "@/components/Process";
 import Services from "@/components/Services";
 import FAQ from "@/components/FAQ";
@@ -12,6 +13,7 @@ export default function Home() {
       <Navigation />
       <Hero />
       <Results />
+      <Founder />
       <Process />
       <Services />
       <FAQ />

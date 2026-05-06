@@ -22,18 +22,22 @@ export default function Footer() {
       >
         <div className="max-w-[560px] mx-auto flex flex-col items-center gap-6 text-center">
           <p className="text-xs font-semibold uppercase tracking-widest text-accent" style={{ letterSpacing: "0.14em" }}>
-            Let&rsquo;s work together
+            Apply for a free audit
           </p>
           <h2 className="font-serif text-5xl md:text-6xl font-normal leading-tight text-bg tracking-tight">
-            Ready to scale <em className="italic text-accent">profitably?</em>
+            See what&rsquo;s actually broken in your{" "}
+            <em className="italic text-accent">Meta funnel.</em>
           </h2>
-          <p className="text-secondary mb-1 leading-relaxed text-sm max-w-md">
-            Tell us a bit about your brand. If we&apos;re a fit, we&apos;ll be in touch within 48 hours
-            with the next steps &mdash; no pitch deck, no hard sell.
-          </p>
-          <div className="inline-flex items-center gap-2 bg-amber-900/30 border border-amber-700/40 rounded-full px-4 py-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block shrink-0" />
-            <span className="text-amber-400 text-xs font-semibold">2 client spots remaining for Q2 2026</span>
+          <div className="flex flex-col gap-4 leading-relaxed text-sm max-w-md text-secondary">
+            <p>
+              Tell us about your brand below. If you look like a fit, we&apos;ll audit your ad
+              account, your landing page, and your funnel on our own time &mdash; then walk you
+              through what we&apos;d change on a 30&#8209;minute call.
+            </p>
+            <p>
+              No pitch deck. No live screen&#8209;share scrambling to find insights. We do the
+              homework before the call so you actually get value from the conversation.
+            </p>
           </div>
 
           <div className="w-full mt-4">
