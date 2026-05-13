@@ -1,15 +1,13 @@
 const fitFor = [
   "DTC ecommerce brands spending $15K+/month on Meta",
-  "$50K+/month in revenue (sweet spot $100K–$500K/month)",
+  "At least $20k+/month in revenue",
   "Funded or bootstrapped — the budget matters, not the funding source",
   "Founders who want a senior strategist in the account every week",
-  "Brands ready for a 90-day rebuild, not a one-month trial",
 ];
 
 const notFitFor = [
   "Brands spending under $15K/month on Meta (you'll get better ROI on creative subscriptions or freelancers at this stage)",
   "$1M+/month brands looking for a fourth opinion",
-  "Anyone wanting month-to-month with no initial commitment",
   "Service businesses, B2B SaaS, or info products (we're DTC-only)",
   "Brands that want us to optimize ROAS without rebuilding creative and landing pages",
 ];

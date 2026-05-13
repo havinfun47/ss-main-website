@@ -1,7 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Results from "@/components/Results";
-import AgencyFailure from "@/components/AgencyFailure";
 import Founder from "@/components/Founder";
 import Process from "@/components/Process";
 import Services from "@/components/Services";
@@ -15,7 +14,6 @@ export default function Home() {
       <Navigation />
       <Hero />
       <Results />
-      <AgencyFailure />
       <Founder />
       <Process />
       <Services />
