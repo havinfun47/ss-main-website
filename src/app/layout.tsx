@@ -19,11 +19,11 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://havinfun47.github.io"),
-  title: "Scale Science — Meta Funnels for eCom Brands",
+  title: "Scale Science | Meta Funnels for eCom Brands",
   description:
     "Senior-led Meta ads, in-house creative, and landing pages built around how your customer actually buys. For DTC brands spending $15K+/month on Meta.",
   openGraph: {
-    title: "Scale Science — Meta Funnels for eCom Brands",
+    title: "Scale Science | Meta Funnels for eCom Brands",
     description:
       "Senior-led Meta ads, in-house creative, and landing pages built around how your customer actually buys. For DTC brands spending $15K+/month on Meta.",
     images: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Scale Science — Meta Funnels for eCom Brands",
+    title: "Scale Science | Meta Funnels for eCom Brands",
     description:
       "Senior-led Meta ads, in-house creative, and landing pages built around how your customer actually buys. For DTC brands spending $15K+/month on Meta.",
     images: ["/ss-main-website/images/og-image.png"],

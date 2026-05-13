@@ -104,7 +104,7 @@ export default function Services() {
                 <ul className="flex flex-col gap-2 flex-1">
                   {s.items.map((item) => (
                     <li key={item} className="flex items-start gap-2">
-                      <span className="text-xs leading-relaxed shrink-0 mt-0.5" style={{ color: bulletColor }}>—</span>
+                      <span className="text-xs leading-relaxed shrink-0 mt-0.5" style={{ color: bulletColor }}>•</span>
                       <span className="text-xs leading-relaxed" style={{ color: textColor }}>{item}</span>
                     </li>
                   ))}

@@ -4,27 +4,27 @@ import { useState } from "react";
 const faqs = [
   {
     q: "What results can I realistically expect?",
-    a: "Our case studies give you the honest picture — ROAS doubling, CPA dropping by half, ad spend scaling 4–5× while efficiency holds. But the honest answer: results depend on your starting account, your product, and your category. The audit call exists so we can give you a specific take on your specific situation.",
+    a: "Our case studies give you the honest picture: ROAS doubling, CPA dropping by half, ad spend scaling 4–5× while efficiency holds. The honest answer, though, is that results depend on your starting account, your product, and your category. The audit call exists so we can give you a specific take on your specific situation.",
   },
   {
     q: "What platforms do you run ads on?",
-    a: "Meta only — Facebook and Instagram. We go deep on one channel rather than spreading thin across five. No TikTok, no Google, no Pinterest. If you need help anywhere else, we're not the right fit and we'll say so before the call.",
+    a: "Meta only (Facebook and Instagram). We go deep on one channel rather than spreading thin across five. No TikTok, no Google, no Pinterest. If you need help anywhere else, we're not the right fit and we'll say so before the call.",
   },
   {
     q: "What ad budget do I need to get started?",
-    a: "$15K+/month on Meta is the gate. Below that, the math doesn't justify a senior-led engagement — you'll get better ROI on a creative subscription or a freelancer at this stage, and we'll tell you that on the call if you're under the threshold.",
+    a: "$15K+/month on Meta is the gate. Below that, the math doesn't justify a senior-led engagement. You'll get better ROI on a creative subscription or a freelancer at this stage, and we'll tell you that on the call if you're under the threshold.",
   },
   {
     q: "How is Scale Science different from other agencies?",
-    a: "Most agencies run on the Junior Handoff: a senior closes the deal, then a junior runs the account alongside 30 other brands. That model only works for the agency, never for the brand. At Scale Science, the senior strategist who pitched you is in your account every week. Creative is built in-house by the same team running the media — not outsourced to a separate vendor whose work doesn't talk to your campaigns. Landing pages are built by the same team using the same conversion data. One team, no handoffs.",
+    a: "Most agencies run on the Junior Handoff: a senior closes the deal, then a junior runs the account alongside 30 other brands. That model only works for the agency, never for the brand. At Scale Science, the senior strategist who pitched you is in your account every week. Creative is built in-house by the same team running the media, not outsourced to a separate vendor whose work doesn't talk to your campaigns. Landing pages are built by the same team using the same conversion data. One team, no handoffs.",
   },
   {
     q: "What types of brands do you work with?",
-    a: "DTC ecommerce only. Funded or bootstrapped — the budget matters, not the funding source. $50K+/month in revenue, sweet spot around $100K–$500K/month. Across home goods, health & wellness, kitchen appliances, mushroom coffee, and similar high-consideration DTC categories. No service businesses, no B2B SaaS, no info products.",
+    a: "DTC ecommerce only. Funded or bootstrapped: the budget matters, not the funding source. $50K+/month in revenue, sweet spot around $100K–$500K/month. Across home goods, health & wellness, kitchen appliances, mushroom coffee, and similar high-consideration DTC categories. No service businesses, no B2B SaaS, no info products.",
   },
   {
     q: "How does the strategy call work?",
-    a: "Apply through the form below. If you look like a fit, we'll audit your ad account, your landing page, and your funnel on our own time — then walk you through exactly what we'd change on a free 30-minute call. No pitch deck, no live screen-share scrambling to find insights. We do the homework before the call so you get value whether or not we end up working together.",
+    a: "Apply through the form below. If you look like a fit, we'll audit your ad account, your landing page, and your funnel on our own time, then walk you through exactly what we'd change on a free 30-minute call. No pitch deck, no live screen-share scrambling to find insights. We do the homework before the call so you get value whether or not we end up working together.",
   },
 ];
 

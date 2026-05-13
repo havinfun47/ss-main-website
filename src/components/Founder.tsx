@@ -51,8 +51,8 @@ export default function Founder() {
 
             <div className="flex flex-col gap-5 text-secondary leading-relaxed text-base md:text-lg">
               <p>
-                Before Scale Science, I was the in&#8209;house marketing lead at Sepura Home &mdash;
-                a kitchen brand priced at 2&times; the market leader. Before me, they&rsquo;d handed
+                Before Scale Science, I was the in&#8209;house marketing lead at Sepura Home, a
+                kitchen brand priced at 2&times; the market leader. Before me, they&rsquo;d handed
                 their Meta account to one of the largest agencies in Canada. Six figures of ad spend
                 later, ROAS was sitting at 1.03 and MER was at 97%. The brand was burning money on
                 every order.
@@ -61,8 +61,8 @@ export default function Founder() {
                 They fired the agency and gave me the keys. Six months later, ROAS was at{" "}
                 <span className="text-primary font-semibold">3.44 (+234%)</span>, nCPA was down 71%,
                 MER down to 31% and the same creative I&rsquo;d built for ads crossed{" "}
-                <span className="text-primary font-semibold">100M organic views</span> &mdash;
-                including a single reel that hit 27M.
+                <span className="text-primary font-semibold">100M organic views</span>, including
+                a single reel that hit 27M.
               </p>
               <p>
                 That experience is the entire reason Scale Science exists. The problem isn&rsquo;t
@@ -72,9 +72,9 @@ export default function Founder() {
                 week.
               </p>
               <p>
-                If you&rsquo;re a DTC founder spending at least $15k/month on Meta &mdash; funded,
-                bootstrapped, doesn&rsquo;t matter, the budget does &mdash; and you&rsquo;ve felt
-                that &ldquo;I&rsquo;m paying an agency to make this worse&rdquo; feeling,
+                If you&rsquo;re a DTC founder spending at least $15k/month on Meta (funded or
+                bootstrapped, the budget is what matters), and you&rsquo;ve felt that
+                &ldquo;I&rsquo;m paying an agency to make this worse&rdquo; feeling,
                 that&rsquo;s exactly the problem I&rsquo;m built to solve.
               </p>
             </div>

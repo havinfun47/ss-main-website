@@ -9,7 +9,7 @@ const cases = [
     title: "40% less spend. 89% more revenue.",
     industry: "Sepura Home · Garbage Disposal Alternative",
     description:
-      "Sepura Home was priced at 2× the market leader. Their previous agency was delivering a 1.03 ROAS and 97% MER. We rebuilt the entire funnel — messaging, audiences, landing pages. Turned it around in 60 days.",
+      "Sepura Home was priced at 2× the market leader. Their previous agency was delivering a 1.03 ROAS and 97% MER. We rebuilt the entire funnel: messaging, audiences, landing pages. Turned it around in 60 days.",
     bullets: [
       "ROAS: 1.03 → 3.44 in 60 days (+234%)",
       "nCPA: $529 → $152 (−71%)",
@@ -26,11 +26,11 @@ const cases = [
     title: "The same ad creative did 100M+ organic views.",
     industry: "Sepura Home · Same brand, second angle",
     description:
-      "Once we'd rebuilt Sepura's ad account, we edited their existing footage into reels that ran in paid — then they reposted them organically. The top hook hit 27M views on a single Instagram reel. Total organic reach across Instagram and Facebook crossed 100 million. Zero new videography. Same brand, same shoots, multiplied output.",
+      "Once we'd rebuilt Sepura's ad account, we edited their existing footage into reels that ran in paid. Then they reposted them organically. The top hook hit 27M views on a single Instagram reel. Total organic reach across Instagram and Facebook crossed 100 million. Zero new videography. Same brand, same shoots, multiplied output.",
     bullets: [
       "100M+ organic views across Instagram and Facebook",
       "27M views on a single repurposed reel",
-      "Built from their existing content — zero new videography",
+      "Built from their existing content. Zero new videography.",
     ],
     stats: [
       { label: "Organic Views", value: "100M+" },
@@ -43,7 +43,7 @@ const cases = [
     title: "+1,076% Meta revenue in 90 days.",
     industry: "myco:soul · Mushroom Coffee",
     description:
-      "A saturated mushroom coffee market with acquisition costs that blocked profitability. We built a four-stage funnel — educational advertorials through to strategic retargeting — unlocking explosive, sustainable scale.",
+      "A saturated mushroom coffee market with acquisition costs that blocked profitability. We built a four-stage funnel (educational advertorials through to strategic retargeting) that unlocked explosive, sustainable scale.",
     bullets: [
       "Meta attributed revenue +1,076%",
       "Cost per purchase −66%",
@@ -78,7 +78,7 @@ const cases = [
     title: "$0 → $122K revenue in 60 days.",
     industry: "Kitchen Appliance Brand",
     description:
-      "No existing Meta presence. We built the full funnel from scratch — research, creative, audiences, landing pages — and delivered $122K in revenue at a 3.17 ROAS within the first 60 days.",
+      "No existing Meta presence. We built the full funnel from scratch (research, creative, audiences, landing pages) and delivered $122K in revenue at a 3.17 ROAS within the first 60 days.",
     bullets: [
       "$0 to $122K in attributed revenue",
       "3.17 ROAS from day one",

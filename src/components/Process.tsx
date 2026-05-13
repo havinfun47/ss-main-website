@@ -2,28 +2,28 @@ const phases = [
   {
     number: "01",
     title: "Set the breakeven number",
-    description: "Lock in target KPIs and breakeven ROAS for your specific unit economics. Connect Shopify, pixel, and tracking. Clean data flow before a dollar is spent — because every decision downstream depends on knowing what \"winning\" actually means for your account.",
+    description: "Lock in target KPIs and breakeven ROAS for your specific unit economics. Connect Shopify, pixel, and tracking. Clean data flow before a dollar is spent. Every decision downstream depends on knowing what \"winning\" actually means for your account.",
     outcome: "Clean foundation",
     highlight: false,
   },
   {
     number: "02",
     title: "Map the beliefs your customer needs to hold",
-    description: "Customer pains, desires, objections, conversion beliefs. Competitor teardown. We define the avatars and the 6 beliefs that have to be in place before someone clicks \"buy\" — then build the monthly testing plan around them.",
+    description: "Customer pains, desires, objections, conversion beliefs. Competitor teardown. We define the avatars and the 6 beliefs that have to be in place before someone clicks \"buy,\" then build the monthly testing plan around them.",
     outcome: "Angles + messaging",
     highlight: false,
   },
   {
     number: "03",
     title: "One angle = one ad = one landing page",
-    description: "Video and static creative from belief-driven briefs. A dedicated landing page for every angle — because sending three different ads to the same generic homepage is how conversion rates die. Campaign architecture structured for scale.",
+    description: "Video and static creative from belief-driven briefs. A dedicated landing page for every angle. Sending three different ads to the same generic homepage is how conversion rates die. Campaign architecture structured for scale.",
     outcome: "Creatives ready",
     highlight: false,
   },
   {
     number: "04",
     title: "Kill losers before they drain budget",
-    description: "Deploy across angles and personas. Collect live data fast. We make kill decisions early so spend concentrates on what's working — not on what we hoped would work.",
+    description: "Deploy across angles and personas. Collect live data fast. We make kill decisions early so spend concentrates on what's working, not on what we hoped would work.",
     outcome: "Live data",
     highlight: false,
   },
@@ -51,7 +51,7 @@ export default function Process() {
             </h2>
           </div>
           <p className="text-sm leading-relaxed md:max-w-sm text-secondary">
-            A compounding flywheel — not a one-time setup. Every phase builds on the last so results don&apos;t plateau, they accelerate.
+            A compounding flywheel, not a one-time setup. Every phase builds on the last so results don&apos;t plateau, they accelerate.
           </p>
         </div>
 

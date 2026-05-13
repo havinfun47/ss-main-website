@@ -1,7 +1,7 @@
 const fitFor = [
   "DTC ecommerce brands spending $15K+/month on Meta",
   "At least $20k+/month in revenue",
-  "Funded or bootstrapped — the budget matters, not the funding source",
+  "Funded or bootstrapped: the budget matters, not the funding source",
   "Founders who want a senior strategist in the account every week",
 ];
 
