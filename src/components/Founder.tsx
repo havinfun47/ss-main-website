@@ -72,10 +72,10 @@ export default function Founder() {
                 week.
               </p>
               <p>
-                If you&rsquo;re a DTC founder doing $30k&ndash;$80k MRR, spending at least
-                $15k/month on Meta, and you&rsquo;ve felt that &ldquo;I&rsquo;m paying an agency to
-                make this worse&rdquo; feeling &mdash; that&rsquo;s exactly the problem I&rsquo;m
-                built to solve.
+                If you&rsquo;re a DTC founder spending at least $15k/month on Meta &mdash; funded,
+                bootstrapped, doesn&rsquo;t matter, the budget does &mdash; and you&rsquo;ve felt
+                that &ldquo;I&rsquo;m paying an agency to make this worse&rdquo; feeling,
+                that&rsquo;s exactly the problem I&rsquo;m built to solve.
               </p>
             </div>
 

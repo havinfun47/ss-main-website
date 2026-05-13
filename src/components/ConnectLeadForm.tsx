@@ -6,10 +6,10 @@ const APPS_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbxAESDc0GS8aJztfEv4r328Z8NC2Q4hPqoWzu_aprMDzl-rF9VXWVpTHFgW_N7hXaym/exec";
 
 const REVENUE_OPTIONS = [
-  "Under $30k MRR",
-  "$30k–$50k MRR",
+  "Under $50k MRR",
   "$50k–$100k MRR",
-  "$100k+ MRR",
+  "$100k–$250k MRR",
+  "$250k+ MRR",
 ];
 
 const AD_SPEND_OPTIONS = [
@@ -314,6 +314,10 @@ export default function ConnectLeadForm() {
             {errors.adSpend}
           </span>
         )}
+        <p className="text-[12px] text-tertiary leading-relaxed mt-1">
+          We&rsquo;re built for brands spending $15K+/month on Meta. If you&rsquo;re under that,
+          we may not be the right fit yet.
+        </p>
       </div>
 
       <div className="flex flex-col gap-1.5">

@@ -23,10 +23,10 @@ const cases = [
   },
   {
     id: "viral-reels",
-    title: "100M+ organic views from the same creative.",
-    industry: "Sepura Home · Garbage Disposal Alternative",
+    title: "The same ad creative did 100M+ organic views.",
+    industry: "Sepura Home · Same brand, second angle",
     description:
-      "Same brand, no extra shoots. We edited their existing footage into the reels that ran in their ad account, then they reposted them organically — the top hook hit 27M views on a single Instagram reel, and total organic reach across Instagram and Facebook has crossed 100 million views.",
+      "Once we'd rebuilt Sepura's ad account, we edited their existing footage into reels that ran in paid — then they reposted them organically. The top hook hit 27M views on a single Instagram reel. Total organic reach across Instagram and Facebook crossed 100 million. Zero new videography. Same brand, same shoots, multiplied output.",
     bullets: [
       "100M+ organic views across Instagram and Facebook",
       "27M views on a single repurposed reel",
@@ -48,6 +48,7 @@ const cases = [
       "Meta attributed revenue +1,076%",
       "Cost per purchase −66%",
       "Ad spend scaled +510%",
+      "ROAS +583% (revenue scaled 2× faster than spend)",
     ],
     stats: [
       { label: "Meta Revenue", value: "+1,076%" },
@@ -105,7 +106,7 @@ export default function Results() {
             </h2>
           </div>
           <p className="text-secondary max-w-xs leading-relaxed text-sm">
-            Real brands, real numbers — across home goods, health & wellness, and more.
+            Across home goods, health & wellness, and kitchen DTC.
           </p>
         </div>
 

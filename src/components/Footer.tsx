@@ -32,11 +32,12 @@ export default function Footer() {
             <p>
               Tell us about your brand below. If you look like a fit, we&apos;ll audit your ad
               account, your landing page, and your funnel on our own time &mdash; then walk you
-              through what we&apos;d change on a 30&#8209;minute call.
+              through exactly what we&apos;d change on a free 30&#8209;minute call.
             </p>
             <p>
               No pitch deck. No live screen&#8209;share scrambling to find insights. We do the
-              homework before the call so you actually get value from the conversation.
+              homework before the call so you actually get value from the conversation &mdash;
+              whether or not we end up working together.
             </p>
           </div>
 

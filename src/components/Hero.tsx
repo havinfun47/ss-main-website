@@ -12,19 +12,19 @@ export default function Hero() {
         <div className="inline-flex items-center gap-2 border border-border bg-bg rounded-full px-4 py-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-accent inline-block shrink-0" />
           <span className="text-secondary text-xs font-medium uppercase" style={{ letterSpacing: "0.14em" }}>
-            For Funded DTC E&#8209;commerce Startups
+            For DTC brands spending $15K+/month on Meta
           </span>
         </div>
 
         <h1 className="font-serif text-5xl md:text-7xl leading-[1.06] tracking-tight text-primary font-normal">
-          More revenue. Better margins.{" "}
-          <em className="text-accent not-italic italic">Without the agency rollercoaster.</em>
+          Scale your DTC brand on Meta{" "}
+          <em className="text-accent not-italic italic">without watching ROAS collapse.</em>
         </h1>
 
         <p className="text-secondary text-lg leading-relaxed max-w-2xl font-sans">
-          Scale Science is the Meta growth system for DTC brands doing $30k&ndash;$80k MRR who are
-          ready to grow without watching profit collapse. Senior strategists, data&#8209;backed
-          creative, and landing pages built around your customer&apos;s actual buying journey.
+          Senior&#8209;led Meta ads, in&#8209;house creative, and landing pages built around how
+          your customer actually buys. One team. One engagement. No junior media buyers running
+          your account.
         </p>
 
         <div className="flex flex-col items-center gap-3 w-full sm:w-auto sm:max-w-md">

@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://havinfun47.github.io"),
   title: "Scale Science — Meta Funnels for eCom Brands",
   description:
-    "Boutique growth partner for 6-7 figure eCommerce brands. Senior Meta strategists, data-backed creative, and landing pages engineered to convert.",
+    "Senior-led Meta ads, in-house creative, and landing pages built around how your customer actually buys. For DTC brands spending $15K+/month on Meta.",
   openGraph: {
     title: "Scale Science — Meta Funnels for eCom Brands",
     description:
-      "Boutique growth partner for 6-7 figure eCommerce brands. Senior Meta strategists, data-backed creative, and landing pages engineered to convert.",
+      "Senior-led Meta ads, in-house creative, and landing pages built around how your customer actually buys. For DTC brands spending $15K+/month on Meta.",
     images: [
       {
         url: "/ss-main-website/images/og-image.png",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Scale Science — Meta Funnels for eCom Brands",
     description:
-      "Boutique growth partner for 6-7 figure eCommerce brands. Senior Meta strategists, data-backed creative, and landing pages engineered to convert.",
+      "Senior-led Meta ads, in-house creative, and landing pages built around how your customer actually buys. For DTC brands spending $15K+/month on Meta.",
     images: ["/ss-main-website/images/og-image.png"],
   },
 };

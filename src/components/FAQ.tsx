@@ -4,27 +4,27 @@ import { useState } from "react";
 const faqs = [
   {
     q: "What results can I realistically expect?",
-    a: "Results vary by brand, budget, and starting point — but our case studies give you a realistic picture. New brands can expect a profitable funnel live within 2 weeks. Established brands typically see meaningful ROAS improvement and CPA reduction within the first 30 days. We're designed to produce results in 60 days or less.",
+    a: "Our case studies give you the honest picture — ROAS doubling, CPA dropping by half, ad spend scaling 4–5× while efficiency holds. But the honest answer: results depend on your starting account, your product, and your category. The audit call exists so we can give you a specific take on your specific situation.",
   },
   {
     q: "What platforms do you run ads on?",
-    a: "Our core expertise is Meta — Facebook and Instagram. We go deep on one channel rather than spreading thin across five. If you're looking for Google, TikTok, or Pinterest management, we're not the right fit.",
+    a: "Meta only — Facebook and Instagram. We go deep on one channel rather than spreading thin across five. No TikTok, no Google, no Pinterest. If you need help anywhere else, we're not the right fit and we'll say so before the call.",
   },
   {
     q: "What ad budget do I need to get started?",
-    a: "We typically work with brands spending at least $20K/month in ad spend. Our sweet spot is $20K–$100K/month, where our systems create the most leverage. If you're below that threshold, we'll be straightforward on the call about whether we're the right fit.",
+    a: "$15K+/month on Meta is the gate. Below that, the math doesn't justify a senior-led engagement — you'll get better ROI on a creative subscription or a freelancer at this stage, and we'll tell you that on the call if you're under the threshold.",
   },
   {
     q: "How is Scale Science different from other agencies?",
-    a: "We don't use juniors. We don't outsource. We're a boutique shop which means your account gets real senior attention — not a rotating cast of account managers. We communicate proactively, we build custom landing pages as standard, and we own our results.",
+    a: "Most agencies run on the Junior Handoff: a senior closes the deal, then a junior runs the account alongside 30 other brands. That model only works for the agency, never for the brand. At Scale Science, the senior strategist who pitched you is in your account every week. Creative is built in-house by the same team running the media — not outsourced to a separate vendor whose work doesn't talk to your campaigns. Landing pages are built by the same team using the same conversion data. One team, no handoffs.",
   },
   {
     q: "What types of brands do you work with?",
-    a: "We work with 6-7 figure eCommerce brands across high-consideration categories: home goods, health & wellness, kitchen, outdoor, supplements, and more. We're selective — we only take on brands we're genuinely confident we can scale.",
+    a: "DTC ecommerce only. Funded or bootstrapped — the budget matters, not the funding source. $50K+/month in revenue, sweet spot around $100K–$500K/month. Across home goods, health & wellness, kitchen appliances, mushroom coffee, and similar high-consideration DTC categories. No service businesses, no B2B SaaS, no info products.",
   },
   {
     q: "How does the strategy call work?",
-    a: "Book a free 30-minute call. We'll review your current ad setup, identify the top opportunities you're missing, and outline exactly what our system would look like for your brand. No pitch decks, no hard sell — just a real conversation about your growth.",
+    a: "Apply through the form below. If you look like a fit, we'll audit your ad account, your landing page, and your funnel on our own time — then walk you through exactly what we'd change on a free 30-minute call. No pitch deck, no live screen-share scrambling to find insights. We do the homework before the call so you get value whether or not we end up working together.",
   },
 ];
 

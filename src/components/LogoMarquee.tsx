@@ -17,7 +17,7 @@ export default function LogoMarquee() {
   return (
     <section className="py-10 border-y border-border overflow-hidden bg-bg-card">
       <p className="text-center text-tertiary text-xs uppercase tracking-widest mb-6 font-medium">
-        Trusted by 6-7 figure eCom brands
+        Trusted by DTC brands spending $15K+/month on Meta
       </p>
       <div className="relative">
         <div className="flex gap-12 animate-marquee whitespace-nowrap marquee-track">
