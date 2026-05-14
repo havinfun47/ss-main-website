@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: "What types of brands do you work with?",
-    a: "DTC ecommerce only. Funded or bootstrapped: the budget matters, not the funding source. $50K+/month in revenue, sweet spot around $100K–$500K/month. Across home goods, health & wellness, kitchen appliances, mushroom coffee, and similar high-consideration DTC categories. No service businesses, no B2B SaaS, no info products.",
+    a: "DTC ecommerce only. Funded or bootstrapped: the budget matters, not the funding source. At least $20K+/month in revenue and spending $15K+/month on Meta. Across home goods, health & wellness, kitchen appliances, mushroom coffee, and similar high-consideration DTC categories. No service businesses, no B2B SaaS, no info products.",
   },
   {
     q: "How does the strategy call work?",

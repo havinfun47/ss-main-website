@@ -6,7 +6,7 @@ const fitFor = [
 ];
 
 const notFitFor = [
-  "Brands spending under $15K/month on Meta (you'll get better ROI on creative subscriptions or freelancers at this stage)",
+  "Brands spending under $15K/month on Meta (you'd be better off learning how to run your own ads at that stage)",
   "$1M+/month brands looking for a fourth opinion",
   "Service businesses, B2B SaaS, or info products (we're DTC-only)",
   "Brands that want us to optimize ROAS without rebuilding creative and landing pages",
