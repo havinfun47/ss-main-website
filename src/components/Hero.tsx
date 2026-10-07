@@ -41,12 +41,6 @@ export default function Hero() {
             Tell us about your brand. If we&apos;re a fit, we&apos;ll audit your account on our own
             time and walk you through what we&apos;d change on a 30&#8209;min call.
           </p>
-          <div className="inline-flex items-center justify-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5 mt-1">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block shrink-0" />
-            <span className="text-amber-700 text-xs font-semibold">
-              Currently accepting 2 new clients for Q2 2026. Once full, the next opening is Q3.
-            </span>
-          </div>
         </div>
 
         {/* Partner logos */}
